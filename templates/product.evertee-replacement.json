@@ -1,0 +1,535 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "text_mk4GLe": {
+          "type": "text",
+          "settings": {
+            "text": "<strong>THE T-SHIRT THAT LASTS A LIFETIME. GUARANTEED.</strong>",
+            "text_style": "uppercase"
+          }
+        },
+        "custom_liquid_PdUgBU": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"trustpilot-container\">\n  <div class=\"trustpilot-text\">\"Amazing\"</div>\n\n  <img\n    class=\"trustpilot-image\"\n    src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqwTrpqlDxrYZ0pXL4aXXL4azowSSvjMZM2g&s\"\n    alt=\"Trustpilot Image\"\n  />\n\n  <div class=\"trustpilot-rating\">Rated 4.4/5 on</div>\n\n  <img\n    class=\"trustpilot-logo\"\n    src=\"https://cdn.shopify.com/s/files/1/0798/4267/2987/files/trustpilot-logo-sml_bf402230-0d05-4609-a750-c310e4720da2.png?v=1733179329\"\n    alt=\"Trustpilot Image\"\n  />\n</div>\n\n<style>\n          .trustpilot-container {\n              display: flex;\n              align-items: center;\n              background-color: #e9fff9;\n              border: 1px solid #d4edda;\n              border-radius: 8px;\n              padding: 2px 10px;\n\n              width: 100%;\n  border: 1px dashed #898686;\n  gap: 8px;\n  justify-content: center;\n          }\n\n  .trustpilot-image{\n  width: 60px;\n  }\n  .trustpilot-logo{\n  width: 70px;\n  }\n  .trustpilot-text{\n  font-size: 13px;\n  font-weight: 600;\n  }\n  .trustpilot-rating{\n  font-size: 10px;\n  font-weight: 500;\n  color: #000;\n  }\n</style>"
+          }
+        },
+        "loox_reviews_loox_trust_badge_zbA3Pd": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-trust-badge/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "disabled": true,
+          "settings": {
+            "layout": "horizontal-slim",
+            "alignment": "fillContainer",
+            "scheme-type": "default",
+            "review-title": "reviews",
+            "rating-icon": true,
+            "average-rating": true,
+            "loox-branding": false,
+            "review-count": true,
+            "open-reviews": true,
+            "show-border": false,
+            "border-radius": 0,
+            "font-size": 12,
+            "background-color": "#ffffff",
+            "secondary-background-color": "",
+            "text-color": "#000000",
+            "rating-icon-color": "#246d62",
+            "border-color": ""
+          }
+        },
+        "price": {
+          "type": "price",
+          "disabled": true,
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "text_reE6pp": {
+          "type": "text",
+          "settings": {
+            "text": "Replacement item must match your original order.",
+            "text_style": "body"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "upsellplus_upsell_pdp_block_CppyLz": {
+          "type": "shopify://apps/upsellplus/blocks/upsell-pdp-block/553fb951-397c-4171-8b32-7056a23ffd82",
+          "settings": {}
+        },
+        "custom_liquid_4NPr8P": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"happy-customersV2\">\n    <div class=\"avatarsV2\">\n        <img src=\"https://img.freepik.com/free-photo/stylish-african-american-woman-smiling_23-2148770405.jpg\" alt=\"Customer 1\" class=\"avatarV2\" />\n        <img src=\"https://thumbs.dreamstime.com/b/beautiful-african-american-woman-relaxing-outside-happy-middle-aged-smiling-46298787.jpg\" alt=\"Customer 2\" class=\"avatarV2\" />\n        <img src=\"https://media.istockphoto.com/id/1320651997/photo/young-woman-close-up-isolated-studio-portrait.jpg?s=612x612&w=0&k=20&c=lV6pxz-DknISGT2jjiSvUmSaw0hpMDf-dBpT8HTSAUI=\" alt=\"Customer 3\" class=\"avatarV2\" />\n    </div>\n    <span class=\"textV2\">\n<span style = \"font-weight: 900;\">Michael</span>\n    <span class=\"verifiedV2\">\n      <img\n        src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Twitter_Verified_Badge.svg/800px-Twitter_Verified_Badge.svg.png\"\n        alt=\"verified badge\"\n        class=\"verifiedV2\">\n    </span> \n   <span>and <strong>758</strong> people purchased</span>\n</span>\n</div>\n\n<style>\n    .happy-customersV2 {\n        display: flex;\n        align-items: center;\n        background-color: #ffffff;\n        border-radius: 8px;\n        padding: 5px 15px;\n        font-family: Roboto, sans-serif !important;\n        font-size: 12px;\n        color: #000;\n        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);\n    }\n\n    .avatarsV2 {\n        display: flex;\n        margin-right: 10px;\n    }\n\n    .avatarV2 {\n        width: 22px;\n        height: 22px;\n        border-radius: 50%;\n        border: 2px solid white;\n        margin-left: -7px;\n        object-fit: cover;\n    }\n\n.textV2 {\n    font-weight: normal;\n    font-size: 12px;\n    color: #000;\n    line-height: 0px;\n    display: flex;\n    align-items: center;\n    gap: 3px;\n}\n\n    .textV2 strong {\n        font-weight: 800;\n        font-family: Roboto, sans-serif;\n    }\n\n    .verifiedV2 {\n        vertical-align: middle;\n        height: 13px;\n        width: 13px;\n    }\n</style>"
+          }
+        },
+        "custom_liquid_3FHwzX": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class = \"fast-delivery-offer\">\n    <svg\n      xmlns:dc=\"http://purl.org/dc/elements/1.1/\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      xmlns:xlink=\"http://www.w3.org/1999/xlink\"\n      width=\"15\"\n      fill=\"#007800\"\n      version=\"1.1\"\n      id=\"Layer_1\"\n      x=\"0px\"\n      y=\"0px\"\n      viewBox=\"0 0 24 24\"\n      style=\"enable-background:new 0 0 24 24;\"\n      xml:space=\"preserve\"\n    >\n      <metadata>\n        <dc:creator>Davooda</dc:creator>\n        <dc:relation>https://davooda.com</dc:relation>\n      </metadata>\n\n      <style type=\"text/css\">\n        .st0{fill:none;stroke:#039903;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}\n        .st1{fill:none;stroke:#039903;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}\n        .st2{fill:none;stroke:#039903;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}\n        .st3{fill:#039903;}\n        .st4{fill:#FFFFFF;stroke:#039903;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}\n        .st5{fill:none;stroke:#039903;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}\n        .st6{fill:none;stroke:#039903;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}\n        .st7{fill:#010101;}\n        .st8{fill:none;stroke:#039903;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}\n      </style>\n      <g>\n        <path\n          class=\"st0\"\n          d=\"M6,5h9v2l3.7,0.8c0.9,0.2,1.7,0.8,2.1,1.7l1.8,4c0.2,0.4,0.3,0.8,0.3,1.3v1.7V18h-3\"\n        />\n        <line class=\"st0\" x1=\"5\" y1=\"13\" x2=\"2\" y2=\"13\" />\n      </g>\n      <line class=\"st0\" x1=\"15\" y1=\"18\" x2=\"9\" y2=\"18\" />\n      <circle class=\"st0\" cx=\"6.5\" cy=\"18.5\" r=\"2.5\" />\n      <circle class=\"st0\" cx=\"17.5\" cy=\"18.5\" r=\"2.5\" />\n      <polyline class=\"st0\" points=\"15,7 15,12 15,14 \" />\n      <line class=\"st0\" x1=\"1\" y1=\"9\" x2=\"7\" y2=\"9\" />\n      <line class=\"st0\" x1=\"4\" y1=\"19\" x2=\"3\" y2=\"19\" />\n    </svg>\nFast Delivery within 2-3 Days\n</div>\n\n<style>\n.fast-delivery-offer {\n    display: flex;\n    justify-content: center;\n    gap: 10px;\n    font-size: 16px;\n    background: #e9fbea;\n    border-radius: 8px;\n    width: max-content;\n    margin-left: auto;\n    margin-right: auto;\n    padding: 0px 20px;\n    font-weight: 600;\n    color: #039903;\nalign-items: center;\n}\n</style>"
+          }
+        },
+        "loox_reviews_loox_rating_UEKAV4": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-rating/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "disabled": true,
+          "settings": {
+            "contentSize": 16,
+            "pattern": "",
+            "hideText": false,
+            "alignment": "",
+            "layout": "",
+            "textColor": "",
+            "starColor": "",
+            "showAllReviews": false,
+            "looxOpenFloatingWidget": false,
+            "emptyRatingWidget": false
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {}
+        },
+        "klarna_on_site_messaging_app_block_fBH8Dz": {
+          "type": "shopify://apps/klarna-on-site-messaging/blocks/app-block/b95936a9-74b6-4a95-8103-6a1b6459c25e",
+          "disabled": true,
+          "settings": {
+            "data_key": "credit-promotion-badge",
+            "theme": "dark",
+            "topPadding": "0",
+            "bottomPadding": "0",
+            "messagePrefix": ""
+          }
+        },
+        "klarna_on_site_messaging_app_block_MzcLFj": {
+          "type": "shopify://apps/klarna-on-site-messaging/blocks/app-block/b95936a9-74b6-4a95-8103-6a1b6459c25e",
+          "settings": {
+            "data_key": "footer-promotion-auto-size",
+            "theme": "default",
+            "topPadding": "0",
+            "bottomPadding": "0",
+            "messagePrefix": ""
+          }
+        },
+        "klarna_on_site_messaging_app_block_NUBM68": {
+          "type": "shopify://apps/klarna-on-site-messaging/blocks/app-block/b95936a9-74b6-4a95-8103-6a1b6459c25e",
+          "disabled": true,
+          "settings": {
+            "data_key": "top-strip-promotion-badge",
+            "theme": "default",
+            "topPadding": "0",
+            "bottomPadding": "0",
+            "messagePrefix": ""
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {}
+        },
+        "collapsible_tab_4YyHJK": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "HOW DOES THIS WORK",
+            "icon": "shirt",
+            "content": "<p>It sounds too good to be true right?  </p><p>Well, put simply, should anything ever happen to your Evertee, simply get in touch and we'll arrange a replacement garment.</p><p>That's it.<br/></p><p>Oh, and unlimited replacements.</p><p>How are we so confident?</p><p>Our premium heavyweight t-shirt is carefully and ethically crafted from 100% combed cotton.</p><p>Designed for unmatched durability, timeless comfort, and sustainability, it’s built to handle whatever life throws at it. </p><p>Featuring a classic fit, double-needle stitching, and pre-shrunk fabric, Evertee is as tough as it is soft.</p><p>Save money, save the planet, make Evertee the only t-shirt you’ll ever need.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_JXrb7D": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "DELIVERY & RETURNS",
+            "icon": "box",
+            "content": "<p>Orders placed by 2pm are shipped same day. If this falls on a weekend, it will be shipped the next working day. <br/><br/>Allow 1-3 working days for UK delivery.</p><p>Allow 7-8 working days for USA / ROW delivery</p><p>We offer a no quibble 28 day return policy. We just ask that the tee is in the same condition as we sent it.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_3Brz6X": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "EVERT(R)EE",
+            "icon": "leaf",
+            "content": "<p>Not only does making the switch to Evertee help save over 100 trees, but we'll plant an extra one for each Evertee sold, just for good measure!</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_B4eDpp": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "SIZING",
+            "icon": "ruler",
+            "content": "<p>Our premium heavyweight t-shirt is carefully and ethically crafted from 100% combed cotton. </p><p>Fitting is true to size, but if it's not the right size, we offer a free no quibble 28 day return / exchange window.</p>",
+            "page": ""
+          }
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "text_mk4GLe",
+        "custom_liquid_PdUgBU",
+        "loox_reviews_loox_trust_badge_zbA3Pd",
+        "price",
+        "variant_picker",
+        "text_reE6pp",
+        "buy_buttons",
+        "upsellplus_upsell_pdp_block_CppyLz",
+        "custom_liquid_4NPr8P",
+        "custom_liquid_3FHwzX",
+        "loox_reviews_loox_rating_UEKAV4",
+        "quantity_selector",
+        "klarna_on_site_messaging_app_block_fBH8Dz",
+        "klarna_on_site_messaging_app_block_MzcLFj",
+        "klarna_on_site_messaging_app_block_NUBM68",
+        "description",
+        "collapsible_tab_4YyHJK",
+        "collapsible_tab_JXrb7D",
+        "collapsible_tab_3Brz6X",
+        "collapsible_tab_B4eDpp",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail",
+        "mobile_thumbnails": "hide",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_LxkkmX": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_6Tnxgb": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em>\"I'VE SAVED A FORTUNE SWITCHING TO EVERTEE\"</em>",
+            "heading_size": "h2"
+          }
+        },
+        "text_qGjTrB": {
+          "type": "text",
+          "settings": {
+            "text": "<p>⭐⭐⭐⭐⭐ CHRIS, MANCHESTER</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_6Tnxgb",
+        "text_qGjTrB"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-4",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "1736348687de85f9df": {
+      "type": "apps",
+      "blocks": {
+        "loox_reviews_loox_snippets_widget_bEyMJG": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-snippets-widget/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "disabled": true,
+          "settings": {
+            "reviews-limit": 10,
+            "alignment": "center",
+            "max-width": "736px",
+            "color-scheme": "default",
+            "shadow": "",
+            "show-rating": true,
+            "show-image": true,
+            "hide-arrows-mobile": false,
+            "font-size": 14,
+            "show-border": false,
+            "border-radius": 16,
+            "background-color": "",
+            "text-color": "",
+            "name-color": "",
+            "rating-icon-color": "",
+            "border-color": "",
+            "shadow-color": ""
+          }
+        },
+        "loox_reviews_loox_dynamic_section_PJ4fp6": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-dynamic-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "only_photos": false,
+            "aggregated": true,
+            "limit": 3,
+            "hide_thumbnails": true,
+            "maxwidth": 1080,
+            "is_sample": true
+          }
+        },
+        "loox_reviews_loox_dynamic_section_DYXhHr": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-dynamic-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "disabled": true,
+          "settings": {
+            "only_photos": false,
+            "aggregated": false,
+            "limit": 20,
+            "hide_thumbnails": false,
+            "maxwidth": 1080,
+            "is_sample": true
+          }
+        }
+      },
+      "block_order": [
+        "loox_reviews_loox_snippets_widget_bEyMJG",
+        "loox_reviews_loox_dynamic_section_PJ4fp6",
+        "loox_reviews_loox_dynamic_section_DYXhHr"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "YOU MAY ALSO LIKE",
+        "heading_size": "h1",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    },
+    "multirow_L9f8fz": {
+      "type": "multirow",
+      "blocks": {
+        "row_QeX7gN": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/IMG_4693.png",
+            "caption": "",
+            "heading": "THE T-SHIRT THAT LASTS A LIFETIME",
+            "text": "<p>If anything ever happens to your t-shirt, we’ll replace it, simple. It’s the only t-shirt you’ll ever need — a promise no fast-fashion brand can match.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "row_xV6ryq": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/663E0F8C-9551-43A6-A019-D574EEEF11A8.png",
+            "caption": "",
+            "heading": "THE EASIEST £771 YOU'LL EVER EARN",
+            "text": "<p>The average person purchases approximately <strong>80 t-shirts </strong>over their lifetime (1.6 t-shirts/year). At an average cost of £10 per t-shirt, this totals <strong>£800</strong>. Meaning your £29 Evertee could save you up to <strong>£771</strong> over your lifetime. It just makes sense!</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "row_FMMeTV": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/G5000BlackM459.jpg",
+            "caption": "",
+            "heading": "SAVE THE EQUIVALENT OF 2,700 BATH TUBS OF WATER",
+            "text": "<p>It would take 216,000 liters of water to manufacture the same number of t-shirts as 1 Evertee. Make the change.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_QeX7gN",
+        "row_xV6ryq",
+        "row_FMMeTV"
+      ],
+      "settings": {
+        "image_height": "adapt",
+        "desktop_image_width": "medium",
+        "image_layout": "alternate-left",
+        "heading_size": "h1",
+        "text_style": "subtitle",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "row_color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "collapsible_content_NNPzfc": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_UqUbNX": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "HOW CAN A T-SHIRT LAST A LIFETIME?",
+            "icon": "question_mark",
+            "row_content": "<p>We don’t cut corners. Evertee is built with premium, sustainable materials designed to outlive your wardrobe. And if it doesn’t? We’ll replace it. Simple as that.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_fmCMR3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "WHY SHOULD I PAY MORE FOR A T-SHIRT?",
+            "icon": "price_tag",
+            "row_content": "<p>Because it’s the <em>only</em> t-shirt you’ll ever need. While you’re busy buying dozens of fast-fashion t-shirts every year, Evertee is saving you <strong>money</strong>, time, and the planet. Over a lifetime, it’s a motherflippin' bargain.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_WQJC9K": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "WHAT IF MY T-SHIRT GETS DAMAGED?",
+            "icon": "recycle",
+            "row_content": "<p>Don’t sweat it. Tear? Hole? Weird stain you don’t want to talk about? Send it back, and we’ll replace it. We’ve got your back for life.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_67nEph": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "HOW DOES EVERTEE HELP SAVE THE PLANET?",
+            "icon": "plant",
+            "row_content": "<p>By ditching fast fashion. Our t-shirt replaces <strong>80+ disposable tees</strong>, saves <strong>216,000 liters of water</strong>, and prevents <strong>hundreds of kilos of CO₂ emissions</strong>. One t-shirt, one massive impact.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_g3tTQJ": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "WHAT MAKES EVERTEE SO DAMN COMFORTABLE?",
+            "icon": "shirt",
+            "row_content": "<p>It’s crafted from ethically sourced, ridiculously soft, natural fibres. It feels so good, you’ll wonder why you ever wore anything else. Go ahead, try it—your skin will thank you.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_LbVnQH": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "WHAT'S THE CATCH?",
+            "icon": "eye",
+            "row_content": "<p>There isn’t one. You get a lifetime guarantee, unmatched quality, and the satisfaction of telling fast fashion to eff<em> off. No catches, no bull </em>—just a damn good t-shirt.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_UqUbNX",
+        "collapsible_row_fmCMR3",
+        "collapsible_row_WQJC9K",
+        "collapsible_row_67nEph",
+        "collapsible_row_g3tTQJ",
+        "collapsible_row_LbVnQH"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "WHAT THE FAQ",
+        "heading_size": "h0",
+        "heading_alignment": "center",
+        "layout": "row",
+        "container_color_scheme": "scheme-4",
+        "color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image": "shopify://shop_images/Gildan5000MilitaryGreenMale720.jpg",
+        "image_ratio": "large",
+        "desktop_layout": "image_first",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_x4CnGP": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_4Fb3bK": {
+          "type": "heading",
+          "settings": {
+            "heading": "SAVE YOUR WALLET. SAVE THE PLANET",
+            "heading_size": "h1"
+          }
+        },
+        "text_WWLR3p": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Not only does making the switch to Evertee help save over 100 trees, but we'll plant an extra one for each Evertee sold, just for good measure!</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_4Fb3bK",
+        "text_WWLR3p"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Evertee_logo_2.png",
+        "height": "small",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-2",
+        "color_scheme": "scheme-2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_LxkkmX",
+    "1736348687de85f9df",
+    "related-products",
+    "multirow_L9f8fz",
+    "collapsible_content_NNPzfc",
+    "image_with_text_x4CnGP"
+  ]
+}

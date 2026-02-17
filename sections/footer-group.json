@@ -1,0 +1,119 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "176156544753754c2e": {
+      "type": "apps",
+      "blocks": {
+        "conversagent_gqa_block_XwN3ab": {
+          "type": "shopify://apps/conversagent/blocks/gqa-block/9dcb9616-f02a-40f7-b434-36f4866f2140",
+          "disabled": true,
+          "settings": {
+            "gqa_agentName": "",
+            "gqa_agentTagLine": "AI Assistant",
+            "gqa_waitForGreeting": false,
+            "gqa_isSearchSuggestion": false,
+            "gqa_theme_bodyBg": "#fff",
+            "gqa_theme_bodyBorderColor": "#bfbfbf",
+            "gqa_theme_msgBubbleUserBg": "#7123c0",
+            "gqa_theme_msgBubbleUserTextColor": "#fff",
+            "gqa_theme_msgBubbleAgentBg": "#f0f0f0",
+            "gqa_theme_msgBubbleAgentTextColor": "#000",
+            "gqa_loading_style": "default",
+            "gqa_customCSS": ""
+          }
+        }
+      },
+      "block_order": [
+        "conversagent_gqa_block_XwN3ab"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "HEAR MORE ABOUT WHAT WE DO",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Be the first to know about new collections and exclusive offers.</p>"
+          }
+        },
+        "email-form": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading",
+        "paragraph",
+        "email-form"
+      ],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 56
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "link_list_fC8dEk": {
+          "type": "link_list",
+          "settings": {
+            "heading": "USEFUL LINKS",
+            "menu": "footer"
+          }
+        },
+        "text_6i7V6F": {
+          "type": "text",
+          "settings": {
+            "heading": "",
+            "subtext": "<p>Evertee | Company Number: 11306660. Registered Address Brulimar House, Jubilee Street, Manchester, M24 2LX</p>"
+          }
+        }
+      },
+      "block_order": [
+        "link_list_fC8dEk",
+        "text_6i7V6F"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "newsletter_enable": false,
+        "newsletter_heading": "",
+        "enable_follow_on_shop": true,
+        "show_social": true,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "payment_enable": true,
+        "show_policy": true,
+        "margin_top": 0,
+        "padding_top": 44,
+        "padding_bottom": 40
+      }
+    }
+  },
+  "order": [
+    "176156544753754c2e",
+    "newsletter",
+    "footer"
+  ]
+}

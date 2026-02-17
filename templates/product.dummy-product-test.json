@@ -1,0 +1,541 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "text_HhUzij": {
+          "type": "text",
+          "settings": {
+            "text": "<em>The T-Shirt Guaranteed To Last A Lifetime</em>",
+            "text_style": "body"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "fly_bundles_quantity_breaks_app_block_volume_QMNmFR": {
+          "type": "shopify://apps/fly-bundles-quantity-breaks/blocks/app-block-volume/26807bdc-c2ed-4a25-afb2-06e6b1ebf843",
+          "settings": {
+            "product": "{{product}}"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "custom_liquid_3FHwzX": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class = \"fast-delivery-offer\">\n    <svg\n      xmlns:dc=\"http://purl.org/dc/elements/1.1/\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      xmlns:xlink=\"http://www.w3.org/1999/xlink\"\n      width=\"15\"\n      fill=\"#007800\"\n      version=\"1.1\"\n      id=\"Layer_1\"\n      x=\"0px\"\n      y=\"0px\"\n      viewBox=\"0 0 24 24\"\n      style=\"enable-background:new 0 0 24 24;\"\n      xml:space=\"preserve\"\n    >\n      <metadata>\n        <dc:creator>Davooda</dc:creator>\n        <dc:relation>https://davooda.com</dc:relation>\n      </metadata>\n\n      <style type=\"text/css\">\n        .st0{fill:none;stroke:#039903;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}\n        .st1{fill:none;stroke:#039903;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}\n        .st2{fill:none;stroke:#039903;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}\n        .st3{fill:#039903;}\n        .st4{fill:#FFFFFF;stroke:#039903;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}\n        .st5{fill:none;stroke:#039903;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}\n        .st6{fill:none;stroke:#039903;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}\n        .st7{fill:#010101;}\n        .st8{fill:none;stroke:#039903;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}\n      </style>\n      <g>\n        <path\n          class=\"st0\"\n          d=\"M6,5h9v2l3.7,0.8c0.9,0.2,1.7,0.8,2.1,1.7l1.8,4c0.2,0.4,0.3,0.8,0.3,1.3v1.7V18h-3\"\n        />\n        <line class=\"st0\" x1=\"5\" y1=\"13\" x2=\"2\" y2=\"13\" />\n      </g>\n      <line class=\"st0\" x1=\"15\" y1=\"18\" x2=\"9\" y2=\"18\" />\n      <circle class=\"st0\" cx=\"6.5\" cy=\"18.5\" r=\"2.5\" />\n      <circle class=\"st0\" cx=\"17.5\" cy=\"18.5\" r=\"2.5\" />\n      <polyline class=\"st0\" points=\"15,7 15,12 15,14 \" />\n      <line class=\"st0\" x1=\"1\" y1=\"9\" x2=\"7\" y2=\"9\" />\n      <line class=\"st0\" x1=\"4\" y1=\"19\" x2=\"3\" y2=\"19\" />\n    </svg>\nFast Delivery within 2-3 Days\n</div>\n\n<style>\n.fast-delivery-offer {\n    display: flex;\n    justify-content: center;\n    gap: 10px;\n    font-size: 16px;\n    background: #e9fbea;\n    border-radius: 8px;\n    width: max-content;\n    margin-left: auto;\n    margin-right: auto;\n    padding: 0px 20px;\n    font-weight: 600;\n    color: #039903;\nalign-items: center;\n}\n</style>"
+          }
+        },
+        "klarna_on_site_messaging_app_block_MzcLFj": {
+          "type": "shopify://apps/klarna-on-site-messaging/blocks/app-block/b95936a9-74b6-4a95-8103-6a1b6459c25e",
+          "settings": {
+            "data_key": "footer-promotion-auto-size",
+            "theme": "default",
+            "topPadding": "0",
+            "bottomPadding": "0",
+            "messagePrefix": ""
+          }
+        },
+        "collapsible_tab_4YyHJK": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "HOW DOES THIS WORK?",
+            "icon": "question_mark",
+            "content": "<p>It sounds too good to be true right?  </p><p>Well, put simply, should anything ever happen to your Evertee, simply get in touch and we'll arrange a replacement garment.</p><p>That's it.<br/></p><p>Oh, and unlimited replacements.</p><p>How are we so confident?</p><p>Our premium heavyweight t-shirt is carefully and ethically crafted from 100% combed cotton.</p><p>Designed for unmatched durability, timeless comfort, and sustainability, it’s built to handle whatever life throws at it. </p><p>Featuring a classic fit, double-needle stitching, and pre-shrunk fabric, Evertee is as tough as it is soft.</p><p>Save money, save the planet, make Evertee the only t-shirt you’ll ever need.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_3Brz6X": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "WHAT'S COVERED IN THE GUARANTEE",
+            "icon": "check_mark",
+            "content": "<p>✅ Holes appearing in the fabric </p><p>✅ Colour starting to fade or look dull</p><p>✅ Stitching coming loose</p><p>✅ Collar or sleeves losing their shape or sagging</p><p>✅ Logo fading or peeling (if you’ve opted for a tee with our logo on it)</p><p>✅ Accidental damage including stains .We just ask you stick to our fair play policy of 1 replacement per year for anything accidental, we think that’s fair, hopefully you do too.</p><p>✅ Deodorant stains - Again, we just ask that you stick to our fair play policy of 1 replacement per month for this. </p><p></p><p>What's not covered </p><p>❌ Anything intentional*</p><p></p><p></p><p>*We'll never know if anyone intentionally damages their tee so we're relying on people being honest here. We know there will be a select few who try to take us for a ride, but we trust that the overall population are decent humans who will do the right thing.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_rr63KB": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "ABOUT THE TEE",
+            "icon": "shirt",
+            "content": "<ul><li>Premium fitted crew neck tee</li><li>Thick 210g weight</li><li>Longer body length</li><li>100% combed ringspun cotton</li><li>Soft tag printed for extra comfort</li></ul>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_JXrb7D": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "DELIVERY & RETURNS",
+            "icon": "box",
+            "content": "<p>Allow 1-3 working days for UK delivery.</p><p>Allow 7-8 working days for USA / ROW delivery</p><p>We offer a no quibble 28 day return policy. We just ask that the tee is in the same condition as we sent it.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_B4eDpp": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "SIZING",
+            "icon": "ruler",
+            "content": "<p>Our premium heavyweight t-shirt is carefully and ethically crafted from 100% combed cotton. </p><p>Fitting is true to size, but if it's not the right size, we offer a free no quibble 28 day return / exchange window.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "text_HhUzij",
+        "variant_picker",
+        "fly_bundles_quantity_breaks_app_block_volume_QMNmFR",
+        "buy_buttons",
+        "custom_liquid_3FHwzX",
+        "klarna_on_site_messaging_app_block_MzcLFj",
+        "collapsible_tab_4YyHJK",
+        "collapsible_tab_3Brz6X",
+        "collapsible_tab_rr63KB",
+        "collapsible_tab_JXrb7D",
+        "collapsible_tab_B4eDpp"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "gallery_layout": "thumbnail_slider",
+        "mobile_thumbnails": "hide",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 8,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_LxkkmX": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_6Tnxgb": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em>\"I'VE SAVED A FORTUNE SWITCHING TO EVERTEE\"</em>",
+            "heading_size": "h2"
+          }
+        },
+        "text_qGjTrB": {
+          "type": "text",
+          "settings": {
+            "text": "<p>⭐⭐⭐⭐⭐ CHRIS, MANCHESTER</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_6Tnxgb",
+        "text_qGjTrB"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-4",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "blocks_kMDjaT": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_73028c5_pQaryg": {
+          "type": "ai_gen_block_73028c5",
+          "settings": {
+            "image": "shopify://shop_images/trust-pilot-section.png",
+            "image_link": "https://uk.trustpilot.com/review/evertee.co.uk",
+            "desktop_width_percent": 15,
+            "border_radius": 0,
+            "enable_hover_effect": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_73028c5_pQaryg"
+      ],
+      "name": "Linked image",
+      "settings": {}
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "YOU MAY ALSO LIKE",
+        "heading_size": "h1",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    },
+    "multicolumn_RfwDPN": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_FaR7aa": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>WHAT'S COVERED</strong>",
+            "text": "<p></p><p>✅ Holes appearing in the fabric </p><p>✅ Colour starting to fade or look dull</p><p>✅ Stitching coming loose</p><p>✅ Collar or sleeves losing their shape</p><p>✅ Logo fading or peeling</p><p>✅ Accidental damage including stains / deoderant stains. We just ask you stick to our fair play policy of 1 replacement per month for anything accidental, we think that’s fair, hopefully you do too.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_EEtgnn": {
+          "type": "column",
+          "settings": {
+            "title": "WHAT'S NOT COVERED",
+            "text": "<p>❌ Anything intentional*</p><p></p><p></p><p>*We'll never know if anyone intentionally damages their tee so we're relying on people being honest here. We know there will be a select few who try to take us for a ride, but we trust that the overall population are decent humans who will do the right thing.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_FaR7aa",
+        "column_EEtgnn"
+      ],
+      "settings": {
+        "title": "WHAT'S COVERED IN THE GUARANTEE?",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "scheme-4",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 44,
+        "padding_bottom": 36
+      }
+    },
+    "1745436972a1b9bb61": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "174543695190399f32": {
+      "type": "apps",
+      "blocks": {
+        "super_video_ugc_video_wall_popup_play_QQNzVE": {
+          "type": "shopify://apps/super-video-ugc/blocks/video_wall_popup_play/2721aaf8-cc8e-48db-a5ff-caf1f1abfc5c",
+          "settings": {
+            "title": "FAN VIDEOS",
+            "subheading": "",
+            "text_alignment": "center",
+            "heading_size": 42,
+            "subheading_size": 12,
+            "item_size": "--image-aspect-ratio",
+            "desktop_item": "4",
+            "mobile_item": "2",
+            "spacing": 4,
+            "radius": 14,
+            "video_auto_play": true,
+            "video_hosted_1": "shopify://files/videos/IMG_1365 - VEED Export.MP4",
+            "video_url_1": "",
+            "video_hosted_2": "shopify://files/videos/Evertee Video  - VEED Export.MP4",
+            "video_url_2": "",
+            "video_hosted_3": "shopify://files/videos/IMG_1834 2.MOV",
+            "video_url_3": "",
+            "video_hosted_4": "shopify://files/videos/IMG_3634.MOV",
+            "video_url_4": "",
+            "video_url_5": "",
+            "video_url_6": "",
+            "video_url_7": "",
+            "video_url_8": "",
+            "video_url_9": "",
+            "video_url_10": "",
+            "video_url_11": "",
+            "video_url_12": "",
+            "video_url_13": "",
+            "video_url_14": ""
+          }
+        }
+      },
+      "block_order": [
+        "super_video_ugc_video_wall_popup_play_QQNzVE"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "rich_text_UfhrYx": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Xe87LQ": {
+          "type": "heading",
+          "settings": {
+            "heading": "\"HOW CAN YOU AFFORD TO OFFER UNLIMITED REPLACEMENTS?\"",
+            "heading_size": "h1"
+          }
+        },
+        "text_xXxLaU": {
+          "type": "text",
+          "settings": {
+            "text": "<p>This is the question we get asked the most. The honest answer is that we're so confident in the quality of our t-shirts that we know for the most part, we'll never have to replace them. </p><p></p><p>If we had any doubt in the quality of our tees, we wouldn't offer this.</p>"
+          }
+        },
+        "button_XtHDTz": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_Xe87LQ",
+        "text_xXxLaU",
+        "button_XtHDTz"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "multicolumn_LmFEyD": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_xYgFRw": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>STEP 1 : GET IN TOUCH</strong>",
+            "text": "<p>Just reach out to us and let us know what happened. We may need you to send us a photo of what's happened to the tee. In some rare cases we may ask you to send the tee back to us - we'll provide a postage label for this in this case.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_rtKPzW": {
+          "type": "column",
+          "settings": {
+            "title": "STEP 2  : GET YOUR REPLACEMENT",
+            "text": "<p>We'll ship out your complimentary replacement. We just ask that you cover the shipping on the replacement item, that's it!</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_xYgFRw",
+        "column_rtKPzW"
+      ],
+      "settings": {
+        "title": "HOW TO CLAIM A REPLACEMENT",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "scheme-4",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 44,
+        "padding_bottom": 36
+      }
+    },
+    "multirow_L9f8fz": {
+      "type": "multirow",
+      "blocks": {
+        "row_QeX7gN": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/IMG_4693.png",
+            "caption": "",
+            "heading": "THE T-SHIRT THAT LASTS A LIFETIME",
+            "text": "<p>If anything ever happens to your t-shirt, we’ll replace it, simple. It’s the only t-shirt you’ll ever need — a promise no fast-fashion brand can match.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "row_xV6ryq": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/White_evertee_man_8b7c713c-1fb3-4ccf-b857-6bd3c472887e.png",
+            "caption": "",
+            "heading": "THE EASIEST MONEY YOU'LL EVER EARN",
+            "text": "<p>The average person purchases approximately <strong>80 t-shirts </strong>over their lifetime (1.6 t-shirts/year). Just imagine the money you'll save for more stuff!</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "row_FMMeTV": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/Evertee_Black.png",
+            "caption": "",
+            "heading": "SAVE THE EQUIVALENT OF 2,700 BATH TUBS OF WATER",
+            "text": "<p>It would take 216,000 liters of water to manufacture the same number of t-shirts as 1 Evertee. Make the change.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_QeX7gN",
+        "row_xV6ryq",
+        "row_FMMeTV"
+      ],
+      "settings": {
+        "image_height": "adapt",
+        "desktop_image_width": "medium",
+        "image_layout": "alternate-left",
+        "heading_size": "h1",
+        "text_style": "subtitle",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "row_color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "collapsible_content_NNPzfc": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_UqUbNX": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "HOW CAN A T-SHIRT LAST A LIFETIME?",
+            "icon": "question_mark",
+            "row_content": "<p>We don’t cut corners. Evertee is built with premium, sustainable materials designed to outlive your wardrobe. And if it doesn’t? We’ll replace it. Simple as that.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_fmCMR3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "WHY SHOULD I PAY MORE FOR A T-SHIRT?",
+            "icon": "price_tag",
+            "row_content": "<p>Because it’s the <em>only</em> t-shirt you’ll ever need. While you’re busy buying dozens of fast-fashion t-shirts every year, Evertee is saving you <strong>money</strong>, time, and the planet. Over a lifetime, it’s a motherflippin' bargain.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_WQJC9K": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "WHAT IF MY T-SHIRT GETS DAMAGED?",
+            "icon": "recycle",
+            "row_content": "<p>Don’t sweat it. Tear? Hole? Weird stain you don’t want to talk about? Send it back, and we’ll replace it. We’ve got your back for life.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_67nEph": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "HOW DOES EVERTEE HELP SAVE THE PLANET?",
+            "icon": "plant",
+            "row_content": "<p>By ditching fast fashion. Our t-shirt replaces <strong>80+ disposable tees</strong>, saves <strong>216,000 liters of water</strong>, and prevents <strong>hundreds of kilos of CO₂ emissions</strong>. One t-shirt, one massive impact.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_g3tTQJ": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "WHAT MAKES EVERTEE SO DAMN COMFORTABLE?",
+            "icon": "shirt",
+            "row_content": "<p>It’s crafted from ethically sourced, ridiculously soft, natural fibres. It feels so good, you’ll wonder why you ever wore anything else. Go ahead, try it—your skin will thank you.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_LbVnQH": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "WHAT'S THE CATCH?",
+            "icon": "eye",
+            "row_content": "<p>There isn’t one. You get a lifetime guarantee, unmatched quality, and the satisfaction of telling fast fashion to eff<em> off. No catches, no bull </em>—just a damn good t-shirt.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_UqUbNX",
+        "collapsible_row_fmCMR3",
+        "collapsible_row_WQJC9K",
+        "collapsible_row_67nEph",
+        "collapsible_row_g3tTQJ",
+        "collapsible_row_LbVnQH"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "WHAT THE FAQ",
+        "heading_size": "h0",
+        "heading_alignment": "center",
+        "layout": "row",
+        "container_color_scheme": "scheme-4",
+        "color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image": "shopify://shop_images/Evertee_Green.png",
+        "image_ratio": "large",
+        "desktop_layout": "image_first",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_LxkkmX",
+    "blocks_kMDjaT",
+    "related-products",
+    "multicolumn_RfwDPN",
+    "1745436972a1b9bb61",
+    "174543695190399f32",
+    "rich_text_UfhrYx",
+    "multicolumn_LmFEyD",
+    "multirow_L9f8fz",
+    "collapsible_content_NNPzfc"
+  ]
+}

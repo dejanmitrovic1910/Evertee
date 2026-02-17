@@ -1,0 +1,140 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_3437gY": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "JANUARY SALE - £10 OFF ALL BUNDLES",
+            "link": ""
+          }
+        },
+        "announcement_CRHBLC": {
+          "type": "announcement",
+          "settings": {
+            "text": "LIFETIME REPLACEMENTS ON ALL TEES",
+            "link": ""
+          }
+        },
+        "announcement_T7CbmN": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "Welcome to our store",
+            "link": ""
+          }
+        },
+        "announcement_cpTKLR": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "RATED 5 STARS BY CUSTOMERS",
+            "link": ""
+          }
+        },
+        "announcement_iXzLpt": {
+          "type": "announcement",
+          "settings": {
+            "text": "£10 OFF ALL BUNDLES TODAY",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement_3437gY",
+        "announcement_CRHBLC",
+        "announcement_T7CbmN",
+        "announcement_cpTKLR",
+        "announcement_iXzLpt"
+      ],
+      "settings": {
+        "auto_rotate": true,
+        "change_slides_speed": 3,
+        "color_scheme": "scheme-2",
+        "show_line_separator": false,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
+    },
+    "17453048628eb07b12": {
+      "type": "apps",
+      "blocks": {
+        "trustview_app_embed_block_gnCxMD": {
+          "type": "shopify://apps/trustview/blocks/app_embed_block/bda8b0f7-273b-4b6e-ab43-02c3fec9d11a",
+          "disabled": true,
+          "settings": {
+            "widget_design": "design9",
+            "widget_theme": "light",
+            "widget_hyperlink": false,
+            "hide_trust_logo": false
+          }
+        }
+      },
+      "block_order": [
+        "trustview_app_embed_block_gnCxMD"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_position": "middle-left",
+        "mobile_logo_position": "center",
+        "menu": "main-menu",
+        "menu_type_desktop": "mega",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": false,
+        "color_scheme": "scheme-1",
+        "menu_color_scheme": "scheme-1",
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "enable_customer_avatar": false,
+        "margin_bottom": 0,
+        "padding_top": 12,
+        "padding_bottom": 4
+      }
+    },
+    "1771014354326cb2a1": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_73028c5_iN3AYh": {
+          "type": "ai_gen_block_73028c5",
+          "settings": {
+            "image": "shopify://shop_images/trust-pilot.png",
+            "image_link": "https://uk.trustpilot.com/review/evertee.co.uk",
+            "desktop_width_percent": 20,
+            "border_radius": 0,
+            "enable_hover_effect": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_73028c5_iN3AYh"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "17453048628eb07b12",
+    "header",
+    "1771014354326cb2a1"
+  ]
+}

@@ -1,0 +1,829 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image-with-text": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "A T-SHIRT FOR LIFE. GUARANTEED.",
+            "heading_size": "h0"
+          }
+        },
+        "text_ERXiFk": {
+          "type": "text",
+          "settings": {
+            "text": "<h5>We guarantee each t-shirt for life. Helping you save your money for the important stuff  🫶</h5>",
+            "text_style": "subtitle"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_label": "BUY YOUR LAST EVER T-SHIRT",
+            "button_link": "shopify://products/evertee-original®",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text_ERXiFk",
+        "button"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/663E0F8C-9551-43A6-A019-D574EEEF11A8.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "section_color_scheme": "scheme-1",
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "173635054678028f9c": {
+      "type": "apps",
+      "blocks": {
+        "loox_reviews_loox_agg_section_kEikGK": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-agg-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "only_photos": false,
+            "hide_thumbnails": false,
+            "product_handle": "evertee-original®",
+            "aggregated": true,
+            "data-limit": 1,
+            "maxwidth": 1080,
+            "is_sample": true
+          }
+        }
+      },
+      "block_order": [
+        "loox_reviews_loox_agg_section_kEikGK"
+      ],
+      "disabled": true,
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "image_with_text_gp4DDF": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_QwXwzK": {
+          "type": "heading",
+          "settings": {
+            "heading": "F*CK OVER SPENDING ON CLOTHES",
+            "heading_size": "hxxl"
+          }
+        },
+        "text_mdjL68": {
+          "type": "text",
+          "settings": {
+            "text": "<h6>Our mission is to revolutionise fashion by creating high-quality, sustainable clothing that lasts a lifetime.</h6>",
+            "text_style": "subtitle"
+          }
+        },
+        "button_h89bBP": {
+          "type": "button",
+          "settings": {
+            "button_label": "BUY YOUR LAST EVER T-SHIRT",
+            "button_link": "shopify://collections/all",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_QwXwzK",
+        "text_mdjL68",
+        "button_h89bBP"
+      ],
+      "disabled": true,
+      "settings": {
+        "image": "shopify://shop_images/Evertee_hat.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "section_color_scheme": "scheme-1",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_kDJEfF": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_mwYcAH": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em>\"THESE GUYS ARE SAVING PEOPLE A F*CK LOAD OF MONEY & THE PLANET AT THE SAME TIME.\"</em>",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_mwYcAH"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-5",
+        "full_width": true,
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "1745136413dae6fd9b": {
+      "type": "apps",
+      "blocks": {
+        "trustview_app_review_widget_tPYNbW": {
+          "type": "shopify://apps/trustview/blocks/app_review_widget/bda8b0f7-273b-4b6e-ab43-02c3fec9d11a",
+          "settings": {
+            "widget_design": "design1",
+            "widget_theme": "light",
+            "which_reviews_to_show": "only5",
+            "reviews_per_page": "5",
+            "show_reviews_on_mobile": true,
+            "hide_trust_logo": false
+          }
+        }
+      },
+      "block_order": [
+        "trustview_app_review_widget_tPYNbW"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "multirow_aKqLpt": {
+      "type": "multirow",
+      "blocks": {
+        "row_Cg3Dji": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/IMG_4693.png",
+            "caption": "",
+            "heading": "THE T-SHIRT THAT LASTS A LIFETIME",
+            "text": "<p>If anything happens to your t-shirt, we’ll either ethically repair or replace it for free. It’s the only t-shirt you’ll ever need — a promise no fast-fashion brand can match.</p>",
+            "button_label": "I'M IN",
+            "button_link": "shopify://products/evertee-original®"
+          }
+        },
+        "row_Xmw7yA": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/Putty.png",
+            "caption": "",
+            "heading": "KIDS EVERTEE - THAT GROWS AS THEY DO",
+            "text": "<p>Evertee Kids grows with your child, saving you money with unlimited replacements for their current and next size. </p><p>Made from tough, c<strong>omfy 100% organic cotton,</strong> it’s the only t-shirt they’ll need, leaving fast fashion in the dust. <strong>Grab yours today!</strong></p>",
+            "button_label": "BUY EVERTEE KIDS",
+            "button_link": "shopify://products/evertee-kids®"
+          }
+        },
+        "row_q8Twky": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/Gildan5000MilitaryGreenMale720.jpg",
+            "caption": "",
+            "heading": "SAVE THE EQUIVALENT OF 2,700 BATH TUBS OF WATER",
+            "text": "<p>It would take 216,000 liters of water to manufacture the same number of t-shirts as 1 Evertee. Make the change.</p>",
+            "button_label": "BUY NOW",
+            "button_link": "shopify://products/evertee-original®"
+          }
+        }
+      },
+      "block_order": [
+        "row_Cg3Dji",
+        "row_Xmw7yA",
+        "row_q8Twky"
+      ],
+      "settings": {
+        "image_height": "adapt",
+        "desktop_image_width": "medium",
+        "image_layout": "alternate-left",
+        "heading_size": "h1",
+        "text_style": "body",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "section_color_scheme": "",
+        "row_color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_hDC8QL": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_XccCjt": {
+          "type": "heading",
+          "settings": {
+            "heading": "EVERTEE FOR BIG PEOPLE 👇",
+            "heading_size": "h1"
+          }
+        },
+        "button_fpQw6k": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "F*CK IT, I'M SOLD",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_XccCjt",
+        "button_fpQw6k"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "featured_product_pkkG4w": {
+      "type": "featured-product",
+      "blocks": {
+        "text_GyAW9N": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_XjKEA3": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_fQTK7p": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_DGxNyx": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_JKUkYz": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_MJUGDK": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share_4XiDXX": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "text_GyAW9N",
+        "title_XjKEA3",
+        "price_fQTK7p",
+        "variant_picker_DGxNyx",
+        "quantity_selector_JKUkYz",
+        "buy_buttons_MJUGDK",
+        "share_4XiDXX"
+      ],
+      "settings": {
+        "product": "evertee-original®",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_qYPpKL": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_VeNYk6": {
+          "type": "heading",
+          "settings": {
+            "heading": "EVERTEE FOR LITTLE PEOPLE 👇",
+            "heading_size": "h1"
+          }
+        },
+        "button_GPhxf6": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "F*CK IT, I'M SOLD",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_VeNYk6",
+        "button_GPhxf6"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 64,
+        "padding_bottom": 0
+      }
+    },
+    "featured_product_zewwcR": {
+      "type": "featured-product",
+      "blocks": {
+        "text_rhXeqj": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_pfebMY": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_xrhbBm": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_FxfhKk": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_QAj3jc": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_DNXYwp": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share_hkpYFA": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "text_rhXeqj",
+        "title_pfebMY",
+        "price_xrhbBm",
+        "variant_picker_FxfhKk",
+        "quantity_selector_QAj3jc",
+        "buy_buttons_DNXYwp",
+        "share_hkpYFA"
+      ],
+      "settings": {
+        "product": "evertee-kids®",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_BUXP8T": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_xBX4Hf": {
+          "type": "heading",
+          "settings": {
+            "heading": "EVERTEE FOR COLD PEOPLE 👇",
+            "heading_size": "h1"
+          }
+        },
+        "button_NVNc4A": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "F*CK IT, I'M SOLD",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_xBX4Hf",
+        "button_NVNc4A"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 64,
+        "padding_bottom": 0
+      }
+    },
+    "featured_product_7pynKx": {
+      "type": "featured-product",
+      "blocks": {
+        "text_B6mxjT": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_XkFGk8": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_YQ6xRM": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_6rct8a": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_b6XRpr": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_VXJ6fA": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share_4dKfVf": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "text_B6mxjT",
+        "title_XkFGk8",
+        "price_YQ6xRM",
+        "variant_picker_6rct8a",
+        "quantity_selector_b6XRpr",
+        "buy_buttons_VXJ6fA",
+        "share_4dKfVf"
+      ],
+      "settings": {
+        "product": "evertee®-hoodie",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "collapsible_content_WM8UDh": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_QdJcQM": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "HOW CAN A T-SHIRT LAST A LIFETIME?",
+            "icon": "question_mark",
+            "row_content": "<p>We don’t cut corners. Evertee is built with premium, sustainable materials designed to outlive your wardrobe. And if it doesn’t? We’ll replace it. Simple as that.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_QyeW47": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "WHY SHOULD I PAY MORE FOR A T-SHIRT?",
+            "icon": "price_tag",
+            "row_content": "<p>Because it’s the <em>only</em> t-shirt you’ll ever need. While you’re busy buying dozens of fast-fashion t-shirts every year, Evertee is saving you <strong>money</strong>, time, and the planet. Over a lifetime, it’s a motherflippin' bargain.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_HVNEh9": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "WHAT IF MY T-SHIRT GETS DAMAGED?",
+            "icon": "recycle",
+            "row_content": "<p>Don’t sweat it. Tear? Hole? Weird stain you don’t want to talk about? Send it back, and we'll replace it. We’ve got your back for life.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_cawAnf": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "HOW DOES EVERTEE HELP SAVE THE PLANET?",
+            "icon": "plant",
+            "row_content": "<p>By ditching fast fashion. Our t-shirt replaces <strong>80+ disposable tees</strong>, saves <strong>216,000 liters of water</strong>, and prevents <strong>hundreds of kilos of CO₂ emissions</strong>. One t-shirt, one massive impact.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_XcHtNW": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "WHAT MAKES EVERTEE SO DAMN COMFORTABLE?",
+            "icon": "shirt",
+            "row_content": "<p>It’s crafted from ethically sourced, ridiculously soft, natural fibers. It feels so good, you’ll wonder why you ever wore anything else. Go ahead, try it—your skin will thank you.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_aCRqY9": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "WHAT'S THE CATCH?",
+            "icon": "eye",
+            "row_content": "<p>There isn’t one. You get a lifetime guarantee, unmatched quality, and the satisfaction of telling fast fashion to eff<em> off. No catches, no bull</em>—just a damn good t-shirt that lasts a lifetime.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_QdJcQM",
+        "collapsible_row_QyeW47",
+        "collapsible_row_HVNEh9",
+        "collapsible_row_cawAnf",
+        "collapsible_row_XcHtNW",
+        "collapsible_row_aCRqY9"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "DA FAQ",
+        "heading_size": "h0",
+        "heading_alignment": "center",
+        "layout": "row",
+        "container_color_scheme": "scheme-5",
+        "color_scheme": "scheme-1",
+        "open_first_collapsible_row": true,
+        "image": "shopify://shop_images/663E0F8C-9551-43A6-A019-D574EEEF11A8.png",
+        "image_ratio": "large",
+        "desktop_layout": "image_first",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_FhHaK9": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_edrb8h": {
+          "type": "heading",
+          "settings": {
+            "heading": "PICK YOUR PURPOSE 👇",
+            "heading_size": "h0"
+          }
+        }
+      },
+      "block_order": [
+        "heading_edrb8h"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_p8nTyP": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_GMmm3c": {
+          "type": "heading",
+          "settings": {
+            "heading": "SAVE MONEY 💰",
+            "heading_size": "h2"
+          }
+        },
+        "button_KAgtEB": {
+          "type": "button",
+          "settings": {
+            "button_label": "SAVE DOUGH",
+            "button_link": "shopify://products/evertee-original®",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_GMmm3c",
+        "button_KAgtEB"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_dLacDN": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_WXW6iM": {
+          "type": "heading",
+          "settings": {
+            "heading": "SAVE THE PLANET 🌍",
+            "heading_size": "h2"
+          }
+        },
+        "button_d8XEMr": {
+          "type": "button",
+          "settings": {
+            "button_label": "BE A HERO",
+            "button_link": "shopify://products/evertee-original®",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_WXW6iM",
+        "button_d8XEMr"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_fQVexd": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_RkyWrn": {
+          "type": "heading",
+          "settings": {
+            "heading": "I WANT BOTH 🙌",
+            "heading_size": "h2"
+          }
+        },
+        "button_fVMnVp": {
+          "type": "button",
+          "settings": {
+            "button_label": "BE A THRIFTY SUPERHERO",
+            "button_link": "shopify://products/evertee-original®",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_RkyWrn",
+        "button_fVMnVp"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_ewKkVW": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_EUQR8H": {
+          "type": "heading",
+          "settings": {
+            "heading": "SAVE THE PLANET. TWICE ✌️",
+            "heading_size": "h1"
+          }
+        },
+        "text_4zJzTg": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Not only does making the switch to Evertee help save over 100 trees, but we'll plant an extra one for each Evertee sold, just for good measure!</p>",
+            "text_style": "body"
+          }
+        },
+        "button_LBr69L": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_EUQR8H",
+        "text_4zJzTg",
+        "button_LBr69L"
+      ],
+      "disabled": true,
+      "settings": {
+        "image": "shopify://shop_images/Evertee_logo_2.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 12,
+        "padding_bottom": 16
+      }
+    }
+  },
+  "order": [
+    "image-with-text",
+    "173635054678028f9c",
+    "image_with_text_gp4DDF",
+    "rich_text_kDJEfF",
+    "1745136413dae6fd9b",
+    "multirow_aKqLpt",
+    "rich_text_hDC8QL",
+    "featured_product_pkkG4w",
+    "rich_text_qYPpKL",
+    "featured_product_zewwcR",
+    "rich_text_BUXP8T",
+    "featured_product_7pynKx",
+    "collapsible_content_WM8UDh",
+    "rich_text_FhHaK9",
+    "rich_text_p8nTyP",
+    "rich_text_dLacDN",
+    "rich_text_fQVexd",
+    "image_with_text_ewKkVW"
+  ]
+}

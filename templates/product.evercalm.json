@@ -1,0 +1,892 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "text_ba8Jak": {
+          "type": "text",
+          "settings": {
+            "text": "A soft, tag-free t-shirt designed to feel the same every time, so kids who need comfort and consistency can get dressed without stress.",
+            "text_style": "body"
+          }
+        },
+        "custom_liquid_PdUgBU": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "<div class=\"trustpilot-container\">\n  <div class=\"trustpilot-text\">\"Amazing\"</div>\n\n  <img\n    class=\"trustpilot-image\"\n    src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqwTrpqlDxrYZ0pXL4aXXL4azowSSvjMZM2g&s\"\n    alt=\"Trustpilot Image\"\n  />\n\n  <div class=\"trustpilot-rating\">Rated 4.4/5 on</div>\n\n  <img\n    class=\"trustpilot-logo\"\n    src=\"https://cdn.shopify.com/s/files/1/0798/4267/2987/files/trustpilot-logo-sml_bf402230-0d05-4609-a750-c310e4720da2.png?v=1733179329\"\n    alt=\"Trustpilot Image\"\n  />\n</div>\n\n<style>\n          .trustpilot-container {\n              display: flex;\n              align-items: center;\n              background-color: #e9fff9;\n              border: 1px solid #d4edda;\n              border-radius: 8px;\n              padding: 2px 10px;\n\n              width: 100%;\n  border: 1px dashed #898686;\n  gap: 8px;\n  justify-content: center;\n          }\n\n  .trustpilot-image{\n  width: 60px;\n  }\n  .trustpilot-logo{\n  width: 70px;\n  }\n  .trustpilot-text{\n  font-size: 13px;\n  font-weight: 600;\n  }\n  .trustpilot-rating{\n  font-size: 10px;\n  font-weight: 500;\n  color: #000;\n  }\n</style>"
+          }
+        },
+        "loox_reviews_loox_trust_badge_zbA3Pd": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-trust-badge/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "disabled": true,
+          "settings": {
+            "layout": "horizontal-slim",
+            "alignment": "fillContainer",
+            "scheme-type": "default",
+            "review-title": "reviews",
+            "rating-icon": true,
+            "average-rating": true,
+            "loox-branding": false,
+            "review-count": true,
+            "open-reviews": true,
+            "show-border": false,
+            "border-radius": 0,
+            "font-size": 12,
+            "background-color": "#ffffff",
+            "secondary-background-color": "",
+            "text-color": "#000000",
+            "rating-icon-color": "#246d62",
+            "border-color": ""
+          }
+        },
+        "price": {
+          "type": "price",
+          "disabled": true,
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "disabled": true,
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "custom_liquid_DTNb9G": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<!-- TrustBox widget - Micro Star -->\n<div class=\"trustpilot-widget\" data-locale=\"en-GB\" data-template-id=\"5419b732fbfb950b10de65e5\" data-businessunit-id=\"67b08658c7134948394fdcc5\" data-style-height=\"24px\" data-style-width=\"100%\" data-token=\"2b476b92-fdee-4aee-8b38-af8104bc1915\">\n  <a href=\"https://uk.trustpilot.com/review/evertee.co.uk\" target=\"_blank\" rel=\"noopener\">Trustpilot</a>\n</div>\n<!-- End TrustBox widget -->"
+          }
+        },
+        "trustview_app_embed_block_wCMHUJ": {
+          "type": "shopify://apps/trustview/blocks/app_embed_block/bda8b0f7-273b-4b6e-ab43-02c3fec9d11a",
+          "settings": {
+            "widget_design": "design9",
+            "widget_theme": "light",
+            "widget_hyperlink": true,
+            "hide_trust_logo": false
+          }
+        },
+        "custom_liquid_4NPr8P": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "<div class=\"happy-customersV2\">\n    <div class=\"avatarsV2\">\n        <img src=\"https://img.freepik.com/free-photo/stylish-african-american-woman-smiling_23-2148770405.jpg\" alt=\"Customer 1\" class=\"avatarV2\" />\n        <img src=\"https://thumbs.dreamstime.com/b/beautiful-african-american-woman-relaxing-outside-happy-middle-aged-smiling-46298787.jpg\" alt=\"Customer 2\" class=\"avatarV2\" />\n        <img src=\"https://media.istockphoto.com/id/1320651997/photo/young-woman-close-up-isolated-studio-portrait.jpg?s=612x612&w=0&k=20&c=lV6pxz-DknISGT2jjiSvUmSaw0hpMDf-dBpT8HTSAUI=\" alt=\"Customer 3\" class=\"avatarV2\" />\n    </div>\n    <span class=\"textV2\">\n<span style = \"font-weight: 900;\">Michael</span>\n    <span class=\"verifiedV2\">\n      <img\n        src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Twitter_Verified_Badge.svg/800px-Twitter_Verified_Badge.svg.png\"\n        alt=\"verified badge\"\n        class=\"verifiedV2\">\n    </span> \n   <span>and <strong>758</strong> people purchased</span>\n</span>\n</div>\n\n<style>\n    .happy-customersV2 {\n        display: flex;\n        align-items: center;\n        background-color: #ffffff;\n        border-radius: 8px;\n        padding: 5px 15px;\n        font-family: Roboto, sans-serif !important;\n        font-size: 12px;\n        color: #000;\n        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);\n    }\n\n    .avatarsV2 {\n        display: flex;\n        margin-right: 10px;\n    }\n\n    .avatarV2 {\n        width: 22px;\n        height: 22px;\n        border-radius: 50%;\n        border: 2px solid white;\n        margin-left: -7px;\n        object-fit: cover;\n    }\n\n.textV2 {\n    font-weight: normal;\n    font-size: 12px;\n    color: #000;\n    line-height: 0px;\n    display: flex;\n    align-items: center;\n    gap: 3px;\n}\n\n    .textV2 strong {\n        font-weight: 800;\n        font-family: Roboto, sans-serif;\n    }\n\n    .verifiedV2 {\n        vertical-align: middle;\n        height: 13px;\n        width: 13px;\n    }\n</style>"
+          }
+        },
+        "custom_liquid_3FHwzX": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class = \"fast-delivery-offer\">\n    <svg\n      xmlns:dc=\"http://purl.org/dc/elements/1.1/\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      xmlns:xlink=\"http://www.w3.org/1999/xlink\"\n      width=\"15\"\n      fill=\"#007800\"\n      version=\"1.1\"\n      id=\"Layer_1\"\n      x=\"0px\"\n      y=\"0px\"\n      viewBox=\"0 0 24 24\"\n      style=\"enable-background:new 0 0 24 24;\"\n      xml:space=\"preserve\"\n    >\n      <metadata>\n        <dc:creator>Davooda</dc:creator>\n        <dc:relation>https://davooda.com</dc:relation>\n      </metadata>\n\n      <style type=\"text/css\">\n        .st0{fill:none;stroke:#039903;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}\n        .st1{fill:none;stroke:#039903;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}\n        .st2{fill:none;stroke:#039903;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}\n        .st3{fill:#039903;}\n        .st4{fill:#FFFFFF;stroke:#039903;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}\n        .st5{fill:none;stroke:#039903;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}\n        .st6{fill:none;stroke:#039903;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}\n        .st7{fill:#010101;}\n        .st8{fill:none;stroke:#039903;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}\n      </style>\n      <g>\n        <path\n          class=\"st0\"\n          d=\"M6,5h9v2l3.7,0.8c0.9,0.2,1.7,0.8,2.1,1.7l1.8,4c0.2,0.4,0.3,0.8,0.3,1.3v1.7V18h-3\"\n        />\n        <line class=\"st0\" x1=\"5\" y1=\"13\" x2=\"2\" y2=\"13\" />\n      </g>\n      <line class=\"st0\" x1=\"15\" y1=\"18\" x2=\"9\" y2=\"18\" />\n      <circle class=\"st0\" cx=\"6.5\" cy=\"18.5\" r=\"2.5\" />\n      <circle class=\"st0\" cx=\"17.5\" cy=\"18.5\" r=\"2.5\" />\n      <polyline class=\"st0\" points=\"15,7 15,12 15,14 \" />\n      <line class=\"st0\" x1=\"1\" y1=\"9\" x2=\"7\" y2=\"9\" />\n      <line class=\"st0\" x1=\"4\" y1=\"19\" x2=\"3\" y2=\"19\" />\n    </svg>\nFast Delivery within 2-3 Days\n</div>\n\n<style>\n.fast-delivery-offer {\n    display: flex;\n    justify-content: center;\n    gap: 10px;\n    font-size: 16px;\n    background: #e9fbea;\n    border-radius: 8px;\n    width: max-content;\n    margin-left: auto;\n    margin-right: auto;\n    padding: 0px 20px;\n    font-weight: 600;\n    color: #039903;\nalign-items: center;\n}\n</style>"
+          }
+        },
+        "upsellplus_upsell_pdp_block_hL4jXF": {
+          "type": "shopify://apps/upsellplus/blocks/upsell-pdp-block/553fb951-397c-4171-8b32-7056a23ffd82",
+          "settings": {}
+        },
+        "loox_reviews_loox_rating_UEKAV4": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-rating/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "disabled": true,
+          "settings": {
+            "contentSize": 16,
+            "pattern": "",
+            "hideText": false,
+            "alignment": "",
+            "layout": "",
+            "textColor": "",
+            "starColor": "",
+            "showAllReviews": false,
+            "looxOpenFloatingWidget": false,
+            "emptyRatingWidget": false
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {}
+        },
+        "klarna_on_site_messaging_app_block_fBH8Dz": {
+          "type": "shopify://apps/klarna-on-site-messaging/blocks/app-block/b95936a9-74b6-4a95-8103-6a1b6459c25e",
+          "disabled": true,
+          "settings": {
+            "data_key": "credit-promotion-badge",
+            "theme": "dark",
+            "topPadding": "0",
+            "bottomPadding": "0",
+            "messagePrefix": ""
+          }
+        },
+        "klarna_on_site_messaging_app_block_MzcLFj": {
+          "type": "shopify://apps/klarna-on-site-messaging/blocks/app-block/b95936a9-74b6-4a95-8103-6a1b6459c25e",
+          "settings": {
+            "data_key": "footer-promotion-auto-size",
+            "theme": "default",
+            "topPadding": "0",
+            "bottomPadding": "0",
+            "messagePrefix": ""
+          }
+        },
+        "selleasy_lb_upsell_widget_pal_wJKy46": {
+          "type": "shopify://apps/selleasy/blocks/lb-upsell-widget-pal/790c1a03-a71f-4bc1-9869-00dad526d3c2",
+          "settings": {}
+        },
+        "klarna_on_site_messaging_app_block_NUBM68": {
+          "type": "shopify://apps/klarna-on-site-messaging/blocks/app-block/b95936a9-74b6-4a95-8103-6a1b6459c25e",
+          "disabled": true,
+          "settings": {
+            "data_key": "top-strip-promotion-badge",
+            "theme": "default",
+            "topPadding": "0",
+            "bottomPadding": "0",
+            "messagePrefix": ""
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "collapsible_tab_4YyHJK": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "HOW DOES THIS WORK?",
+            "icon": "question_mark",
+            "content": "<p>If your child’s Evercalm Tee is worn out, damaged, or no longer fits, just get in touch and we’ll arrange a replacement. There are no limits and no complicated steps.</p><p>Evercalm was created for children with autism and sensory sensitivities who rely on clothing that feels familiar and predictable. When a t-shirt becomes part of a child’s routine, replacing it with something different can be difficult.</p><p>That’s why Evercalm is made to last. Each tee is crafted from soft, combed cotton and finished to keep the same feel and fit over time. The classic cut avoids tightness and cling, while the pre-shrunk fabric and reinforced stitching help it stay consistent through frequent wear and washing.</p><p>Our replacement promise exists so the routine does not have to change, even as your child grows. The t-shirt they trust can stay the t-shirt they wear.</p><p>A simple promise, designed to support calmer, more predictable days.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_3Brz6X": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "WHAT'S COVERED IN THE GUARANTEE",
+            "icon": "check_mark",
+            "content": "<p>We’ll replace your Evercalm Tee if you notice any of the following through normal wear:</p><p>✅ Holes appearing in the fabric<br/><br/>✅ Colour fading or looking dull over time<br/><br/>✅ Stitching coming loose<br/><br/>✅ Collar or sleeves losing their shape<br/><br/>✅ Accidental damage, including stains</p><p>For accidental damage, we ask that replacements are limited to <strong>one per year</strong>. We think that’s fair, and we hope you do too.</p><p>✅ Deodorant stains are also covered<br/><br/>For these, we ask that replacements are limited to <strong>one per month</strong>.</p><p><strong>What's not covered?</strong></p><p>❌ Intentional damage</p><p>We understand we can’t always know how damage happens, so this policy is built on trust. Most families are simply trying to keep a routine working, and that’s who this promise is for. We trust people to be honest and to use it fairly.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_rr63KB": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "ABOUT THE TEE",
+            "icon": "shirt",
+            "content": "<p>Classic, relaxed fit with a comfortable crew neckline</p><p>Mid-weight 165g fabric that feels substantial without being heavy<br/><br/>Slightly longer body length for comfortable everyday wear<br/><br/>Made from 100% organic, combed ringspun cotton for a smooth, soft feel<br/><br/>Peel-away neck label to leave the neckline smooth and irritation-free</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_JXrb7D": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "DELIVERY & RETURNS",
+            "icon": "box",
+            "content": "<p>Orders placed by 2pm are shipped same day. If this falls on a weekend, it will be shipped the next working day. <br/><br/>Allow 1-3 working days for UK delivery.</p><p>Allow 7-8 working days for USA / ROW delivery</p><p>We offer a no quibble 28 day return policy. We just ask that the tee is in the same condition as we sent it.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_B4eDpp": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "SIZING",
+            "icon": "ruler",
+            "content": "<p>Our premium heavyweight t-shirt is carefully and ethically crafted from 100% combed cotton. </p><p>Fitting is true to size, but if it's not the right size, we offer a free no quibble 28 day return / exchange window.</p>",
+            "page": ""
+          }
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "text_ba8Jak",
+        "custom_liquid_PdUgBU",
+        "loox_reviews_loox_trust_badge_zbA3Pd",
+        "price",
+        "variant_picker",
+        "buy_buttons",
+        "custom_liquid_DTNb9G",
+        "trustview_app_embed_block_wCMHUJ",
+        "custom_liquid_4NPr8P",
+        "custom_liquid_3FHwzX",
+        "upsellplus_upsell_pdp_block_hL4jXF",
+        "loox_reviews_loox_rating_UEKAV4",
+        "quantity_selector",
+        "klarna_on_site_messaging_app_block_fBH8Dz",
+        "klarna_on_site_messaging_app_block_MzcLFj",
+        "selleasy_lb_upsell_widget_pal_wJKy46",
+        "klarna_on_site_messaging_app_block_NUBM68",
+        "description",
+        "collapsible_tab_4YyHJK",
+        "collapsible_tab_3Brz6X",
+        "collapsible_tab_rr63KB",
+        "collapsible_tab_JXrb7D",
+        "collapsible_tab_B4eDpp",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "gallery_layout": "thumbnail",
+        "mobile_thumbnails": "hide",
+        "media_position": "left",
+        "image_zoom": "none",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_LxkkmX": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_6Tnxgb": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em>\"GETTING DRESSED IS SO MUCH EASIER NOW\"</em>",
+            "heading_size": "h2"
+          }
+        },
+        "text_qGjTrB": {
+          "type": "text",
+          "settings": {
+            "text": "<p>⭐⭐⭐⭐⭐ DENISE, YORK</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_6Tnxgb",
+        "text_qGjTrB"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-4",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_UfhrYx": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Xe87LQ": {
+          "type": "heading",
+          "settings": {
+            "heading": "WHAT MAKES THIS DIFFERENT FROM OTHER KIDS' TEES?",
+            "heading_size": "h1"
+          }
+        },
+        "text_xXxLaU": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Most kids’ t-shirts are designed for price or appearance. Evercalm is designed for consistency. It uses soft, organic combed cotton that feels the same wear after wear, a peel-away neck label that removes a common source of irritation, and a classic fit that avoids tightness and cling. </p><p>The fabric is mid-weight and pre-shrunk so it keeps its shape and feel after washing. Nothing is added unless it helps the t-shirt stay comfortable and predictable.</p>"
+          }
+        },
+        "button_XtHDTz": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_Xe87LQ",
+        "text_xXxLaU",
+        "button_XtHDTz"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "1745136421cfb3bf02": {
+      "type": "apps",
+      "blocks": {
+        "trustview_app_review_widget_FmbgHB": {
+          "type": "shopify://apps/trustview/blocks/app_review_widget/bda8b0f7-273b-4b6e-ab43-02c3fec9d11a",
+          "settings": {
+            "widget_design": "design4",
+            "widget_theme": "light",
+            "which_reviews_to_show": "3plus",
+            "reviews_per_page": "20",
+            "show_reviews_on_mobile": true,
+            "hide_trust_logo": false
+          }
+        },
+        "trustview_app_embed_block_Tg3ng3": {
+          "type": "shopify://apps/trustview/blocks/app_embed_block/bda8b0f7-273b-4b6e-ab43-02c3fec9d11a",
+          "settings": {
+            "widget_design": "design1",
+            "widget_theme": "light",
+            "widget_hyperlink": true,
+            "hide_trust_logo": false
+          }
+        }
+      },
+      "block_order": [
+        "trustview_app_review_widget_FmbgHB",
+        "trustview_app_embed_block_Tg3ng3"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "1736348687de85f9df": {
+      "type": "apps",
+      "blocks": {
+        "loox_reviews_loox_snippets_widget_bEyMJG": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-snippets-widget/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "disabled": true,
+          "settings": {
+            "reviews-limit": 10,
+            "alignment": "center",
+            "max-width": "736px",
+            "color-scheme": "default",
+            "shadow": "",
+            "show-rating": true,
+            "show-image": true,
+            "hide-arrows-mobile": false,
+            "font-size": 14,
+            "show-border": false,
+            "border-radius": 16,
+            "background-color": "",
+            "text-color": "",
+            "name-color": "",
+            "rating-icon-color": "",
+            "border-color": "",
+            "shadow-color": ""
+          }
+        },
+        "loox_reviews_loox_dynamic_section_PJ4fp6": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-dynamic-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "only_photos": false,
+            "aggregated": true,
+            "limit": 3,
+            "hide_thumbnails": true,
+            "maxwidth": 1080,
+            "is_sample": true
+          }
+        },
+        "loox_reviews_loox_dynamic_section_DYXhHr": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-dynamic-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "disabled": true,
+          "settings": {
+            "only_photos": false,
+            "aggregated": false,
+            "limit": 20,
+            "hide_thumbnails": false,
+            "maxwidth": 1080,
+            "is_sample": true
+          }
+        }
+      },
+      "block_order": [
+        "loox_reviews_loox_snippets_widget_bEyMJG",
+        "loox_reviews_loox_dynamic_section_PJ4fp6",
+        "loox_reviews_loox_dynamic_section_DYXhHr"
+      ],
+      "disabled": true,
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "YOU MAY ALSO LIKE",
+        "heading_size": "h1",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    },
+    "multicolumn_RfwDPN": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_7a9XXf": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_FaR7aa": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>WHAT'S COVERED</strong>",
+            "text": "<p>✅ Holes appearing in the fabric<br/>✅ Colour fading or looking dull over time<br/>✅ Stitching coming loose<br/>✅ Collar or sleeves losing their shape<br/>✅ Logo fading or peeling if you’ve chosen a branded tee<br/>✅ Accidental damage, including stains or deodorant marks</p><p>For accidental damage, we ask that replacements are limited to <strong>one per month</strong>. This helps us keep the promise fair and sustainable for everyone.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_EEtgnn": {
+          "type": "column",
+          "settings": {
+            "title": "WHAT'S NOT COVERED",
+            "text": "<p>❌ Intentional damage</p><p>We know we cannot always tell how damage happens, so this guarantee is built on trust. It exists to support families who rely on consistency and routine, and we trust people to use it honestly and fairly.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_7a9XXf",
+        "column_FaR7aa",
+        "column_EEtgnn"
+      ],
+      "settings": {
+        "title": "WHAT'S COVERED IN THE GUARANTEE?",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "scheme-4",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 44,
+        "padding_bottom": 36
+      }
+    },
+    "1745436972a1b9bb61": {
+      "type": "apps",
+      "disabled": true,
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "174543695190399f32": {
+      "type": "apps",
+      "blocks": {
+        "super_video_ugc_video_wall_popup_play_QQNzVE": {
+          "type": "shopify://apps/super-video-ugc/blocks/video_wall_popup_play/2721aaf8-cc8e-48db-a5ff-caf1f1abfc5c",
+          "settings": {
+            "title": "FAN VIDEOS",
+            "subheading": "",
+            "text_alignment": "center",
+            "heading_size": 42,
+            "subheading_size": 12,
+            "item_size": "--image-aspect-ratio",
+            "desktop_item": "4",
+            "mobile_item": "2",
+            "spacing": 4,
+            "radius": 14,
+            "video_auto_play": true,
+            "video_hosted_1": "shopify://files/videos/IMG_1365 - VEED Export.MP4",
+            "video_url_1": "",
+            "video_hosted_2": "shopify://files/videos/Evertee Video  - VEED Export.MP4",
+            "video_url_2": "",
+            "video_hosted_3": "shopify://files/videos/IMG_1834 2.MOV",
+            "video_url_3": "",
+            "video_hosted_4": "shopify://files/videos/IMG_3634.MOV",
+            "video_url_4": "",
+            "video_url_5": "",
+            "video_url_6": "",
+            "video_url_7": "",
+            "video_url_8": "",
+            "video_url_9": "",
+            "video_url_10": "",
+            "video_url_11": "",
+            "video_url_12": "",
+            "video_url_13": "",
+            "video_url_14": ""
+          }
+        }
+      },
+      "block_order": [
+        "super_video_ugc_video_wall_popup_play_QQNzVE"
+      ],
+      "disabled": true,
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "multirow_L9f8fz": {
+      "type": "multirow",
+      "blocks": {
+        "row_QeX7gN": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/3813550a-f821-4481-81bb-4449d46fd2bb.jpg",
+            "caption": "",
+            "heading": "A T-SHIRT THAT FEELS THE SAME EVERY TIME",
+            "text": "<p>Getting dressed shouldn’t be unpredictable.</p><p>Evercalm was created to remove the small details that can cause big reactions  labels that scratch, fabrics that feel different from one day to the next, or t-shirts that suddenly stop feeling “right”.</p><p>This tee is soft, tag-free, and designed to stay consistent. The fit doesn’t cling or twist. The fabric doesn’t change after washing. What works one day should still work the next.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "row_xV6ryq": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/2187c731-d9b8-47bc-a384-6fccd5c97163.jpg",
+            "caption": "",
+            "heading": "DESIGNED FOR ROUTINE",
+            "text": "<p>Our children often rely on familiar clothing that feels the same each time it’s worn. Changing that can be difficult.</p><p>Evercalm is made to stay consistent and when it’s worn out or outgrown, we replace it with the same t-shirt, so the routine stays intact.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "row_FMMeTV": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/b05369b8-f0ae-46d2-a836-61f8cd0cd489.jpg",
+            "caption": "",
+            "heading": "EVERY DETAIL THOUGHTFULLY DESIGNED",
+            "text": "<p>Evercalm is made from soft, organic combed cotton chosen for its smooth, consistent feel. The mid-weight fabric is substantial without being heavy, helping it hold its shape while staying comfortable all day.</p><p>A peel-away neck label removes a common source of irritation, leaving nothing behind to rub or scratch. The classic fit avoids tightness and cling, and reinforced stitching helps the t-shirt keep the same feel and fit over time.</p><p>Every detail is intentional. Nothing extra. Nothing that needs adjusting.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_QeX7gN",
+        "row_xV6ryq",
+        "row_FMMeTV"
+      ],
+      "settings": {
+        "image_height": "adapt",
+        "desktop_image_width": "medium",
+        "image_layout": "alternate-left",
+        "heading_size": "h1",
+        "text_style": "subtitle",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "row_color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_yB7Jea": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_f8BmiA": {
+          "type": "heading",
+          "settings": {
+            "heading": "IS THIS RIGHT FOR MY CHILD?",
+            "heading_size": "h1"
+          }
+        },
+        "text_aqrwDb": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Evercalm works best for children who are sensitive to labels, rough fabrics, or clothing that feels different from one day to the next. It’s designed for kids who prefer familiar, comfortable clothes and often want to wear the same t-shirt repeatedly.</p><p>Every child is different, but for many families, this tee removes the most common frustrations around getting dressed.</p>"
+          }
+        },
+        "button_zyy9mV": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_f8BmiA",
+        "text_aqrwDb",
+        "button_zyy9mV"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 20,
+        "padding_bottom": 28
+      }
+    },
+    "collapsible_content_NNPzfc": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_UqUbNX": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How does the Evercalm replacement promise work?",
+            "icon": "question_mark",
+            "row_content": "<p>Evercalm is designed to be worn regularly and relied on. If your child’s t-shirt becomes worn out, damaged, or no longer fits, you can contact us and we’ll arrange a replacement.</p><p>The idea is simple: when a t-shirt becomes part of a routine, changing it can be difficult. Our replacement promise exists so the fit and feel don’t have to change, even as your child grows.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_fmCMR3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Why is Evercalm different from a standard kids’ t-shirt?",
+            "icon": "price_tag",
+            "row_content": "<p>Most kids’ t-shirts are designed for style or price. Evercalm is designed for consistency.</p><p>It uses soft, organic combed cotton, a peel-away neck label, and a classic fit that avoids tightness and cling. The fabric is mid-weight and pre-shrunk so it feels the same after washing. Nothing is added unless it serves a purpose.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_WQJC9K": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What happens if my Evercalm Tee is worn out or damaged?",
+            "icon": "recycle",
+            "row_content": "<p>If your Evercalm Tee develops holes, loose stitching, fading, or loses its shape through normal wear, we’ll replace it.</p><p>Accidental damage and stains are also covered within our fair use policy. The goal is to support families who rely on consistency, while keeping the promise sustainable for everyone.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_67nEph": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Why Evercalm is designed to be worn again and again",
+            "icon": "plant",
+            "row_content": "<p>Evercalm is made to reduce the need for constant replacement and re-adjustment.</p><p>Children who find clothing comfortable often want to wear the same items repeatedly. Evercalm is built to withstand frequent wear and washing, and when it does need replacing, the next one is made to feel the same.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_g3tTQJ": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What makes Evercalm comfortable for sensitive kids?",
+            "icon": "shirt",
+            "row_content": "<p>Comfort is not just about softness. It’s about predictability.</p><p>Evercalm removes common triggers like scratchy labels and changing fit. The peel-away neck label leaves the neckline smooth, the fabric stays consistent, and the cut avoids pressure points or cling.</p><p>Every detail is designed to reduce irritation and distraction.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_LbVnQH": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is there anything I should know about the guarantee?",
+            "icon": "eye",
+            "row_content": "<p>The Evercalm guarantee is built on trust.</p><p>It doesn’t cover intentional damage, and we ask families to follow our fair use guidelines for accidental replacements. The promise exists to support real, everyday use and to help maintain routines, not to be taken advantage of.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_UqUbNX",
+        "collapsible_row_fmCMR3",
+        "collapsible_row_WQJC9K",
+        "collapsible_row_67nEph",
+        "collapsible_row_g3tTQJ",
+        "collapsible_row_LbVnQH"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "FAQ'S",
+        "heading_size": "h0",
+        "heading_alignment": "center",
+        "layout": "row",
+        "container_color_scheme": "scheme-4",
+        "color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image": "shopify://shop_images/e3e2398d-5123-45c6-8c6c-1431fda20be7.jpg",
+        "image_ratio": "large",
+        "desktop_layout": "image_first",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "multicolumn_LmFEyD": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_xYgFRw": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>STEP 1 : GET IN TOUCH</strong>",
+            "text": "<p>Just reach out to us and let us know what happened. We may need you to send us a photo of what's happened to the tee. In some rare cases we may ask you to send the tee back to us - we'll provide a postage label for this in this case.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_rtKPzW": {
+          "type": "column",
+          "settings": {
+            "title": "STEP 2  : GET YOUR REPLACEMENT",
+            "text": "<p>We'll ship out your complimentary replacement. We just ask that you cover the shipping on the replacement item, that's it!</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_xYgFRw",
+        "column_rtKPzW"
+      ],
+      "settings": {
+        "title": "HOW TO CLAIM A REPLACEMENT",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "scheme-4",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 44,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_NG3W9C": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_mTtW7y": {
+          "type": "heading",
+          "settings": {
+            "heading": "IS THIS RIGHT FOR MY CHILD?",
+            "heading_size": "h1"
+          }
+        },
+        "text_zeXzHp": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Evercalm works best for children who are sensitive to labels, rough fabrics, or clothing that feels different from one day to the next. It’s designed for kids who prefer familiar, comfortable clothes and often want to wear the same t-shirt repeatedly.</p><p>Every child is different, but for many families, this tee removes the most common frustrations around getting dressed.</p>"
+          }
+        },
+        "button_8cacjU": {
+          "type": "button",
+          "settings": {
+            "button_label": "Order Evercalm",
+            "button_link": "shopify://products/evercalm®-t-shirt-kids",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_mTtW7y",
+        "text_zeXzHp",
+        "button_8cacjU"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "custom_liquid_rJwcGh": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<!-- TrustBox widget - Mini -->\n<div class=\"trustpilot-widget\" data-locale=\"en-GB\" data-template-id=\"53aa8807dec7e10d38f59f32\" data-businessunit-id=\"67b08658c7134948394fdcc5\" data-style-height=\"150px\" data-style-width=\"100%\" data-token=\"a05728a8-6fb9-43f8-9bd5-ba249a415fb1\">\n  <a href=\"https://uk.trustpilot.com/review/evertee.co.uk\" target=\"_blank\" rel=\"noopener\">Trustpilot</a>\n</div>\n<!-- End TrustBox widget -->",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "image_with_text_x4CnGP": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_4Fb3bK": {
+          "type": "heading",
+          "settings": {
+            "heading": "SAVE YOUR WALLET. SAVE THE PLANET",
+            "heading_size": "h1"
+          }
+        },
+        "text_WWLR3p": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Not only does making the switch to Evertee help save over 100 trees, but we'll plant an extra one for each Evertee sold, just for good measure!</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_4Fb3bK",
+        "text_WWLR3p"
+      ],
+      "disabled": true,
+      "settings": {
+        "image": "shopify://shop_images/Evertee_logo_2.png",
+        "height": "small",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-2",
+        "color_scheme": "scheme-2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_LxkkmX",
+    "rich_text_UfhrYx",
+    "1745136421cfb3bf02",
+    "1736348687de85f9df",
+    "related-products",
+    "multicolumn_RfwDPN",
+    "1745436972a1b9bb61",
+    "174543695190399f32",
+    "multirow_L9f8fz",
+    "rich_text_yB7Jea",
+    "collapsible_content_NNPzfc",
+    "multicolumn_LmFEyD",
+    "rich_text_NG3W9C",
+    "custom_liquid_rJwcGh",
+    "image_with_text_x4CnGP"
+  ]
+}
