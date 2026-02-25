@@ -1,0 +1,2 @@
+$env:SHOPIFY_FLAG_STORE="k65mku-9v.myshopify.com"
+set SHOPIFY_FLAG_STORE=k65mku-9v.myshopify.com
