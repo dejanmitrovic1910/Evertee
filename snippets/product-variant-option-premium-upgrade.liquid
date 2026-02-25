@@ -1,0 +1,99 @@
+{% comment %}
+  Renders the "Premium Heavy Tee Upgrade" variant option as a card with image, description, cost and yes/no toggle.
+  Toggle right = Yes, toggle left = No.
+  Accepts: option, block, product_form_id, section_id, step_number
+{% endcomment %}
+{%- liquid
+  assign input_name = option.name | append: '-' | append: option.position
+  assign no_value = nil
+  assign yes_value = nil
+  assign no_id = nil
+  assign yes_id = nil
+  assign no_url = nil
+  assign yes_url = nil
+  for value in option.values
+    assign v_down = value | downcase
+    if v_down == 'no'
+      assign no_value = value
+      assign no_id = value.id
+      assign no_url = value.product_url
+    elsif v_down == 'yes'
+      assign yes_value = value
+      assign yes_id = value.id
+      assign yes_url = value.product_url
+    endif
+  endfor
+  if no_value == nil
+    assign no_value = option.values[0]
+    assign no_id = option.values[0].id
+    assign no_url = option.values[0].product_url
+  endif
+  if yes_value == nil
+    assign yes_value = option.values[1] | default: option.values[0]
+    assign yes_id = option.values[1].id | default: option.values[0].id
+    assign yes_url = option.values[1].product_url | default: option.values[0].product_url
+  endif
+  assign upgrade_image = block.settings.premium_upgrade_image
+  assign upgrade_description = block.settings.premium_upgrade_description | default: 'Upgrade to ultra-durable 220gsm heavyweight fabric for +£2 per tee'
+  assign upgrade_cost_raw = block.settings.premium_upgrade_cost | default: '+£2 per tee'
+  assign upgrade_cost_parts = upgrade_cost_raw | split: ' per '
+  assign upgrade_price = upgrade_cost_parts[0] | strip | default: '+£2'
+-%}
+<div class="variant-picker-step__premium-upgrade product-form__input product-form__input--premium-upgrade">
+  <div class="premium-upgrade-card">
+    {%- if upgrade_image != blank -%}
+      <div class="premium-upgrade-card__icon">
+        <img
+          src="{{ upgrade_image | image_url: width: 80 }}"
+          alt=""
+          width="40"
+          height="40"
+          loading="lazy"
+        >
+      </div>
+    {%- endif -%}
+    <div class="premium-upgrade-card__content">
+      <div class="premium-upgrade-card__title">{{ option.name }}</div>
+      {%- if upgrade_description != blank -%}
+        <p class="premium-upgrade-card__description">{{ upgrade_description }}</p>
+      {%- endif -%}
+    </div>
+    <fieldset class="js product-form__input premium-upgrade-card__toggle-wrap" aria-label="{{ option.name }}">
+      <span class="premium-upgrade-toggle" data-premium-upgrade-toggle>
+        {%- comment -%} No first (toggle left), then Yes (toggle right) {% endcomment -%}
+        <input
+          type="radio"
+          id="{{ section_id }}-{{ option.position }}-premium-no"
+          name="{{ input_name | escape }}"
+          value="{{ no_value | escape }}"
+          form="{{ product_form_id }}"
+          data-product-url="{{ no_url }}"
+          data-option-value-id="{{ no_id }}"
+          class="premium-upgrade-toggle__input premium-upgrade-toggle__input--no"
+          {% unless option.selected_value == yes_value %}checked{% endunless %}
+        >
+        <label for="{{ section_id }}-{{ option.position }}-premium-no" class="premium-upgrade-toggle__label premium-upgrade-toggle__label--no">
+          <span class="visually-hidden">{{ no_value }}</span>
+        </label>
+        <input
+          type="radio"
+          id="{{ section_id }}-{{ option.position }}-premium-yes"
+          name="{{ input_name | escape }}"
+          value="{{ yes_value | escape }}"
+          form="{{ product_form_id }}"
+          data-product-url="{{ yes_url }}"
+          data-option-value-id="{{ yes_id }}"
+          class="premium-upgrade-toggle__input premium-upgrade-toggle__input--yes"
+          {% if option.selected_value == yes_value %}checked{% endif %}
+        >
+        <label for="{{ section_id }}-{{ option.position }}-premium-yes" class="premium-upgrade-toggle__label premium-upgrade-toggle__label--yes">
+          <span class="visually-hidden">{{ yes_value }}</span>
+        </label>
+        <span class="premium-upgrade-toggle__slider" aria-hidden="true"></span>
+      </span>
+      {%- if upgrade_price != blank -%}
+        <div class="premium-upgrade-card__cost"><span class="premium-upgrade-card__cost-price">{{ upgrade_price }}</span> <span class="premium-upgrade-card__cost-label">per tee</span></div>
+      {%- endif -%}
+    </fieldset>
+  </div>
+</div>
