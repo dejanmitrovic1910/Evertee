@@ -1083,6 +1083,25 @@ class VariantSelects extends HTMLElement {
     });
   }
 
+  syncFormVariantFromData() {
+    const script = this.querySelector('[data-selected-variant]');
+    if (!script || !script.textContent || !script.textContent.trim()) return;
+    try {
+      const variant = JSON.parse(script.textContent.trim());
+      if (variant && variant.id) {
+        const productInfo = this.closest('product-info');
+        if (productInfo) {
+          const id = String(variant.id);
+          productInfo.querySelectorAll('input[name="id"]').forEach((input) => {
+            input.value = id;
+          });
+        }
+      }
+    } catch (e) {
+      /* ignore */
+    }
+  }
+
   updateSelectionMetadata({ target }) {
     const { value, tagName } = target;
 

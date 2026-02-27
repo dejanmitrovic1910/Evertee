@@ -1,9 +1,9 @@
 {% comment %}
   Renders the "Premium Heavy Tee Upgrade" variant option as a card with image, description, cost and yes/no toggle.
   Toggle right = Yes, toggle left = No.
-  Accepts: option, block, product_form_id, section_id, step_number, visual_only (optional)
+  Accepts: option, block, product_form_id, section_id, step_number, visual_only (optional), variant (optional)
   When visual_only is true, renders display-only copy that syncs with the hidden form inputs in the variant picker.
-  default_no (optional): when true, No is checked by default instead of option.selected_value.
+  variant: when set, which option is checked is derived from this variant (like other option pickers); otherwise uses option.selected_value.
 {% endcomment %}
 {%- liquid
   assign input_name = option.name | append: '-' | append: option.position
@@ -41,11 +41,18 @@
   assign upgrade_cost_parts = upgrade_cost_raw | split: ' per '
   assign upgrade_price = upgrade_cost_parts[0] | strip | default: '+£2'
   assign visual_only = visual_only | default: false
-  assign default_no = default_no | default: true
   assign checked_no = false
   assign checked_yes = false
-  if default_no
-    assign checked_no = true
+  assign opt_key = 'option' | append: option.position
+  if variant != blank
+    assign variant_opt_val = variant[opt_key] | downcase | strip
+    assign no_val_down = no_value | downcase | strip
+    assign yes_val_down = yes_value | downcase | strip
+    if variant_opt_val == yes_val_down
+      assign checked_yes = true
+    else
+      assign checked_no = true
+    endif
   elsif option.selected_value == yes_value
     assign checked_yes = true
   else

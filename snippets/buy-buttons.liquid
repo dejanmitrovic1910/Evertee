@@ -6,11 +6,13 @@
   - product_form_id: {String} product form id.
   - section_id: {String} id of section to which this snippet belongs.
   - section: {Object} section object (optional, for premium upgrade visual).
+  - initial_variant: {Object} variant to use for form/price (e.g. "No" for Premium upgrade); optional.
   - show_pickup_availability: {Boolean} for the pickup availability. If true the pickup availability is rendered, false - not rendered (optional).
 
   Usage:
   {% render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, section: section, show_pickup_availability: true %}
 {% endcomment %}
+{%- assign current_variant = initial_variant | default: product.selected_or_first_available_variant -%}
 <div {{ block.shopify_attributes }}>
   {%- if product != blank -%}
     {%- liquid
@@ -49,10 +51,10 @@
         <input
           type="hidden"
           name="id"
-          value="{{ product.selected_or_first_available_variant.id }}"
-          {% if product.selected_or_first_available_variant.available == false
+          value="{{ current_variant.id }}"
+          {% if current_variant.available == false
             or quantity_rule_soldout
-            or product.selected_or_first_available_variant == null
+            or current_variant == null
           %}
             disabled
           {% endif %}
@@ -87,6 +89,7 @@
                 product_form_id: product_form_id,
                 section_id: section_id,
                 step_number: 0,
+                variant: current_variant,
                 visual_only: true
               %}
             </div>
@@ -160,25 +163,6 @@
                   other.checked = true;
                   other.dispatchEvent(new Event('change', { bubbles: true }));
                 });
-
-                function setDefaultNo() {
-                  var v = getVisual();
-                  var hidden = getHidden();
-                  if (!v || !hidden) return;
-                  var visualRadios = v.querySelectorAll('input[type="radio"]');
-                  var hiddenRadios = hidden.querySelectorAll('input[type="radio"]');
-                  var noIdx = 0;
-                  if (hiddenRadios[noIdx] && !hiddenRadios[noIdx].checked) {
-                    hiddenRadios[noIdx].checked = true;
-                    hiddenRadios[noIdx].dispatchEvent(new Event('change', { bubbles: true }));
-                  }
-                  if (visualRadios[noIdx]) visualRadios[noIdx].checked = true;
-                }
-                if (document.readyState === 'loading') {
-                  document.addEventListener('DOMContentLoaded', setDefaultNo);
-                } else {
-                  setDefaultNo();
-                }
               })();
             </script>
           {%- endif -%}
@@ -187,10 +171,10 @@
         <div class="product-form__buttons">
           {%- liquid
             assign check_against_inventory = true
-            if product.selected_or_first_available_variant.inventory_management != 'shopify' or product.selected_or_first_available_variant.inventory_policy == 'continue'
+            if current_variant.inventory_management != 'shopify' or current_variant.inventory_policy == 'continue'
               assign check_against_inventory = false
             endif
-            if product.selected_or_first_available_variant.quantity_rule.min > product.selected_or_first_available_variant.inventory_quantity and check_against_inventory
+            if current_variant.quantity_rule.min > current_variant.inventory_quantity and check_against_inventory
               assign quantity_rule_soldout = true
             endif
           -%}
@@ -199,17 +183,17 @@
             type="submit"
             name="add"
             class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
-            {% if product.selected_or_first_available_variant.available == false
+            {% if current_variant.available == false
               or quantity_rule_soldout
-              or product.selected_or_first_available_variant == null
+              or current_variant == null
             %}
               disabled
             {% endif %}
           >
             <span>
-              {%- if product.selected_or_first_available_variant == null -%}
+              {%- if current_variant == null -%}
                 {{ 'products.product.unavailable' | t }}
-              {%- elsif product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
+              {%- elsif current_variant.available == false or quantity_rule_soldout -%}
                 {{ 'products.product.sold_out' | t }}
               {%- else -%}
                 {{ 'products.product.add_to_cart' | t }}
@@ -241,17 +225,17 @@
   {%- if show_pickup_availability -%}
     {{ 'component-pickup-availability.css' | asset_url | stylesheet_tag }}
 
-    {%- assign pick_up_availabilities = product.selected_or_first_available_variant.store_availabilities
+    {%- assign pick_up_availabilities = current_variant.store_availabilities
       | where: 'pick_up_enabled', true
     -%}
 
     <pickup-availability
       class="product__pickup-availabilities quick-add-hidden"
-      {% if product.selected_or_first_available_variant.available and pick_up_availabilities.size > 0 %}
+      {% if current_variant.available and pick_up_availabilities.size > 0 %}
         available
       {% endif %}
       data-root-url="{{ routes.root_url }}"
-      data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+      data-variant-id="{{ current_variant.id }}"
       data-has-only-default-variant="{{ product.has_only_default_variant }}"
       data-product-page-color-scheme="gradient color-{{ section.settings.color_scheme }}"
     >
