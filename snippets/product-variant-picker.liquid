@@ -22,11 +22,15 @@
     {% if show_logo_option %}data-with-logo="true"{% endif %}
     {{ block.shopify_attributes }}
   >
+    {%- assign step_number = 0 -%}
     {%- for option in product.options_with_values -%}
       {%- liquid
+        assign name = option.name | downcase
+        if name != 'colour' and name != 'color'
+          assign step_number = step_number | plus: 1
+        endif
         assign swatch_count = option.values | map: 'swatch' | compact | size
         assign picker_type = block.settings.picker_type
-        assign step_number = forloop.index
         assign step_title = option.name
         if option.name == 'Size'
           assign step_title = 'Select Your Size'
@@ -42,13 +46,16 @@
       -%}
       <div class="variant-picker-step variant-picker-step--{{ step_number }}{% if option.name == 'Premium Heavy Tee Upgrade' %} variant-picker-step-no--border{% endif %}{%  if picker_type == 'swatch' %} variant-picker-step--swatch{% endif %}">
         {%- if option.name == 'Premium Heavy Tee Upgrade' -%}
-          {% render 'product-variant-option-premium-upgrade',
-            option: option,
-            block: block,
-            product_form_id: product_form_id,
-            section_id: section.id,
-            step_number: step_number
-          %}
+          <div class="premium-upgrade-form-inputs visually-hiddden" aria-hidden="true" data-premium-upgrade-hidden data-section-id="{{ section.id }}" data-option-position="{{ option.position }}">
+            {% render 'product-variant-option-premium-upgrade',
+              option: option,
+              block: block,
+              product_form_id: product_form_id,
+              section_id: section.id,
+              step_number: step_number,
+              visual_only: false
+            %}
+          </div>
         {%- elsif picker_type == 'swatch' -%}
           <fieldset class="js product-form__input product-form__input--swatch">
             <legend class="variant-picker-step__header form__label">
@@ -116,12 +123,12 @@
           </div>
         {%- endif -%}
       </div>
-      {%- if forloop.first and show_logo_option -%}
-        {%- assign logo_step = forloop.index | plus: 1 -%}
-        <div class="variant-picker-step variant-picker-step--{{ logo_step }}">
+      {%- if option.name == 'Select Your Size' and show_logo_option -%}
+        {%- assign step_number = step_number | plus: 1 -%}
+        <div class="variant-picker-step variant-picker-step--{{ step_number }}">
           <fieldset class="product-form__input product-form__input--pill product-form__logo-option">
             <legend class="variant-picker-step__header form__label">
-              <span class="variant-picker-step__number" aria-hidden="true">{{ logo_step }}</span>
+              <span class="variant-picker-step__number" aria-hidden="true">{{ step_number }}</span>
               <span class="variant-picker-step__title">Choose Blank or With Logo</span>
             </legend>
             <div class="logo-option-radios">

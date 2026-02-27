@@ -5,10 +5,11 @@
   - block: {Object} passing the block information.
   - product_form_id: {String} product form id.
   - section_id: {String} id of section to which this snippet belongs.
+  - section: {Object} section object (optional, for premium upgrade visual).
   - show_pickup_availability: {Boolean} for the pickup availability. If true the pickup availability is rendered, false - not rendered (optional).
 
   Usage:
-  {% render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true %}
+  {% render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, section: section, show_pickup_availability: true %}
 {% endcomment %}
 <div {{ block.shopify_attributes }}>
   {%- if product != blank -%}
@@ -60,6 +61,127 @@
 
         {%- if gift_card_recipient_feature_active -%}
           {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
+        {%- endif -%}
+
+        {%- comment -%} Visual premium upgrade (syncs with hidden inputs in variant picker for correct SKU) {% endcomment -%}
+        {%- if section != blank -%}
+          {%- assign variant_picker_block = null -%}
+          {%- for blk in section.blocks -%}
+            {%- if blk.type == 'variant_picker' -%}
+              {%- assign variant_picker_block = blk -%}
+              {%- break -%}
+            {%- endif -%}
+          {%- endfor -%}
+          {%- assign premium_option = null -%}
+          {%- for opt in product.options_with_values -%}
+            {%- if opt.name == 'Premium Heavy Tee Upgrade' -%}
+              {%- assign premium_option = opt -%}
+              {%- break -%}
+            {%- endif -%}
+          {%- endfor -%}
+          {%- if variant_picker_block != blank and premium_option != blank -%}
+            <div class="premium-upgrade-before-cta" data-premium-upgrade-visual-wrapper>
+              {% render 'product-variant-option-premium-upgrade',
+                option: premium_option,
+                block: variant_picker_block,
+                product_form_id: product_form_id,
+                section_id: section_id,
+                step_number: 0,
+                visual_only: true
+              %}
+            </div>
+            <script>
+              (function() {
+                var wrapper = document.querySelector('[data-premium-upgrade-visual-wrapper]');
+                if (!wrapper) return;
+                var visual = wrapper.querySelector('[data-premium-upgrade-visual]');
+                if (!visual) return;
+                var sectionId = visual.getAttribute('data-section-id');
+                var optionPos = visual.getAttribute('data-option-position');
+                var syncingVisualToHidden = false;
+
+                function getHidden() {
+                  return document.querySelector('variant-selects [data-premium-upgrade-hidden][data-section-id="' + sectionId + '"][data-option-position="' + optionPos + '"]');
+                }
+                function getVisual() {
+                  var w = document.querySelector('[data-premium-upgrade-visual-wrapper]');
+                  return w ? w.querySelector('[data-premium-upgrade-visual]') : null;
+                }
+
+                function syncVisualToHidden(evt) {
+                  if (!evt.target.matches('input[type="radio"]') || !evt.target.closest('[data-premium-upgrade-visual]')) return;
+                  var v = getVisual();
+                  var hidden = getHidden();
+                  if (!v || !hidden) return;
+                  var visualRadios = [].slice.call(v.querySelectorAll('input[type="radio"]'));
+                  setTimeout(function() {
+                    var h = getHidden();
+                    if (!h) return;
+                    var hiddenRadios = h.querySelectorAll('input[type="radio"]');
+                    syncingVisualToHidden = true;
+                    try {
+                      visualRadios.forEach(function(r, i) {
+                        if (r.checked && hiddenRadios[i]) {
+                          hiddenRadios[i].checked = true;
+                          hiddenRadios[i].dispatchEvent(new Event('change', { bubbles: true }));
+                        }
+                      });
+                    } finally {
+                      setTimeout(function() { syncingVisualToHidden = false; }, 0);
+                    }
+                  }, 0);
+                }
+                function syncHiddenToVisual(evt) {
+                  if (syncingVisualToHidden) return;
+                  if (!evt.target.matches('input[type="radio"]') || !evt.target.closest('[data-premium-upgrade-hidden]')) return;
+                  var hidden = evt.target.closest('[data-premium-upgrade-hidden]');
+                  if (hidden.getAttribute('data-section-id') !== sectionId || hidden.getAttribute('data-option-position') !== optionPos) return;
+                  var v = getVisual();
+                  if (!v) return;
+                  var visualRadios = v.querySelectorAll('input[type="radio"]');
+                  var hiddenRadios = hidden.querySelectorAll('input[type="radio"]');
+                  hiddenRadios.forEach(function(r, i) {
+                    if (r.checked && visualRadios[i]) visualRadios[i].checked = true;
+                  });
+                }
+
+                document.addEventListener('change', syncVisualToHidden);
+                document.addEventListener('change', syncHiddenToVisual);
+
+                document.addEventListener('click', function(evt) {
+                  if (!evt.isTrusted) return;
+                  var toggle = evt.target.closest('[data-premium-upgrade-toggle]');
+                  if (!toggle || !toggle.closest('[data-premium-upgrade-visual]')) return;
+                  evt.preventDefault();
+                  var inputNo = toggle.querySelector('.premium-upgrade-toggle__input--no');
+                  var inputYes = toggle.querySelector('.premium-upgrade-toggle__input--yes');
+                  if (!inputNo || !inputYes) return;
+                  var other = inputNo.checked ? inputYes : inputNo;
+                  other.checked = true;
+                  other.dispatchEvent(new Event('change', { bubbles: true }));
+                });
+
+                function setDefaultNo() {
+                  var v = getVisual();
+                  var hidden = getHidden();
+                  if (!v || !hidden) return;
+                  var visualRadios = v.querySelectorAll('input[type="radio"]');
+                  var hiddenRadios = hidden.querySelectorAll('input[type="radio"]');
+                  var noIdx = 0;
+                  if (hiddenRadios[noIdx] && !hiddenRadios[noIdx].checked) {
+                    hiddenRadios[noIdx].checked = true;
+                    hiddenRadios[noIdx].dispatchEvent(new Event('change', { bubbles: true }));
+                  }
+                  if (visualRadios[noIdx]) visualRadios[noIdx].checked = true;
+                }
+                if (document.readyState === 'loading') {
+                  document.addEventListener('DOMContentLoaded', setDefaultNo);
+                } else {
+                  setDefaultNo();
+                }
+              })();
+            </script>
+          {%- endif -%}
         {%- endif -%}
 
         <div class="product-form__buttons">

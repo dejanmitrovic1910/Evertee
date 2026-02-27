@@ -161,11 +161,24 @@ if (!customElements.get('product-info')) {
         const currentLogoValue = this.variantSelectors?.querySelector(
           'input[name="properties[Logo]"]:checked'
         )?.value;
+        const premiumChecked = this.variantSelectors?.querySelector(
+          '[data-premium-upgrade-hidden] input[type="radio"]:checked'
+        );
+        const premiumUpgradeValue = premiumChecked?.value;
+
         const postCallbacks = [...(this.postProcessHtmlCallbacks || [])];
         if (currentLogoValue) {
           postCallbacks.push((newNode) => {
             const radio = newNode?.querySelector(
               `input[name="properties[Logo]"][value="${CSS.escape(currentLogoValue)}"]`
+            );
+            if (radio) radio.checked = true;
+          });
+        }
+        if (premiumUpgradeValue) {
+          postCallbacks.push((newNode) => {
+            const radio = newNode?.querySelector(
+              `[data-premium-upgrade-hidden] input[type="radio"][value="${CSS.escape(premiumUpgradeValue)}"]`
             );
             if (radio) radio.checked = true;
           });

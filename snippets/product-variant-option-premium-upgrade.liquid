@@ -1,7 +1,9 @@
 {% comment %}
   Renders the "Premium Heavy Tee Upgrade" variant option as a card with image, description, cost and yes/no toggle.
   Toggle right = Yes, toggle left = No.
-  Accepts: option, block, product_form_id, section_id, step_number
+  Accepts: option, block, product_form_id, section_id, step_number, visual_only (optional)
+  When visual_only is true, renders display-only copy that syncs with the hidden form inputs in the variant picker.
+  default_no (optional): when true, No is checked by default instead of option.selected_value.
 {% endcomment %}
 {%- liquid
   assign input_name = option.name | append: '-' | append: option.position
@@ -38,8 +40,25 @@
   assign upgrade_cost_raw = block.settings.premium_upgrade_cost | default: '+£2 per tee'
   assign upgrade_cost_parts = upgrade_cost_raw | split: ' per '
   assign upgrade_price = upgrade_cost_parts[0] | strip | default: '+£2'
+  assign visual_only = visual_only | default: false
+  assign default_no = default_no | default: true
+  assign checked_no = false
+  assign checked_yes = false
+  if default_no
+    assign checked_no = true
+  elsif option.selected_value == yes_value
+    assign checked_yes = true
+  else
+    assign checked_no = true
+  endif
+  assign id_suffix = ''
+  assign visual_name = ''
+  if visual_only
+    assign id_suffix = '-visual'
+    assign visual_name = 'premium-upgrade-visual-' | append: section_id
+  endif
 -%}
-<div class="variant-picker-step__premium-upgrade product-form__input product-form__input--premium-upgrade">
+<div class="variant-picker-step__premium-upgrade product-form__input product-form__input--premium-upgrade{% if visual_only %} premium-upgrade-visual{% endif %}" {% if visual_only %}data-premium-upgrade-visual data-section-id="{{ section_id }}" data-option-position="{{ option.position }}"{% endif %}>
   <div class="premium-upgrade-card">
     {%- if upgrade_image != blank -%}
       <div class="premium-upgrade-card__icon">
@@ -63,30 +82,30 @@
         {%- comment -%} No first (toggle left), then Yes (toggle right) {% endcomment -%}
         <input
           type="radio"
-          id="{{ section_id }}-{{ option.position }}-premium-no"
-          name="{{ input_name | escape }}"
+          id="{{ section_id }}-{{ option.position }}-premium-no{{ id_suffix }}"
+          {% if visual_only %}name="{{ visual_name | escape }}"{% else %}name="{{ input_name | escape }}"{% endif %}
           value="{{ no_value | escape }}"
-          form="{{ product_form_id }}"
+          {% unless visual_only %}form="{{ product_form_id }}"{% endunless %}
           data-product-url="{{ no_url }}"
           data-option-value-id="{{ no_id }}"
           class="premium-upgrade-toggle__input premium-upgrade-toggle__input--no"
-          {% unless option.selected_value == yes_value %}checked{% endunless %}
+          {% if checked_no %}checked{% endif %}
         >
-        <label for="{{ section_id }}-{{ option.position }}-premium-no" class="premium-upgrade-toggle__label premium-upgrade-toggle__label--no">
+        <label for="{{ section_id }}-{{ option.position }}-premium-no{{ id_suffix }}" class="premium-upgrade-toggle__label premium-upgrade-toggle__label--no">
           <span class="visually-hidden">{{ no_value }}</span>
         </label>
         <input
           type="radio"
-          id="{{ section_id }}-{{ option.position }}-premium-yes"
-          name="{{ input_name | escape }}"
+          id="{{ section_id }}-{{ option.position }}-premium-yes{{ id_suffix }}"
+          {% if visual_only %}name="{{ visual_name | escape }}"{% else %}name="{{ input_name | escape }}"{% endif %}
           value="{{ yes_value | escape }}"
-          form="{{ product_form_id }}"
+          {% unless visual_only %}form="{{ product_form_id }}"{% endunless %}
           data-product-url="{{ yes_url }}"
           data-option-value-id="{{ yes_id }}"
           class="premium-upgrade-toggle__input premium-upgrade-toggle__input--yes"
-          {% if option.selected_value == yes_value %}checked{% endif %}
+          {% if checked_yes %}checked{% endif %}
         >
-        <label for="{{ section_id }}-{{ option.position }}-premium-yes" class="premium-upgrade-toggle__label premium-upgrade-toggle__label--yes">
+        <label for="{{ section_id }}-{{ option.position }}-premium-yes{{ id_suffix }}" class="premium-upgrade-toggle__label premium-upgrade-toggle__label--yes">
           <span class="visually-hidden">{{ yes_value }}</span>
         </label>
         <span class="premium-upgrade-toggle__slider" aria-hidden="true"></span>
