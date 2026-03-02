@@ -5,11 +5,14 @@
   - block: {Object} passing the block information.
   - product_form_id: {String} product form id.
   - section_id: {String} id of section to which this snippet belongs.
+  - section: {Object} section object (optional, for premium upgrade visual).
+  - initial_variant: {Object} variant to use for form/price (e.g. "No" for Premium upgrade); optional.
   - show_pickup_availability: {Boolean} for the pickup availability. If true the pickup availability is rendered, false - not rendered (optional).
 
   Usage:
-  {% render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true %}
+  {% render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, section: section, show_pickup_availability: true %}
 {% endcomment %}
+{%- assign current_variant = initial_variant | default: product.selected_or_first_available_variant -%}
 <div {{ block.shopify_attributes }}>
   {%- if product != blank -%}
     {%- liquid
@@ -28,6 +31,8 @@
       class="product-form"
       data-hide-errors="{{ gift_card_recipient_feature_active }}"
       data-section-id="{{ section.id }}"
+      data-main-product-form="true"
+      data-product-id="{{ product.id }}"
     >
       <div class="product-form__error-message-wrapper" role="alert" hidden>
         <span class="svg-wrapper">
@@ -46,10 +51,10 @@
         <input
           type="hidden"
           name="id"
-          value="{{ product.selected_or_first_available_variant.id }}"
-          {% if product.selected_or_first_available_variant.available == false
+          value="{{ current_variant.id }}"
+          {% if current_variant.available == false
             or quantity_rule_soldout
-            or product.selected_or_first_available_variant == null
+            or current_variant == null
           %}
             disabled
           {% endif %}
@@ -60,13 +65,116 @@
           {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
         {%- endif -%}
 
+        {%- comment -%} Visual premium upgrade (syncs with hidden inputs in variant picker for correct SKU) {% endcomment -%}
+        {%- if section != blank -%}
+          {%- assign variant_picker_block = null -%}
+          {%- for blk in section.blocks -%}
+            {%- if blk.type == 'variant_picker' -%}
+              {%- assign variant_picker_block = blk -%}
+              {%- break -%}
+            {%- endif -%}
+          {%- endfor -%}
+          {%- assign premium_option = null -%}
+          {%- for opt in product.options_with_values -%}
+            {%- if opt.name == 'Premium Heavy Tee Upgrade' -%}
+              {%- assign premium_option = opt -%}
+              {%- break -%}
+            {%- endif -%}
+          {%- endfor -%}
+          {%- if variant_picker_block != blank and premium_option != blank -%}
+            <div class="premium-upgrade-before-cta" data-premium-upgrade-visual-wrapper>
+              {% render 'product-variant-option-premium-upgrade',
+                option: premium_option,
+                block: variant_picker_block,
+                product_form_id: product_form_id,
+                section_id: section_id,
+                step_number: 0,
+                variant: current_variant,
+                visual_only: true
+              %}
+            </div>
+            <script>
+              (function() {
+                var wrapper = document.querySelector('[data-premium-upgrade-visual-wrapper]');
+                if (!wrapper) return;
+                var visual = wrapper.querySelector('[data-premium-upgrade-visual]');
+                if (!visual) return;
+                var sectionId = visual.getAttribute('data-section-id');
+                var optionPos = visual.getAttribute('data-option-position');
+                var syncingVisualToHidden = false;
+
+                function getHidden() {
+                  return document.querySelector('variant-selects [data-premium-upgrade-hidden][data-section-id="' + sectionId + '"][data-option-position="' + optionPos + '"]');
+                }
+                function getVisual() {
+                  var w = document.querySelector('[data-premium-upgrade-visual-wrapper]');
+                  return w ? w.querySelector('[data-premium-upgrade-visual]') : null;
+                }
+
+                function syncVisualToHidden(evt) {
+                  if (!evt.target.matches('input[type="radio"]') || !evt.target.closest('[data-premium-upgrade-visual]')) return;
+                  var v = getVisual();
+                  var hidden = getHidden();
+                  if (!v || !hidden) return;
+                  var visualRadios = [].slice.call(v.querySelectorAll('input[type="radio"]'));
+                  setTimeout(function() {
+                    var h = getHidden();
+                    if (!h) return;
+                    var hiddenRadios = h.querySelectorAll('input[type="radio"]');
+                    syncingVisualToHidden = true;
+                    try {
+                      visualRadios.forEach(function(r, i) {
+                        if (r.checked && hiddenRadios[i]) {
+                          hiddenRadios[i].checked = true;
+                          hiddenRadios[i].dispatchEvent(new Event('change', { bubbles: true }));
+                        }
+                      });
+                    } finally {
+                      setTimeout(function() { syncingVisualToHidden = false; }, 0);
+                    }
+                  }, 0);
+                }
+                function syncHiddenToVisual(evt) {
+                  if (syncingVisualToHidden) return;
+                  if (!evt.target.matches('input[type="radio"]') || !evt.target.closest('[data-premium-upgrade-hidden]')) return;
+                  var hidden = evt.target.closest('[data-premium-upgrade-hidden]');
+                  if (hidden.getAttribute('data-section-id') !== sectionId || hidden.getAttribute('data-option-position') !== optionPos) return;
+                  var v = getVisual();
+                  if (!v) return;
+                  var visualRadios = v.querySelectorAll('input[type="radio"]');
+                  var hiddenRadios = hidden.querySelectorAll('input[type="radio"]');
+                  hiddenRadios.forEach(function(r, i) {
+                    if (r.checked && visualRadios[i]) visualRadios[i].checked = true;
+                  });
+                }
+
+                document.addEventListener('change', syncVisualToHidden);
+                document.addEventListener('change', syncHiddenToVisual);
+
+                document.addEventListener('click', function(evt) {
+                  if (!evt.isTrusted) return;
+                  var toggle = evt.target.closest('[data-premium-upgrade-toggle]');
+                  if (!toggle || !toggle.closest('[data-premium-upgrade-visual]')) return;
+                  evt.preventDefault();
+                  var inputNo = toggle.querySelector('.premium-upgrade-toggle__input--no');
+                  var inputYes = toggle.querySelector('.premium-upgrade-toggle__input--yes');
+                  if (!inputNo || !inputYes) return;
+                  var other = inputNo.checked ? inputYes : inputNo;
+                  other.checked = true;
+                  other.dispatchEvent(new Event('change', { bubbles: true }));
+                });
+              })();
+            </script>
+          {%- endif -%}
+        {%- endif -%}
+
         <div class="product-form__buttons">
           {%- liquid
             assign check_against_inventory = true
-            if product.selected_or_first_available_variant.inventory_management != 'shopify' or product.selected_or_first_available_variant.inventory_policy == 'continue'
+            if current_variant.inventory_management != 'shopify' or current_variant.inventory_policy == 'continue'
               assign check_against_inventory = false
             endif
-            if product.selected_or_first_available_variant.quantity_rule.min > product.selected_or_first_available_variant.inventory_quantity and check_against_inventory
+            if current_variant.quantity_rule.min > current_variant.inventory_quantity and check_against_inventory
               assign quantity_rule_soldout = true
             endif
           -%}
@@ -75,17 +183,17 @@
             type="submit"
             name="add"
             class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
-            {% if product.selected_or_first_available_variant.available == false
+            {% if current_variant.available == false
               or quantity_rule_soldout
-              or product.selected_or_first_available_variant == null
+              or current_variant == null
             %}
               disabled
             {% endif %}
           >
             <span>
-              {%- if product.selected_or_first_available_variant == null -%}
+              {%- if current_variant == null -%}
                 {{ 'products.product.unavailable' | t }}
-              {%- elsif product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
+              {%- elsif current_variant.available == false or quantity_rule_soldout -%}
                 {{ 'products.product.sold_out' | t }}
               {%- else -%}
                 {{ 'products.product.add_to_cart' | t }}
@@ -117,17 +225,17 @@
   {%- if show_pickup_availability -%}
     {{ 'component-pickup-availability.css' | asset_url | stylesheet_tag }}
 
-    {%- assign pick_up_availabilities = product.selected_or_first_available_variant.store_availabilities
+    {%- assign pick_up_availabilities = current_variant.store_availabilities
       | where: 'pick_up_enabled', true
     -%}
 
     <pickup-availability
       class="product__pickup-availabilities quick-add-hidden"
-      {% if product.selected_or_first_available_variant.available and pick_up_availabilities.size > 0 %}
+      {% if current_variant.available and pick_up_availabilities.size > 0 %}
         available
       {% endif %}
       data-root-url="{{ routes.root_url }}"
-      data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+      data-variant-id="{{ current_variant.id }}"
       data-has-only-default-variant="{{ product.has_only_default_variant }}"
       data-product-page-color-scheme="gradient color-{{ section.settings.color_scheme }}"
     >

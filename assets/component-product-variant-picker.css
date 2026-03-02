@@ -11,7 +11,12 @@ variant-selects {
   text-align: center;
 }
 
-.product--no-media .product-form__input.product-form__input--pill,
+.product-form__input.product-form__input--pill {
+  flex-wrap: wrap;
+  margin: 0 auto 0 auto;
+  max-width: 100%;
+}
+
 .product--no-media .product-form__input.product-form__input--swatch {
   flex-wrap: wrap;
   margin: 0 auto 1.2rem auto;
@@ -64,8 +69,8 @@ variant-selects {
   border-radius: var(--variant-pills-radius);
   color: rgb(var(--color-foreground));
   display: inline-block;
-  margin: 0.7rem 0.5rem 0.2rem 0;
-  padding: 1rem 2rem;
+  margin: 0;
+  padding: 0.6rem 1.5rem;
   font-size: 1.4rem;
   letter-spacing: 0.1rem;
   line-height: 1;
@@ -150,3 +155,374 @@ variant-selects {
   }
 }
 /* End custom styles for Swatch display type */
+
+.variant-picker-evertee .variant-picker-step {
+  margin-bottom: 1rem;
+}
+
+.variant-picker-evertee .variant-picker-step:not(.variant-picker-step-no--border) {
+  border: 0.2rem solid rgba(var(--color-foreground), 0.2);
+  border-radius: 1.4rem;
+  padding: 1rem 1.7rem;
+}
+
+.variant-picker-evertee .variant-picker-step:last-child {
+  margin-bottom: 0;
+}
+
+.variant-picker-evertee .variant-picker-step__header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.variant-picker-evertee .variant-picker-step__number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  min-width: 2.2rem;
+  border-radius: 50%;
+  background-color: rgb(var(--evertee-accent));
+  color: rgb(255, 255, 255);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.variant-picker-evertee .variant-picker-step__title {
+  font-weight: 700;
+  color: rgb(var(--color-foreground));
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.variant-picker-evertee .variant-picker-step__options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 0.4rem;
+  width: calc(100% + 1.4rem);
+}
+
+.variant-picker-evertee .variant-picker-step__confirmation {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0.8rem 0 0;
+  font-size: 1.4rem;
+  color: rgb(var(--evertee-accent));
+}
+
+.variant-picker-evertee .variant-picker-step__check {
+  background: rgb(var(--evertee-accent),.8);
+  font-weight: 700;
+  display: inline-flex;
+  width: 1.7rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+  font-size: 10px;
+  height: 1.7rem;
+  margin-top: 0.1rem;
+}
+
+.variant-picker-evertee .product-form__input--pill:not(.product-form__logo-option) input[type='radio'] + label:before {
+  display: none;
+}
+
+.variant-picker-evertee .product-form__input--pill:not(.product-form__logo-option) input[type='radio'] + label:hover {
+  border-color: rgba(var(--color-foreground), 0.4);
+}
+
+.variant-picker-evertee .product-form__input--pill:not(.product-form__logo-option) input[type='radio']:checked + label {
+  background-color: rgb(var(--evertee-pill-selected-bg));
+  color: rgb(255, 255, 255);
+  border-color: rgb(var(--evertee-pill-selected-bg));
+}
+
+.variant-picker-evertee .product-form__input--pill:not(.product-form__logo-option) input[type='radio']:focus-visible + label {
+  box-shadow: 0 0 0 0.2rem rgb(var(--color-background)), 0 0 0 0.4rem rgba(var(--evertee-accent), 0.4);
+}
+
+/* Logo option: two large buttons, selected = green border + checkmark */
+.variant-picker-evertee .product-form__logo-option .logo-option-radios {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.variant-picker-evertee .product-form__logo-option .logo-option-radio {
+  flex: 1;
+  min-width: 12rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.3rem 1.6rem;
+  border: 0.1rem solid rgba(var(--color-foreground), 0.2);
+  border-radius: 1.3rem;
+  background-color: rgb(var(--color-background));
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: rgb(var(--color-foreground));
+  transition: border-color var(--duration-short) ease, box-shadow var(--duration-short) ease;
+}
+
+.variant-picker-evertee .product-form__logo-option .logo-option-radio .logo-option-radio__text {
+  display: inline-flex;
+  align-items: center;
+}
+
+.variant-picker-evertee .product-form__logo-option .logo-option-radio:hover {
+  border-color: rgba(var(--color-foreground), 0.35);
+}
+
+.variant-picker-evertee .product-form__logo-option .logo-option-radio input[type='radio'] {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+}
+
+.variant-picker-evertee .product-form__logo-option .logo-option-radio input[type='radio']:checked + .logo-option-radio__text {
+  color: rgb(var(--evertee-accent));
+}
+.variant-picker-evertee .product-form__logo-option .logo-option-radio input[type='radio']:checked + .logo-option-radio__text::before {
+  content: '✓';
+  margin-right: 0.4rem;
+  color: rgb(var(--evertee-accent));
+  font-weight: 700;
+}
+
+.variant-picker-evertee .product-form__logo-option .logo-option-radio:has(input:checked) {
+  border-color: rgb(var(--evertee-accent));
+  box-shadow: 0 0 0 0.1rem rgb(var(--evertee-accent));
+}
+
+.variant-picker-evertee .product-form__logo-option .logo-option-radio:has(input[type='radio']:focus-visible) {
+  box-shadow: 0 0 0 0.2rem rgb(var(--color-background)), 0 0 0 0.4rem rgba(var(--evertee-accent), 0.4);
+}
+
+/* Swatch selected: light green fill + dark green border */
+.variant-picker-evertee .product-form__input--swatch .swatch-input__input:checked + .swatch-input__label,
+.variant-picker-evertee .product-form__input--swatch .swatch-input__input:active + .swatch-input__label {
+  outline: 0.2rem solid rgb(var(--evertee-accent));
+  outline-offset: 0.15rem;
+}
+
+.variant-picker-evertee .product-form__input--swatch .swatch-input__input:checked + .swatch-input__label .swatch,
+.variant-picker-evertee .product-form__input--swatch .swatch-input__input:active + .swatch-input__label .swatch {
+  box-shadow: inset 0 0 0 0.2rem rgb(var(--evertee-accent));
+}
+
+/* Premium Heavy Tee Upgrade card */
+.variant-picker-step__premium-upgrade {
+  margin-top: 0.8rem;
+}
+
+.premium-upgrade-card {
+  --premium-card-bg: #e8f0ee;
+  --premium-card-border: rgb(var(--evertee-accent));
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1rem 1.2rem;
+  padding: 1.4rem 1.6rem 1.4rem 1.6rem;
+  padding-right: 12rem;
+  background-color: var(--premium-card-bg);
+  border: 0.2rem solid var(--premium-card-border);
+  border-radius: 1.2rem;
+  position: relative;
+}
+
+.premium-upgrade-card__icon {
+  flex-shrink: 0;
+  width: 7rem;
+  height: 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.premium-upgrade-card__icon img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.premium-upgrade-card__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.premium-upgrade-card__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgb(var(--color-foreground));
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+}
+
+.premium-upgrade-card__description {
+  font-size: 1.4rem;
+  line-height: 1.4;
+  color: rgba(var(--color-foreground), 0.85);
+  margin: 0;
+}
+
+.premium-upgrade-card__cost {
+  margin-top: 0.3rem;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.premium-upgrade-card__cost-price {
+  color: #000;
+  font-weight: 500;
+}
+
+.premium-upgrade-card__cost-label {
+  color: rgb(var(--evertee-accent));
+}
+
+.premium-upgrade-card__toggle-wrap {
+  position: absolute;
+  top: 1.4rem;
+  right: 1.6rem;
+  margin: 0;
+  border: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+/* Toggle: left = No, right = Yes */
+.premium-upgrade-toggle {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  width: 4.8rem;
+  height: 2.6rem;
+  flex-shrink: 0;
+}
+
+.premium-upgrade-toggle__input {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+}
+
+.premium-upgrade-toggle__label {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.premium-upgrade-toggle__label--no {
+  left: 0;
+}
+
+.premium-upgrade-toggle__label--yes {
+  right: 0;
+}
+
+.premium-upgrade-toggle__slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(var(--color-foreground), 0.15);
+  border-radius: 2rem;
+  pointer-events: none;
+  transition: background-color 0.2s ease;
+}
+
+.premium-upgrade-toggle__slider::after {
+  content: '';
+  position: absolute;
+  top: 0.3rem;
+  left: 0.3rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: rgb(var(--color-background));
+  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+/* Yes checked = slider on the right */
+.premium-upgrade-toggle__input--yes:checked ~ .premium-upgrade-toggle__slider {
+  background-color: var(--premium-card-border);
+}
+
+.premium-upgrade-toggle__input--yes:checked ~ .premium-upgrade-toggle__slider::after {
+  transform: translateX(2.2rem);
+}
+
+/* No checked = slider on the left (default) */
+.premium-upgrade-toggle__input--no:checked ~ .premium-upgrade-toggle__slider::after {
+  transform: translateX(0);
+}
+
+.premium-upgrade-toggle__input--no:focus-visible ~ .premium-upgrade-toggle__slider,
+.premium-upgrade-toggle__input--yes:focus-visible ~ .premium-upgrade-toggle__slider {
+  box-shadow: 0 0 0 0.2rem rgba(var(--evertee-accent), 0.5);
+}
+
+/* Build Your Bundle – Fly Bundles app wrapper (same look as variant picker steps) */
+.bundle-app-wrapper {
+  margin-top: 1rem;
+}
+
+.bundle-app-wrapper__header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.bundle-app-wrapper__total {
+  margin-left: auto;
+  font-weight: 700;
+  color: rgb(var(--color-foreground));
+}
+
+.bundle-app-wrapper .variant-picker-step__number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  min-width: 2.2rem;
+  border-radius: 50%;
+  background-color: rgb(var(--evertee-accent));
+  color: rgb(255, 255, 255);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.bundle-app-wrapper .variant-picker-step__title {
+  font-weight: 700;
+  color: rgb(var(--color-foreground));
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.bundle-app-block__content {
+  margin-top: 0;
+}

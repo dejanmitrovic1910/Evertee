@@ -156,9 +156,39 @@ if (!customElements.get('product-info')) {
 
       updateOptionValues(html) {
         const variantSelects = html.querySelector('variant-selects');
-        if (variantSelects) {
-          HTMLUpdateUtility.viewTransition(this.variantSelectors, variantSelects, this.preProcessHtmlCallbacks);
+        if (!variantSelects) return;
+
+        const currentLogoValue = this.variantSelectors?.querySelector(
+          'input[name="properties[Logo]"]:checked'
+        )?.value;
+        const premiumChecked = this.variantSelectors?.querySelector(
+          '[data-premium-upgrade-hidden] input[type="radio"]:checked'
+        );
+        const premiumUpgradeValue = premiumChecked?.value;
+
+        const postCallbacks = [...(this.postProcessHtmlCallbacks || [])];
+        if (currentLogoValue) {
+          postCallbacks.push((newNode) => {
+            const radio = newNode?.querySelector(
+              `input[name="properties[Logo]"][value="${CSS.escape(currentLogoValue)}"]`
+            );
+            if (radio) radio.checked = true;
+          });
         }
+        if (premiumUpgradeValue) {
+          postCallbacks.push((newNode) => {
+            const radio = newNode?.querySelector(
+              `[data-premium-upgrade-hidden] input[type="radio"][value="${CSS.escape(premiumUpgradeValue)}"]`
+            );
+            if (radio) radio.checked = true;
+          });
+        }
+        HTMLUpdateUtility.viewTransition(
+          this.variantSelectors,
+          variantSelects,
+          this.preProcessHtmlCallbacks,
+          postCallbacks
+        );
       }
 
       handleUpdateProductInfo(productUrl) {
@@ -213,7 +243,7 @@ if (!customElements.get('product-info')) {
 
       updateVariantInputs(variantId) {
         this.querySelectorAll(
-          `#product-form-${this.dataset.section}, #product-form-installment-${this.dataset.section}`
+          `#product-form-main-${this.dataset.section}, #product-form-installment-${this.dataset.section}, #product-form-${this.dataset.section}`
         ).forEach((productForm) => {
           const input = productForm.querySelector('input[name="id"]');
           input.value = variantId ?? '';
