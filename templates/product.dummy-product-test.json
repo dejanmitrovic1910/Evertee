@@ -23,6 +23,13 @@
             "text_style": "body"
           }
         },
+        "text_TeQy6E": {
+          "type": "text",
+          "settings": {
+            "text": "<strong>🎉 All Bundles Now £10 Off 🎉</strong>",
+            "text_style": "subtitle"
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -39,8 +46,16 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
+            "show_dynamic_checkout": false,
             "show_gift_card_recipient": false
+          }
+        },
+        "kiwi_size_chart_recommender_kiwi_sizing_tabGyR": {
+          "type": "shopify://apps/kiwi-size-chart-recommender/blocks/kiwiSizing/b7369922-bf15-44ce-a121-a22a8fcbc4b0",
+          "settings": {
+            "fallbackToBlockPosition": false,
+            "waitForElementSelector": "",
+            "waitForElementDelay": 5
           }
         },
         "custom_liquid_3FHwzX": {
@@ -108,9 +123,11 @@
       "block_order": [
         "title",
         "text_HhUzij",
+        "text_TeQy6E",
         "variant_picker",
         "fly_bundles_quantity_breaks_app_block_volume_QMNmFR",
         "buy_buttons",
+        "kiwi_size_chart_recommender_kiwi_sizing_tabGyR",
         "custom_liquid_3FHwzX",
         "klarna_on_site_messaging_app_block_MzcLFj",
         "collapsible_tab_4YyHJK",

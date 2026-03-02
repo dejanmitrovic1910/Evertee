@@ -42,13 +42,13 @@
     "17704004183905de71": {
       "type": "apps",
       "blocks": {
-        "upsellplus_upsell_app_block_TgWpXm": {
-          "type": "shopify://apps/upsellplus/blocks/upsell-app-block/553fb951-397c-4171-8b32-7056a23ffd82",
+        "selleasy_lb_upsell_widget_icuc_qrz78w": {
+          "type": "shopify://apps/selleasy/blocks/lb-upsell-widget-icuc/790c1a03-a71f-4bc1-9869-00dad526d3c2",
           "settings": {}
         }
       },
       "block_order": [
-        "upsellplus_upsell_app_block_TgWpXm"
+        "selleasy_lb_upsell_widget_icuc_qrz78w"
       ],
       "settings": {
         "include_margins": true
