@@ -98,6 +98,19 @@
 
           {%- assign initial_variant = product.selected_or_first_available_variant -%}
 
+          {%- assign section_has_fly_bundles = false -%}
+          {%- for b in section.blocks -%}
+            {%- if b.id contains 'fly_bundles_quantity_breaks' -%}
+              {%- assign section_has_fly_bundles = true -%}
+            {%- endif -%}
+          {%- endfor -%}
+          {%- comment -%} Variant picker step number: start from 0 when bundle app is present, else start from 1. {%- endcomment -%}
+          {%- if section_has_fly_bundles -%}
+            {%- assign variant_picker_step_offset = 0 -%}
+          {%- else -%}
+            {%- assign variant_picker_step_offset = 1 -%}
+          {%- endif -%}
+
           {%- for block in section.blocks -%}
             {%- case block.type -%}
               {%- when '@app' -%}
@@ -503,7 +516,7 @@
                 %}
 
               {%- when 'variant_picker' -%}
-                {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id, initial_variant: initial_variant %}
+                {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id, initial_variant: initial_variant, variant_picker_step_offset: variant_picker_step_offset %}
               {%- when 'buy_buttons' -%}
                 {%- render 'buy-buttons',
                   block: block,

@@ -5,14 +5,18 @@
   - product: {Object} product object.
   - block: {Object} passing the block information.
   - product_form_id: {String} Id of the product form to which the variant picker is associated.
+  - variant_picker_step_offset: {Number} Optional. 0 when section has fly_bundles_quantity_breaks app (steps 0,1,2...), 1 otherwise (steps 1,2,3...). Default 1.
   Usage:
-  {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+  {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id, variant_picker_step_offset: variant_picker_step_offset %}
 {% endcomment %}
 {%- liquid
   assign show_logo_option = false
   if product.tags contains 'with_logo'
     assign show_logo_option = true
   endif
+-%}
+{%- liquid
+  assign step_offset = variant_picker_step_offset | default: 1
 -%}
 {%- unless product.has_only_default_variant -%}
   <variant-selects
@@ -43,8 +47,9 @@
             assign picker_type = 'swatch'
           endif
         endif
+        assign display_step = step_number | plus: step_offset
       -%}
-      <div class="variant-picker-step variant-picker-step--{{ step_number }}{% if option.name == 'Premium Heavy Tee Upgrade' %} variant-picker-step-no--border{% endif %}{%  if picker_type == 'swatch' %} variant-picker-step--swatch{% endif %}">
+      <div class="variant-picker-step variant-picker-step--{{ display_step }}{% if option.name == 'Premium Heavy Tee Upgrade' %} variant-picker-step-no--border{% endif %}{%  if picker_type == 'swatch' %} variant-picker-step--swatch{% endif %}">
         {%- if option.name == 'Premium Heavy Tee Upgrade' -%}
           <div class="premium-upgrade-form-inputs visually-hidden" aria-hidden="true" data-premium-upgrade-hidden data-section-id="{{ section.id }}" data-option-position="{{ option.position }}">
             {% render 'product-variant-option-premium-upgrade',
@@ -52,7 +57,7 @@
               block: block,
               product_form_id: product_form_id,
               section_id: section.id,
-              step_number: step_number,
+              step_number: display_step,
               variant: initial_variant,
               visual_only: false
             %}
@@ -60,7 +65,7 @@
         {%- elsif picker_type == 'swatch' -%}
           <fieldset class="js product-form__input product-form__input--swatch">
             <legend class="variant-picker-step__header form__label">
-              <span class="variant-picker-step__number" aria-hidden="true">{{ step_number }}</span>
+              <span class="variant-picker-step__number" aria-hidden="true">{{ display_step }}</span>
               <span class="variant-picker-step__title">{{ step_title }}: <span data-selected-value>{{- option.selected_value -}}</span></span>
             </legend>
             {% render 'product-variant-options',
@@ -73,7 +78,7 @@
         {%- elsif picker_type == 'button' -%}
           <fieldset class="js product-form__input product-form__input--pill">
             <legend class="variant-picker-step__header form__label">
-              <span class="variant-picker-step__number" aria-hidden="true">{{ step_number }}</span>
+              <span class="variant-picker-step__number" aria-hidden="true">{{ display_step }}</span>
               <span class="variant-picker-step__title">{{ step_title }}</span>
             </legend>
             <div class="variant-picker-step__options">
@@ -92,7 +97,7 @@
         {%- else -%}
           <div class="product-form__input product-form__input--dropdown">
             <div class="variant-picker-step__header form__label">
-              <span class="variant-picker-step__number" aria-hidden="true">{{ step_number }}</span>
+              <span class="variant-picker-step__number" aria-hidden="true">{{ display_step }}</span>
               <span class="variant-picker-step__title">{{ option.name }}</span>
             </div>
             <div class="select">
@@ -126,10 +131,11 @@
       </div>
       {%- if option.name == 'Select Your Size' and show_logo_option -%}
         {%- assign step_number = step_number | plus: 1 -%}
-        <div class="variant-picker-step variant-picker-step--{{ step_number }}">
+        {%- assign display_step = step_number | plus: step_offset -%}
+        <div class="variant-picker-step variant-picker-step--{{ display_step }}">
           <fieldset class="product-form__input product-form__input--pill product-form__logo-option">
             <legend class="variant-picker-step__header form__label">
-              <span class="variant-picker-step__number" aria-hidden="true">{{ step_number }}</span>
+              <span class="variant-picker-step__number" aria-hidden="true">{{ display_step }}</span>
               <span class="variant-picker-step__title">Choose Blank or With Logo</span>
             </legend>
             <div class="logo-option-radios">
