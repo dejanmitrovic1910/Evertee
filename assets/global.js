@@ -1162,6 +1162,34 @@ document.addEventListener('click', (e) => {
   other.dispatchEvent(new Event('change', { bubbles: true }));
 });
 
+// Premium separate option: one click on the Premium switch toggles Standard/Premium.
+document.addEventListener('click', (e) => {
+  if (!e.isTrusted) return;
+  const toggle = e.target.closest('[data-premium-separate-toggle]');
+  if (!toggle || !toggle.closest('variant-selects')) return;
+  e.preventDefault();
+  const inputOff = toggle.querySelector('[data-separate-premium="off"]');
+  const inputOn = toggle.querySelector('[data-separate-premium="on"]');
+  if (!inputOff || !inputOn) return;
+  const other = inputOff.checked ? inputOn : inputOff;
+  other.checked = true;
+  other.dispatchEvent(new Event('change', { bubbles: true }));
+});
+
+// Premium badge before CTA: one click on the toggle flips Standard/Premium.
+document.addEventListener('click', (e) => {
+  if (!e.isTrusted) return;
+  const toggle = e.target.closest('[data-premium-badge-cta-toggle]');
+  if (!toggle || !toggle.closest('[data-premium-badge-cta]')) return;
+  e.preventDefault();
+  const inputOff = toggle.querySelector('[data-premium-cta="off"]');
+  const inputOn = toggle.querySelector('[data-premium-cta="on"]');
+  if (!inputOff || !inputOn) return;
+  const other = inputOff.checked ? inputOn : inputOff;
+  other.checked = true;
+  other.dispatchEvent(new Event('change', { bubbles: true }));
+});
+
 class ProductRecommendations extends HTMLElement {
   observer = undefined;
 

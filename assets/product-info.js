@@ -165,6 +165,10 @@ if (!customElements.get('product-info')) {
           '[data-premium-upgrade-hidden] input[type="radio"]:checked'
         );
         const premiumUpgradeValue = premiumChecked?.value;
+        const separateOptionChecked = this.variantSelectors?.querySelector(
+          '[data-premium-separate-hidden] input[type="radio"]:checked'
+        );
+        const separateOptionValue = separateOptionChecked?.value;
 
         const postCallbacks = [...(this.postProcessHtmlCallbacks || [])];
         if (currentLogoValue) {
@@ -181,6 +185,28 @@ if (!customElements.get('product-info')) {
               `[data-premium-upgrade-hidden] input[type="radio"][value="${CSS.escape(premiumUpgradeValue)}"]`
             );
             if (radio) radio.checked = true;
+          });
+        }
+        if (separateOptionValue) {
+          postCallbacks.push((newNode) => {
+            const radio = newNode?.querySelector(
+              `[data-premium-separate-hidden] input[type="radio"][value="${CSS.escape(separateOptionValue)}"]`
+            );
+            if (!radio) return;
+            radio.checked = true;
+            const container = newNode?.querySelector('[data-premium-separate]');
+            if (!container) return;
+            const v = separateOptionValue.toLowerCase();
+            const isLogo = v.indexOf('logo') !== -1;
+            const isPremium = v.indexOf('premium') !== -1;
+            const logoInput = container.querySelector(
+              `input[data-separate-logo="${isLogo ? 'with-logo' : 'blank'}"]`
+            );
+            const premiumInput = container.querySelector(
+              `input[data-separate-premium="${isPremium ? 'on' : 'off'}"]`
+            );
+            if (logoInput) logoInput.checked = true;
+            if (premiumInput) premiumInput.checked = true;
           });
         }
         HTMLUpdateUtility.viewTransition(

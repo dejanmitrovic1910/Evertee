@@ -34,9 +34,7 @@
           "type": "variant_picker",
           "settings": {
             "picker_type": "button",
-            "swatch_shape": "circle",
-            "premium_upgrade_description": "Upgrade to ultra-durable 220gsm heavyweight fabric for +£2 per tee",
-            "premium_upgrade_cost": "+£2 per tee"
+            "swatch_shape": "circle"
           }
         },
         "fly_bundles_quantity_breaks_app_block_volume_QMNmFR": {

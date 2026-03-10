@@ -1,7 +1,7 @@
 {% comment %}
   Renders the "Premium Heavy Tee Upgrade" variant option as a card with image, description, cost and yes/no toggle.
-  Toggle right = Yes, toggle left = No.
-  Accepts: option, block, product_form_id, section_id, step_number, visual_only (optional), variant (optional)
+  Toggle right = Yes, toggle left = No. Uses section settings (premium_badge_*) for content.
+  Accepts: option, section, product_form_id, section_id, step_number, visual_only (optional), variant (optional)
   When visual_only is true, renders display-only copy that syncs with the hidden form inputs in the variant picker.
   variant: when set, which option is checked is derived from this variant (like other option pickers); otherwise uses option.selected_value.
 {% endcomment %}
@@ -35,11 +35,18 @@
     assign yes_id = option.values[1].id | default: option.values[0].id
     assign yes_url = option.values[1].product_url | default: option.values[0].product_url
   endif
-  assign upgrade_image = block.settings.premium_upgrade_image
-  assign upgrade_description = block.settings.premium_upgrade_description | default: 'Upgrade to ultra-durable 220gsm heavyweight fabric for +£2 per tee'
-  assign upgrade_cost_raw = block.settings.premium_upgrade_cost | default: '+£2 per tee'
-  assign upgrade_cost_parts = upgrade_cost_raw | split: ' per '
-  assign upgrade_price = upgrade_cost_parts[0] | strip | default: '+£2'
+  assign upgrade_image = nil
+  assign upgrade_description = 'Upgrade to ultra-durable 220gsm heavyweight fabric for +£2 per tee'
+  assign upgrade_price = '+£2'
+  if section != blank
+    assign upgrade_image = section.settings.premium_badge_image
+    if section.settings.premium_badge_description != blank
+      assign upgrade_description = section.settings.premium_badge_description
+    endif
+    assign upgrade_cost_raw = section.settings.premium_badge_cost | default: '+£2 per tee'
+    assign upgrade_cost_parts = upgrade_cost_raw | split: ' per '
+    assign upgrade_price = upgrade_cost_parts[0] | strip | default: '+£2'
+  endif
   assign visual_only = visual_only | default: false
   assign checked_no = false
   assign checked_yes = false

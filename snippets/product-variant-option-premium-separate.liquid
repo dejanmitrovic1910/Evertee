@@ -1,0 +1,220 @@
+{% comment %}
+  For products with tag "separate_option": renders "Premium Heavy Tee Upgrade" (4 values:
+  Standard, Premium, Standard with logo, Premium with logo) as two separate controls:
+  - "Choose Blank or With Logo" (Blank | With logo)
+  - "Premium" switch badge
+  Syncs visible controls with 4 hidden radios so the correct variant is selected.
+  Accepts: option (4 values), product_form_id, section_id, step_number, variant (optional)
+{% endcomment %}
+{%- liquid
+  assign input_name = option.name | append: '-' | append: option.position
+  assign opt_key = 'option' | append: option.position
+  assign val_standard = nil
+  assign val_premium = nil
+  assign val_standard_logo = nil
+  assign val_premium_logo = nil
+  for value in option.values
+    assign v_down = value | downcase | strip
+    if v_down == 'standard'
+      assign val_standard = value
+    elsif v_down == 'premium'
+      assign val_premium = value
+    elsif v_down contains 'logo' and v_down contains 'standard'
+      assign val_standard_logo = value
+    elsif v_down contains 'logo' and v_down contains 'premium'
+      assign val_premium_logo = value
+    endif
+  endfor
+  comment
+    Fallback: match by position or partial string
+  endcomment
+  if val_standard == nil
+    for value in option.values
+      assign v_down = value | downcase | strip
+      unless v_down contains 'logo'
+        if v_down contains 'standard'
+          assign val_standard = value
+          break
+        endif
+      endunless
+    endfor
+  endif
+  if val_premium == nil
+    for value in option.values
+      assign v_down = value | downcase | strip
+      unless v_down contains 'logo'
+        if v_down contains 'premium'
+          assign val_premium = value
+          break
+        endif
+      endunless
+    endfor
+  endif
+  if val_standard_logo == nil
+    for value in option.values
+      assign v_down = value | downcase | strip
+      if v_down contains 'logo' and v_down contains 'standard'
+        assign val_standard_logo = value
+        break
+      endif
+    endfor
+  endif
+  if val_premium_logo == nil
+    for value in option.values
+      assign v_down = value | downcase | strip
+      if v_down contains 'logo' and v_down contains 'premium'
+        assign val_premium_logo = value
+        break
+      endif
+    endfor
+  endif
+  assign current_val = nil
+  if variant != blank
+    assign current_val = variant[opt_key] | strip
+  else
+    assign current_val = option.selected_value | strip
+  endif
+  assign current_val_down = current_val | downcase
+  assign val_standard_down = val_standard | downcase | strip
+  assign val_premium_down = val_premium | downcase | strip
+  assign val_standard_logo_down = val_standard_logo | downcase | strip
+  assign val_premium_logo_down = val_premium_logo | downcase | strip
+  assign checked_standard = false
+  assign checked_premium = false
+  assign checked_standard_logo = false
+  assign checked_premium_logo = false
+  if val_standard != nil and current_val_down == val_standard_down
+    assign checked_standard = true
+  elsif val_premium != nil and current_val_down == val_premium_down
+    assign checked_premium = true
+  elsif val_standard_logo != nil and current_val_down == val_standard_logo_down
+    assign checked_standard_logo = true
+  elsif val_premium_logo != nil and current_val_down == val_premium_logo_down
+    assign checked_premium_logo = true
+  else
+    assign checked_standard = true
+  endif
+-%}
+<div class="variant-picker-step__premium-separate" data-premium-separate data-section-id="{{ section_id }}" data-option-position="{{ option.position }}"
+  data-value-standard="{{ val_standard | escape }}"
+  data-value-premium="{{ val_premium | escape }}"
+  data-value-standard-logo="{{ val_standard_logo | escape }}"
+  data-value-premium-logo="{{ val_premium_logo | escape }}">
+  {%- comment -%} Hidden radios: one per variant value, so selectedOptionValues and form submit use the correct variant {% endcomment -%}
+  <fieldset class="visually-hidden" aria-hidden="true" data-premium-separate-hidden>
+    {%- if val_standard != nil -%}
+      <input type="radio" name="{{ input_name | escape }}" value="{{ val_standard | escape }}" form="{{ product_form_id }}"
+        data-option-value-id="{{ val_standard.id }}" data-product-url="{{ val_standard.product_url }}"
+        id="premium-separate-hidden-standard-{{ section_id }}-{{ option.position }}" {% if checked_standard %}checked{% endif %}>
+    {%- endif -%}
+    {%- if val_premium != nil -%}
+      <input type="radio" name="{{ input_name | escape }}" value="{{ val_premium | escape }}" form="{{ product_form_id }}"
+        data-option-value-id="{{ val_premium.id }}" data-product-url="{{ val_premium.product_url }}"
+        id="premium-separate-hidden-premium-{{ section_id }}-{{ option.position }}" {% if checked_premium %}checked{% endif %}>
+    {%- endif -%}
+    {%- if val_standard_logo != nil -%}
+      <input type="radio" name="{{ input_name | escape }}" value="{{ val_standard_logo | escape }}" form="{{ product_form_id }}"
+        data-option-value-id="{{ val_standard_logo.id }}" data-product-url="{{ val_standard_logo.product_url }}"
+        id="premium-separate-hidden-standard-logo-{{ section_id }}-{{ option.position }}" {% if checked_standard_logo %}checked{% endif %}>
+    {%- endif -%}
+    {%- if val_premium_logo != nil -%}
+      <input type="radio" name="{{ input_name | escape }}" value="{{ val_premium_logo | escape }}" form="{{ product_form_id }}"
+        data-option-value-id="{{ val_premium_logo.id }}" data-product-url="{{ val_premium_logo.product_url }}"
+        id="premium-separate-hidden-premium-logo-{{ section_id }}-{{ option.position }}" {% if checked_premium_logo %}checked{% endif %}>
+    {%- endif -%}
+  </fieldset>
+
+  {%- comment -%} Visible: Choose Blank or With Logo (div not fieldset so these are not included in selectedOptionValues) {% endcomment -%}
+  <div class="variant-picker-step__header form__label">
+    <span class="variant-picker-step__number" aria-hidden="true">{{ step_number }}</span>
+    <span class="variant-picker-step__title">Choose Blank or With Logo</span>
+  </div>
+  <div class="js product-form__input product-form__input--pill product-form__logo-option" role="group" aria-label="Blank or With Logo">
+    <div class="logo-option-radios" data-premium-separate-logo>
+      <label class="logo-option-radio">
+        <input type="radio" name="separate-logo-{{ section_id }}-{{ option.position }}" value="blank" data-separate-logo="blank" {% if checked_standard or checked_premium %}checked{% endif %}>
+        <span class="logo-option-radio__text">Blank</span>
+      </label>
+      <label class="logo-option-radio">
+        <input type="radio" name="separate-logo-{{ section_id }}-{{ option.position }}" value="with-logo" data-separate-logo="with-logo" {% if checked_standard_logo or checked_premium_logo %}checked{% endif %}>
+        <span class="logo-option-radio__text">With Logo</span>
+      </label>
+    </div>
+  </div>
+
+  {%- comment -%} Visible: Premium switch badge (div not fieldset so not included in selectedOptionValues) {% endcomment -%}
+  <div class="variant-picker-step__premium-badge-wrap">
+    <span class="variant-picker-step__header form__label variant-picker-step__premium-badge-label">Premium</span>
+    <div class="product-form__input premium-upgrade-card__toggle-wrap premium-separate-toggle" role="group" aria-label="Premium" data-premium-separate-premium>
+      <span class="premium-upgrade-toggle" data-premium-separate-toggle>
+        <input type="radio" id="premium-separate-off-{{ section_id }}-{{ option.position }}" name="separate-premium-{{ section_id }}-{{ option.position }}" value="off" data-separate-premium="off" {% if checked_standard or checked_standard_logo %}checked{% endif %} class="premium-upgrade-toggle__input premium-upgrade-toggle__input--no">
+        <label for="premium-separate-off-{{ section_id }}-{{ option.position }}" class="premium-upgrade-toggle__label premium-upgrade-toggle__label--no"><span class="visually-hidden">Standard</span></label>
+        <input type="radio" id="premium-separate-on-{{ section_id }}-{{ option.position }}" name="separate-premium-{{ section_id }}-{{ option.position }}" value="on" data-separate-premium="on" {% if checked_premium or checked_premium_logo %}checked{% endif %} class="premium-upgrade-toggle__input premium-upgrade-toggle__input--yes">
+        <label for="premium-separate-on-{{ section_id }}-{{ option.position }}" class="premium-upgrade-toggle__label premium-upgrade-toggle__label--yes"><span class="visually-hidden">Premium</span></label>
+        <span class="premium-upgrade-toggle__slider" aria-hidden="true"></span>
+      </span>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  var container = document.querySelector('[data-premium-separate][data-section-id="{{ section_id }}"][data-option-position="{{ option.position }}"]');
+  if (!container || container.dataset.initialized) return;
+  container.dataset.initialized = 'true';
+  var sectionId = container.dataset.sectionId;
+  var optionPos = container.dataset.optionPosition;
+  var valueStandard = container.dataset.valueStandard || '';
+  var valuePremium = container.dataset.valuePremium || '';
+  var valueStandardLogo = container.dataset.valueStandardLogo || '';
+  var valuePremiumLogo = container.dataset.valuePremiumLogo || '';
+  var hiddenFieldset = container.querySelector('[data-premium-separate-hidden]');
+  var hiddenRadios = hiddenFieldset ? Array.prototype.slice.call(hiddenFieldset.querySelectorAll('input[type="radio"]')) : [];
+  var logoInputs = container.querySelectorAll('input[data-separate-logo]');
+  var premiumInputs = container.querySelectorAll('input[data-separate-premium]');
+
+  function getHiddenRadioByValue(val) {
+    var valLower = (val || '').toLowerCase();
+    for (var i = 0; i < hiddenRadios.length; i++) {
+      if ((hiddenRadios[i].value || '').toLowerCase() === valLower) return hiddenRadios[i];
+    }
+    return null;
+  }
+
+  function syncToHidden() {
+    var logoChecked = container.querySelector('[data-separate-logo]:checked');
+    var premiumChecked = container.querySelector('[data-separate-premium]:checked');
+    var isLogo = logoChecked && logoChecked.dataset.separateLogo === 'with-logo';
+    var isPremium = premiumChecked && premiumChecked.dataset.separatePremium === 'on';
+    var targetValue = valueStandard;
+    if (isLogo && isPremium) targetValue = valuePremiumLogo;
+    else if (isLogo) targetValue = valueStandardLogo;
+    else if (isPremium) targetValue = valuePremium;
+    var radio = getHiddenRadioByValue(targetValue);
+    if (radio && !radio.checked) {
+      radio.checked = true;
+      radio.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+  }
+
+  function initFromHidden() {
+    var checkedHidden = hiddenFieldset ? hiddenFieldset.querySelector('input:checked') : null;
+    if (!checkedHidden) return;
+    var v = (checkedHidden.value || '').toLowerCase();
+    var isLogo = v.indexOf('logo') !== -1;
+    var isPremium = v.indexOf('premium') !== -1;
+    var logoInput = container.querySelector('[data-separate-logo="' + (isLogo ? 'with-logo' : 'blank') + '"]');
+    var premiumInput = container.querySelector('[data-separate-premium="' + (isPremium ? 'on' : 'off') + '"]');
+    if (logoInput) logoInput.checked = true;
+    if (premiumInput) premiumInput.checked = true;
+  }
+
+  logoInputs.forEach(function(r) {
+    r.addEventListener('change', function() { syncToHidden(); });
+  });
+  premiumInputs.forEach(function(r) {
+    r.addEventListener('change', function() { syncToHidden(); });
+  });
+  initFromHidden();
+})();
+</script>

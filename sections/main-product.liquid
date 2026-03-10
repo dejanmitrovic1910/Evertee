@@ -516,7 +516,7 @@
                 %}
 
               {%- when 'variant_picker' -%}
-                {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id, initial_variant: initial_variant, variant_picker_step_offset: variant_picker_step_offset %}
+                {% render 'product-variant-picker', product: product, block: block, section: section, product_form_id: product_form_id, initial_variant: initial_variant, variant_picker_step_offset: variant_picker_step_offset %}
               {%- when 'buy_buttons' -%}
                 {%- render 'buy-buttons',
                   block: block,
@@ -946,27 +946,6 @@
             }
           ],
           "default": "circle"
-        },
-        {
-          "type": "header",
-          "content": "Premium Heavy Tee Upgrade"
-        },
-        {
-          "type": "image_picker",
-          "id": "premium_upgrade_image",
-          "label": "Upgrade icon (for Premium Heavy Tee Upgrade option)"
-        },
-        {
-          "type": "textarea",
-          "id": "premium_upgrade_description",
-          "label": "Upgrade description",
-          "default": "Upgrade to ultra-durable 220gsm heavyweight fabric for +£2 per tee"
-        },
-        {
-          "type": "text",
-          "id": "premium_upgrade_cost",
-          "label": "Cost label (e.g. +£2 per tee)",
-          "default": "+£2 per tee"
         }
       ]
     },
@@ -2185,6 +2164,27 @@
       "id": "evertee_pill_selected_bg",
       "label": "Pill selected background",
       "default": "#2d2d2d"
+    },
+    {
+      "type": "header",
+      "content": "Premium badge (before Add to cart)"
+    },
+    {
+      "type": "image_picker",
+      "id": "premium_badge_image",
+      "label": "Premium badge icon"
+    },
+    {
+      "type": "textarea",
+      "id": "premium_badge_description",
+      "label": "Premium badge description",
+      "default": "Upgrade to ultra-durable 220gsm heavyweight fabric for +£2 per tee"
+    },
+    {
+      "type": "text",
+      "id": "premium_badge_cost",
+      "label": "Premium badge cost (e.g. +£2 per tee)",
+      "default": "+£2 per tee"
     },
     {
       "type": "header",

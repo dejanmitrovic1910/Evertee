@@ -14,6 +14,10 @@
   if product.tags contains 'with_logo'
     assign show_logo_option = true
   endif
+  assign use_separate_premium_option = false
+  if product.tags contains 'separate_option'
+    assign use_separate_premium_option = true
+  endif
 -%}
 {%- liquid
   assign step_offset = variant_picker_step_offset | default: 1
@@ -49,12 +53,20 @@
         endif
         assign display_step = step_number | plus: step_offset
       -%}
-      <div class="variant-picker-step variant-picker-step--{{ display_step }}{% if option.name == 'Premium Heavy Tee Upgrade' %} variant-picker-step-no--border{% endif %}{%  if picker_type == 'swatch' %} variant-picker-step--swatch{% endif %}">
-        {%- if option.name == 'Premium Heavy Tee Upgrade' -%}
+      <div class="variant-picker-step variant-picker-step--{{ display_step }}{%  if picker_type == 'swatch' %} variant-picker-step--swatch{% endif %}">
+        {%- if option.name == 'Premium Heavy Tee Upgrade' and use_separate_premium_option and option.values.size == 4 -%}
+          {% render 'product-variant-option-premium-separate',
+            option: option,
+            product_form_id: product_form_id,
+            section_id: section.id,
+            step_number: display_step,
+            variant: initial_variant
+          %}
+        {%- elsif option.name == 'Premium Heavy Tee Upgrade' -%}
           <div class="premium-upgrade-form-inputs visually-hidden" aria-hidden="true" data-premium-upgrade-hidden data-section-id="{{ section.id }}" data-option-position="{{ option.position }}">
             {% render 'product-variant-option-premium-upgrade',
               option: option,
-              block: block,
+              section: section,
               product_form_id: product_form_id,
               section_id: section.id,
               step_number: display_step,

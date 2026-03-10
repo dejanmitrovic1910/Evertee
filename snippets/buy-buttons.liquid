@@ -81,11 +81,24 @@
               {%- break -%}
             {%- endif -%}
           {%- endfor -%}
-          {%- if variant_picker_block != blank and premium_option != blank -%}
+          {%- assign show_premium_visual = true -%}
+          {%- if product.tags contains 'separate_option' -%}
+            {%- assign show_premium_visual = false -%}
+          {%- endif -%}
+          {%- if product.tags contains 'separate_option' and premium_option != blank and premium_option.values.size == 4 -%}
+            <div class="premium-badge-cta-wrapper">
+              {% render 'product-variant-option-premium-separate-cta',
+                product: product,
+                current_variant: current_variant,
+                section_id: section_id,
+                section: section
+              %}
+            </div>
+          {%- elsif variant_picker_block != blank and premium_option != blank and show_premium_visual -%}
             <div class="premium-upgrade-before-cta" data-premium-upgrade-visual-wrapper>
               {% render 'product-variant-option-premium-upgrade',
                 option: premium_option,
-                block: variant_picker_block,
+                section: section,
                 product_form_id: product_form_id,
                 section_id: section_id,
                 step_number: 0,
