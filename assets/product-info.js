@@ -197,7 +197,7 @@ if (!customElements.get('product-info')) {
             const container = newNode?.querySelector('[data-premium-separate]');
             if (!container) return;
             const v = separateOptionValue.toLowerCase();
-            const isLogo = v.indexOf('logo') !== -1;
+            const isLogo = v.indexOf('with logo') !== -1;
             const isPremium = v.indexOf('premium') !== -1;
             const logoInput = container.querySelector(
               `input[data-separate-logo="${isLogo ? 'with-logo' : 'blank'}"]`

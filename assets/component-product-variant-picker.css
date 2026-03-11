@@ -207,6 +207,33 @@ variant-selects {
   width: calc(100% + 1.4rem);
 }
 
+/* Pill steps: header and confirmation on same row to save space */
+.variant-picker-evertee .product-form__input--pill:has(.variant-picker-step__confirmation) {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.8rem 1.2rem;
+  align-items: start;
+}
+
+.variant-picker-evertee .product-form__input--pill:has(.variant-picker-step__confirmation) .variant-picker-step__header {
+  grid-column: 1;
+  grid-row: 1;
+  margin-bottom: 0;
+}
+
+.variant-picker-evertee .product-form__input--pill:has(.variant-picker-step__confirmation) .variant-picker-step__confirmation {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0;
+  align-self: center;
+  display: none;
+}
+
+.variant-picker-evertee .product-form__input--pill:has(.variant-picker-step__confirmation) .variant-picker-step__options {
+  grid-column: 1 / -1;
+  grid-row: 2;
+}
+
 .variant-picker-evertee .variant-picker-step__confirmation {
   display: flex;
   align-items: center;
@@ -356,171 +383,9 @@ variant-selects {
   display: none;
 }
 
-/* Premium badge before Add to cart (separate_option products) – prominent visibility */
+/* Premium badge before Add to cart (separate_option) – uses same visual as .premium-upgrade-card */
 .premium-badge-cta-wrapper {
-  margin-bottom: 1.6rem;
-}
-
-.premium-badge-cta {
-  --premium-badge-cta-bg: #e8f0ee;
-  --premium-badge-cta-border: rgb(var(--evertee-accent));
-  --premium-badge-cta-accent: rgb(var(--evertee-accent));
-}
-
-.premium-badge-cta__card {
-  display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 1.2rem 1.6rem;
-  padding: 1.6rem 2rem;
-  background-color: var(--premium-badge-cta-bg);
-  border: 0.25rem solid var(--premium-badge-cta-border);
-  border-radius: 1.4rem;
-  box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.06);
-}
-
-.premium-badge-cta__icon {
-  flex-shrink: 0;
-  width: 5rem;
-  height: 5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.premium-badge-cta__icon img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-.premium-badge-cta__content {
-  flex: 1;
-  min-width: 0;
-}
-
-.premium-badge-cta__label {
-  font-size: 2rem;
-  font-weight: 700;
-  color: rgb(var(--color-foreground));
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  display: block;
-  margin-bottom: 0.3rem;
-}
-
-.premium-badge-cta__description {
-  font-size: 1.4rem;
-  line-height: 1.4;
-  color: rgba(var(--color-foreground), 0.85);
-  margin: 0;
-}
-
-.premium-badge-cta__cost {
-  font-size: 1.4rem;
-  flex-shrink: 0;
-}
-
-.premium-badge-cta__cost-price {
-  color: #000;
-  font-weight: 500;
-}
-
-.premium-badge-cta__cost-label {
-  color: var(--premium-badge-cta-accent);
-}
-
-.premium-badge-cta__toggle-wrap {
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  margin: 0;
-  padding: 0;
-  border: none;
-}
-
-.premium-badge-cta__labels {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: rgba(var(--color-foreground), 0.85);
-}
-
-.premium-badge-cta__labels .premium-badge-cta__option {
-  min-width: 4.5rem;
-}
-
-.premium-badge-cta__toggle {
-  display: inline-flex;
-  align-items: center;
-  position: relative;
-  width: 7.2rem;
-  height: 3.6rem;
-  flex-shrink: 0;
-}
-
-.premium-badge-cta__toggle .premium-upgrade-toggle__input {
-  position: absolute;
-  clip: rect(0, 0, 0, 0);
-  overflow: hidden;
-  width: 1px;
-  height: 1px;
-}
-
-.premium-badge-cta__toggle .premium-upgrade-toggle__label {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 50%;
-  cursor: pointer;
-  z-index: 1;
-}
-
-.premium-badge-cta__toggle .premium-upgrade-toggle__label--no {
-  left: 0;
-}
-
-.premium-badge-cta__toggle .premium-upgrade-toggle__label--yes {
-  right: 0;
-}
-
-.premium-badge-cta__toggle .premium-upgrade-toggle__slider {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(var(--color-foreground), 0.12);
-  border-radius: 2.4rem;
-  pointer-events: none;
-  transition: background-color 0.2s ease;
-}
-
-.premium-badge-cta__toggle .premium-upgrade-toggle__slider::after {
-  content: '';
-  position: absolute;
-  top: 0.4rem;
-  left: 0.4rem;
-  width: 2.8rem;
-  height: 2.8rem;
-  border-radius: 50%;
-  background-color: rgb(var(--color-background));
-  box-shadow: 0 0.15rem 0.4rem rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease;
-}
-
-.premium-badge-cta__toggle .premium-upgrade-toggle__input--yes:checked ~ .premium-upgrade-toggle__slider {
-  background-color: var(--premium-badge-cta-accent);
-}
-
-.premium-badge-cta__toggle .premium-upgrade-toggle__input--yes:checked ~ .premium-upgrade-toggle__slider::after {
-  transform: translateX(3.6rem);
-}
-
-.premium-badge-cta__toggle .premium-upgrade-toggle__input--no:checked ~ .premium-upgrade-toggle__slider::after {
-  transform: translateX(0);
+  margin-bottom: 1rem;
 }
 
 /* Premium Heavy Tee Upgrade card */
