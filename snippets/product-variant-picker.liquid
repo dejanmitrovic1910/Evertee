@@ -5,19 +5,44 @@
   - product: {Object} product object.
   - block: {Object} passing the block information.
   - product_form_id: {String} Id of the product form to which the variant picker is associated.
+  - variant_picker_step_offset: {Number} Optional. 0 when section has fly_bundles_quantity_breaks app (steps 0,1,2...), 1 otherwise (steps 1,2,3...). Default 1.
   Usage:
-  {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+  {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id, variant_picker_step_offset: variant_picker_step_offset %}
 {% endcomment %}
+{%- liquid
+  assign show_logo_option = false
+  if product.tags contains 'with_logo'
+    assign show_logo_option = true
+  endif
+  assign use_separate_premium_option = false
+  if product.tags contains 'separate_option'
+    assign use_separate_premium_option = true
+  endif
+-%}
+{%- liquid
+  assign step_offset = variant_picker_step_offset | default: 1
+-%}
 {%- unless product.has_only_default_variant -%}
   <variant-selects
     id="variant-selects-{{ section.id }}"
     data-section="{{ section.id }}"
+    class="variant-picker-evertee"
+    {% if show_logo_option %}data-with-logo="true"{% endif %}
     {{ block.shopify_attributes }}
   >
+    {%- assign step_number = 0 -%}
     {%- for option in product.options_with_values -%}
       {%- liquid
+        assign name = option.name | downcase
+        if name != 'colour' and name != 'color'
+          assign step_number = step_number | plus: 1
+        endif
         assign swatch_count = option.values | map: 'swatch' | compact | size
         assign picker_type = block.settings.picker_type
+        assign step_title = option.name
+        if option.name == 'Size'
+          assign step_title = 'Select Your Size'
+        endif
 
         if swatch_count > 0 and block.settings.swatch_shape != 'none'
           if block.settings.picker_type == 'dropdown'
@@ -26,69 +51,133 @@
             assign picker_type = 'swatch'
           endif
         endif
+        assign display_step = step_number | plus: step_offset
       -%}
-      {%- if picker_type == 'swatch' -%}
-        <fieldset class="js product-form__input product-form__input--swatch">
-          <legend class="form__label">
-            {{ option.name }}:
-            <span data-selected-value>
-              {{- option.selected_value -}}
-            </span>
-          </legend>
-          {% render 'product-variant-options',
-            product: product,
+      <div class="variant-picker-step variant-picker-step--{{ display_step }}{%  if picker_type == 'swatch' %} variant-picker-step--swatch{% endif %}">
+        {%- if option.name == 'Premium Heavy Tee Upgrade' and use_separate_premium_option and option.values.size == 4 -%}
+          {% render 'product-variant-option-premium-separate',
             option: option,
-            block: block,
-            picker_type: picker_type
+            product_form_id: product_form_id,
+            section_id: section.id,
+            step_number: display_step,
+            variant: initial_variant
           %}
-        </fieldset>
-      {%- elsif picker_type == 'button' -%}
-        <fieldset class="js product-form__input product-form__input--pill">
-          <legend class="form__label">{{ option.name }}</legend>
-          {% render 'product-variant-options',
-            product: product,
-            option: option,
-            block: block,
-            picker_type: picker_type
-          %}
-        </fieldset>
-      {%- else -%}
-        <div class="product-form__input product-form__input--dropdown">
-          <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
-            {{ option.name }}
-          </label>
-          <div class="select">
-            {%- if picker_type == 'swatch_dropdown' -%}
-              <span
-                data-selected-value
-                class="dropdown-swatch"
-              >
-                {% render 'swatch', swatch: option.selected_value.swatch, shape: block.settings.swatch_shape %}
-              </span>
-            {%- endif -%}
-            <select
-              id="Option-{{ section.id }}-{{ forloop.index0 }}"
-              class="select__select"
-              name="options[{{ option.name | escape }}]"
-              form="{{ product_form_id }}"
-            >
+        {%- elsif option.name == 'Premium Heavy Tee Upgrade' -%}
+          <div class="premium-upgrade-form-inputs visually-hidden" aria-hidden="true" data-premium-upgrade-hidden data-section-id="{{ section.id }}" data-option-position="{{ option.position }}">
+            {% render 'product-variant-option-premium-upgrade',
+              option: option,
+              section: section,
+              product_form_id: product_form_id,
+              section_id: section.id,
+              step_number: display_step,
+              variant: initial_variant,
+              visual_only: false
+            %}
+          </div>
+        {%- elsif picker_type == 'swatch' -%}
+          <fieldset class="js product-form__input product-form__input--swatch">
+            <legend class="variant-picker-step__header form__label">
+              {% comment %} <span class="variant-picker-step__number" aria-hidden="true">{{ display_step }}</span> {% endcomment %}
+              <span class="variant-picker-step__title">{{ step_title }}: <span data-selected-value>{{- option.selected_value -}}</span></span>
+            </legend>
+            {% render 'product-variant-options',
+              product: product,
+              option: option,
+              block: block,
+              picker_type: picker_type
+            %}
+          </fieldset>
+        {%- elsif picker_type == 'button' -%}
+          <fieldset class="js product-form__input product-form__input--pill">
+            <legend class="variant-picker-step__header form__label">
+              {% comment %} <span class="variant-picker-step__number" aria-hidden="true">{{ display_step }}</span> {% endcomment %}
+              <span class="variant-picker-step__title">{{ step_title }}</span>
+            </legend>
+            <div class="variant-picker-step__options">
               {% render 'product-variant-options',
                 product: product,
                 option: option,
                 block: block,
                 picker_type: picker_type
               %}
-            </select>
-            <span class="svg-wrapper">
-              {{- 'icon-caret.svg' | inline_asset_content -}}
-            </span>
+            </div>
+            <p class="variant-picker-step__confirmation">
+              <span class="variant-picker-step__check" aria-hidden="true">✓</span>
+              <span data-selected-value>{{ option.selected_value }}</span> selected
+            </p>
+          </fieldset>
+        {%- else -%}
+          <div class="product-form__input product-form__input--dropdown">
+            <div class="variant-picker-step__header form__label">
+              {% comment %} <span class="variant-picker-step__number" aria-hidden="true">{{ display_step }}</span> {% endcomment %}
+              <span class="variant-picker-step__title">{{ option.name }}</span>
+            </div>
+            <div class="select">
+              {%- if picker_type == 'swatch_dropdown' -%}
+                <span
+                  data-selected-value
+                  class="dropdown-swatch"
+                >
+                  {% render 'swatch', swatch: option.selected_value.swatch, shape: block.settings.swatch_shape %}
+                </span>
+              {%- endif -%}
+              <select
+                id="Option-{{ section.id }}-{{ forloop.index0 }}"
+                class="select__select"
+                name="options[{{ option.name | escape }}]"
+                form="{{ product_form_id }}"
+              >
+                {% render 'product-variant-options',
+                  product: product,
+                  option: option,
+                  block: block,
+                  picker_type: picker_type
+                %}
+              </select>
+              <span class="svg-wrapper">
+                {{- 'icon-caret.svg' | inline_asset_content -}}
+              </span>
+            </div>
           </div>
+        {%- endif -%}
+      </div>
+      {%- if option.name == 'Select Your Size' and show_logo_option -%}
+        {%- assign step_number = step_number | plus: 1 -%}
+        {%- assign display_step = step_number | plus: step_offset -%}
+        <div class="variant-picker-step variant-picker-step--{{ display_step }}">
+          <fieldset class="product-form__input product-form__input--pill product-form__logo-option">
+            <legend class="variant-picker-step__header form__label">
+              {% comment %} <span class="variant-picker-step__number" aria-hidden="true">{{ display_step }}</span> {% endcomment %}
+              <span class="variant-picker-step__title">Choose Blank or With Logo</span>
+            </legend>
+            <div class="logo-option-radios">
+              <label class="logo-option-radio">
+                <input
+                  type="radio"
+                  name="properties[Logo]"
+                  value="Without logo"
+                  form="{{ product_form_id }}"
+                  checked
+                >
+                <span class="logo-option-radio__text">Blank</span>
+              </label>
+              <label class="logo-option-radio">
+                <input
+                  type="radio"
+                  name="properties[Logo]"
+                  value="With logo"
+                  form="{{ product_form_id }}"
+                >
+                <span class="logo-option-radio__text">With Logo</span>
+              </label>
+            </div>
+          </fieldset>
         </div>
       {%- endif -%}
     {%- endfor -%}
 
     <script type="application/json" data-selected-variant>
-      {{ product.selected_or_first_available_variant | json }}
+      {{ initial_variant | default: product.selected_or_first_available_variant | json }}
     </script>
   </variant-selects>
 {%- endunless -%}

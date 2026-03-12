@@ -1,0 +1,122 @@
+{% comment %}
+  Premium badge before Add to cart for separate_option products.
+  Uses section settings for image, description, cost (same as other premium badge). Syncs with variant picker.
+  Accepts: product, current_variant, section_id, section (for section.settings)
+{% endcomment %}
+{%- liquid
+  assign premium_option = null
+  for opt in product.options_with_values
+    if opt.name == 'Premium Heavy Tee Upgrade'
+      assign premium_option = opt
+      break
+    endif
+  endfor
+  assign opt_key = ''
+  assign is_premium = false
+  if premium_option != nil
+    assign opt_key = 'option' | append: premium_option.position
+    assign current_val = current_variant[opt_key] | downcase | strip
+    if current_val contains 'premium'
+      assign is_premium = true
+    endif
+  endif
+  assign badge_image = nil
+  assign badge_description = 'Upgrade to ultra-durable 220gsm heavyweight fabric for +£2 per tee'
+  assign badge_price = '+£2'
+  if section != blank
+    assign badge_image = section.settings.premium_badge_image
+    if section.settings.premium_badge_description != blank
+      assign badge_description = section.settings.premium_badge_description
+    endif
+    assign badge_cost_raw = section.settings.premium_badge_cost | default: '+£2 per tee'
+    assign badge_cost_parts = badge_cost_raw | split: ' per '
+    assign badge_price = badge_cost_parts[0] | strip | default: '+£2'
+  endif
+-%}
+{%- if premium_option != nil -%}
+<div class="premium-badge-cta" data-premium-badge-cta data-section-id="{{ section_id }}" data-option-position="{{ premium_option.position }}">
+  <div class="premium-upgrade-card">
+    {%- if badge_image != blank -%}
+      <div class="premium-upgrade-card__icon">
+        <img
+          src="{{ badge_image | image_url: width: 80 }}"
+          alt=""
+          width="40"
+          height="40"
+          loading="lazy"
+        >
+      </div>
+    {%- endif -%}
+    <div class="premium-upgrade-card__content">
+      <div class="premium-upgrade-card__title">{{ premium_option.name }}</div>
+      {%- if badge_description != blank -%}
+        <p class="premium-upgrade-card__description">{{ badge_description }}</p>
+      {%- endif -%}
+    </div>
+    <fieldset class="js product-form__input premium-upgrade-card__toggle-wrap" aria-label="{{ premium_option.name }}">
+      <span class="premium-upgrade-toggle" data-premium-badge-cta-toggle>
+        <input type="radio" id="premium-cta-off-{{ section_id }}" name="premium-cta-{{ section_id }}" value="off" data-premium-cta="off" {% unless is_premium %}checked{% endunless %} class="premium-upgrade-toggle__input premium-upgrade-toggle__input--no">
+        <label for="premium-cta-off-{{ section_id }}" class="premium-upgrade-toggle__label premium-upgrade-toggle__label--no"><span class="visually-hidden">Standard</span></label>
+        <input type="radio" id="premium-cta-on-{{ section_id }}" name="premium-cta-{{ section_id }}" value="on" data-premium-cta="on" {% if is_premium %}checked{% endif %} class="premium-upgrade-toggle__input premium-upgrade-toggle__input--yes">
+        <label for="premium-cta-on-{{ section_id }}" class="premium-upgrade-toggle__label premium-upgrade-toggle__label--yes"><span class="visually-hidden">Premium</span></label>
+        <span class="premium-upgrade-toggle__slider" aria-hidden="true"></span>
+      </span>
+      {%- if badge_price != blank -%}
+        <div class="premium-upgrade-card__cost"><span class="premium-upgrade-card__cost-price">{{ badge_price }}</span> <span class="premium-upgrade-card__cost-label">per tee</span></div>
+      {%- endif -%}
+    </fieldset>
+  </div>
+</div>
+<script>
+(function() {
+  var badge = document.querySelector('[data-premium-badge-cta][data-section-id="{{ section_id }}"][data-option-position="{{ premium_option.position }}"]');
+  if (!badge || badge.dataset.initialized) return;
+  badge.dataset.initialized = 'true';
+  var sectionId = badge.dataset.sectionId;
+  var optionPos = badge.dataset.optionPosition;
+
+  function getPickerContainer() {
+    return document.querySelector('variant-selects [data-premium-separate][data-section-id="' + sectionId + '"][data-option-position="' + optionPos + '"]');
+  }
+
+  function syncFromPicker() {
+    var container = getPickerContainer();
+    if (!container) return;
+    var premiumChecked = container.querySelector('[data-separate-premium]:checked');
+    if (!premiumChecked) return;
+    var isOn = premiumChecked.dataset.separatePremium === 'on';
+    var ctaOn = badge.querySelector('[data-premium-cta="on"]');
+    var ctaOff = badge.querySelector('[data-premium-cta="off"]');
+    if (ctaOn && ctaOff) {
+      if (isOn) { ctaOn.checked = true; } else { ctaOff.checked = true; }
+    }
+  }
+
+  function togglePickerPremium() {
+    var container = getPickerContainer();
+    if (!container) return;
+    var inputOff = container.querySelector('[data-separate-premium="off"]');
+    var inputOn = container.querySelector('[data-separate-premium="on"]');
+    if (!inputOff || !inputOn) return;
+    var other = inputOff.checked ? inputOn : inputOff;
+    other.checked = true;
+    other.dispatchEvent(new Event('change', { bubbles: true }));
+  }
+
+  badge.querySelectorAll('[data-premium-cta]').forEach(function(input) {
+    input.addEventListener('change', function() {
+      togglePickerPremium();
+    });
+  });
+
+  document.addEventListener('change', function(evt) {
+    if (!evt.target.matches('[data-separate-premium]')) return;
+    var container = getPickerContainer();
+    if (!container || !container.contains(evt.target)) return;
+    syncFromPicker();
+  });
+
+  syncFromPicker();
+})();
+</script>
+{%- endif -%}

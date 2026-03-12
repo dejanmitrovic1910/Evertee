@@ -1068,6 +1068,9 @@ class VariantSelects extends HTMLElement {
   connectedCallback() {
     this.addEventListener('change', (event) => {
       const target = this.getInputForEventTarget(event.target);
+      // Don't trigger variant update for line item properties (e.g. Logo with_logo option)
+      if (target.name && target.name.startsWith('properties[')) return;
+
       this.updateSelectionMetadata(event);
 
       publish(PUB_SUB_EVENTS.optionValueSelectionChange, {
@@ -1078,6 +1081,25 @@ class VariantSelects extends HTMLElement {
         },
       });
     });
+  }
+
+  syncFormVariantFromData() {
+    const script = this.querySelector('[data-selected-variant]');
+    if (!script || !script.textContent || !script.textContent.trim()) return;
+    try {
+      const variant = JSON.parse(script.textContent.trim());
+      if (variant && variant.id) {
+        const productInfo = this.closest('product-info');
+        if (productInfo) {
+          const id = String(variant.id);
+          productInfo.querySelectorAll('input[name="id"]').forEach((input) => {
+            input.value = id;
+          });
+        }
+      }
+    } catch (e) {
+      /* ignore */
+    }
   }
 
   updateSelectionMetadata({ target }) {
@@ -1124,6 +1146,49 @@ class VariantSelects extends HTMLElement {
 }
 
 customElements.define('variant-selects', VariantSelects);
+
+// Premium upgrade toggle: one click anywhere toggles No/Yes (ignore click position).
+// Only trusted user clicks inside variant-selects, so bundle/other option updates do not trigger this.
+document.addEventListener('click', (e) => {
+  if (!e.isTrusted) return;
+  const toggle = e.target.closest('[data-premium-upgrade-toggle]');
+  if (!toggle || !toggle.closest('variant-selects')) return;
+  e.preventDefault();
+  const inputNo = toggle.querySelector('.premium-upgrade-toggle__input--no');
+  const inputYes = toggle.querySelector('.premium-upgrade-toggle__input--yes');
+  if (!inputNo || !inputYes) return;
+  const other = inputNo.checked ? inputYes : inputNo;
+  other.checked = true;
+  other.dispatchEvent(new Event('change', { bubbles: true }));
+});
+
+// Premium separate option: one click on the Premium switch toggles Standard/Premium.
+document.addEventListener('click', (e) => {
+  if (!e.isTrusted) return;
+  const toggle = e.target.closest('[data-premium-separate-toggle]');
+  if (!toggle || !toggle.closest('variant-selects')) return;
+  e.preventDefault();
+  const inputOff = toggle.querySelector('[data-separate-premium="off"]');
+  const inputOn = toggle.querySelector('[data-separate-premium="on"]');
+  if (!inputOff || !inputOn) return;
+  const other = inputOff.checked ? inputOn : inputOff;
+  other.checked = true;
+  other.dispatchEvent(new Event('change', { bubbles: true }));
+});
+
+// Premium badge before CTA: one click on the toggle flips Standard/Premium.
+document.addEventListener('click', (e) => {
+  if (!e.isTrusted) return;
+  const toggle = e.target.closest('[data-premium-badge-cta-toggle]');
+  if (!toggle || !toggle.closest('[data-premium-badge-cta]')) return;
+  e.preventDefault();
+  const inputOff = toggle.querySelector('[data-premium-cta="off"]');
+  const inputOn = toggle.querySelector('[data-premium-cta="on"]');
+  if (!inputOff || !inputOn) return;
+  const other = inputOff.checked ? inputOn : inputOff;
+  other.checked = true;
+  other.dispatchEvent(new Event('change', { bubbles: true }));
+});
 
 class ProductRecommendations extends HTMLElement {
   observer = undefined;

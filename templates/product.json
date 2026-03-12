@@ -180,6 +180,14 @@
             "messagePrefix": ""
           }
         },
+        "kiwi_size_chart_recommender_kiwi_sizing_LDCjQh": {
+          "type": "shopify://apps/kiwi-size-chart-recommender/blocks/kiwiSizing/b7369922-bf15-44ce-a121-a22a8fcbc4b0",
+          "settings": {
+            "fallbackToBlockPosition": false,
+            "waitForElementSelector": "",
+            "waitForElementDelay": 5
+          }
+        },
         "selleasy_lb_upsell_widget_pal_wJKy46": {
           "type": "shopify://apps/selleasy/blocks/lb-upsell-widget-pal/790c1a03-a71f-4bc1-9869-00dad526d3c2",
           "disabled": true,
@@ -273,6 +281,7 @@
         "loox_reviews_loox_rating_UEKAV4",
         "quantity_selector",
         "klarna_on_site_messaging_app_block_MzcLFj",
+        "kiwi_size_chart_recommender_kiwi_sizing_LDCjQh",
         "selleasy_lb_upsell_widget_pal_wJKy46",
         "klarna_on_site_messaging_app_block_NUBM68",
         "description",

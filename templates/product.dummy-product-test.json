@@ -50,6 +50,14 @@
             "show_gift_card_recipient": false
           }
         },
+        "kiwi_size_chart_recommender_kiwi_sizing_tabGyR": {
+          "type": "shopify://apps/kiwi-size-chart-recommender/blocks/kiwiSizing/b7369922-bf15-44ce-a121-a22a8fcbc4b0",
+          "settings": {
+            "fallbackToBlockPosition": false,
+            "waitForElementSelector": "",
+            "waitForElementDelay": 5
+          }
+        },
         "custom_liquid_3FHwzX": {
           "type": "custom_liquid",
           "settings": {
@@ -119,6 +127,7 @@
         "variant_picker",
         "fly_bundles_quantity_breaks_app_block_volume_QMNmFR",
         "buy_buttons",
+        "kiwi_size_chart_recommender_kiwi_sizing_tabGyR",
         "custom_liquid_3FHwzX",
         "klarna_on_site_messaging_app_block_MzcLFj",
         "collapsible_tab_4YyHJK",
@@ -130,6 +139,9 @@
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
+        "evertee_accent": "#16523d",
+        "evertee_accent_light": "#86b38d",
+        "evertee_pill_selected_bg": "#2d2d2d",
         "media_size": "medium",
         "constrain_to_viewport": true,
         "media_fit": "cover",
