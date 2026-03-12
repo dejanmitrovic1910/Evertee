@@ -23,6 +23,13 @@
             "text_style": "body"
           }
         },
+        "text_TeQy6E": {
+          "type": "text",
+          "settings": {
+            "text": "<strong>🎉 All Bundles Now £10 Off 🎉</strong>",
+            "text_style": "subtitle"
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -39,7 +46,7 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
+            "show_dynamic_checkout": false,
             "show_gift_card_recipient": false
           }
         },
@@ -108,6 +115,7 @@
       "block_order": [
         "title",
         "text_HhUzij",
+        "text_TeQy6E",
         "variant_picker",
         "fly_bundles_quantity_breaks_app_block_volume_QMNmFR",
         "buy_buttons",

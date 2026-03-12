@@ -58,9 +58,15 @@
           "disabled": true,
           "settings": {}
         },
+        "text_nnQEC9": {
+          "type": "text",
+          "settings": {
+            "text": "<strong>🎉 All Bundles Now £10 Off 🎉</strong>",
+            "text_style": "subtitle"
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
-          "disabled": true,
           "settings": {
             "picker_type": "button",
             "swatch_shape": "circle"
@@ -75,8 +81,42 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
+            "show_dynamic_checkout": false,
             "show_gift_card_recipient": false
+          }
+        },
+        "buy_box_selling_points_YGMknG": {
+          "type": "shopify://apps/buy-box/blocks/selling-points/17b7c6ef-0c82-4743-acf4-050c34e5b233",
+          "settings": {
+            "sellingPoint_1_text": "<strong>Lifetime Replacements</strong> included",
+            "sellingPoint_2_text": "<strong>Fast UK Delivery</strong> in 2–3 days",
+            "sellingPoint_3_text": "<strong>30 Day Returns</strong> guaranteed",
+            "sellingPoint_4_text": "",
+            "sellingPoint_5_text": "",
+            "icon": "checkmark-circle-filled",
+            "icon_color": "#037e05",
+            "text_color": "#212121",
+            "icon_size": 16,
+            "text_size": 16,
+            "alignment": "start",
+            "row_spacing": 8,
+            "margin_top": 5,
+            "margin_bottom": 5,
+            "max-width": "44rem"
+          }
+        },
+        "buy_box_payment_icons_axiNKj": {
+          "type": "shopify://apps/buy-box/blocks/payment-icons/17b7c6ef-0c82-4743-acf4-050c34e5b233",
+          "disabled": true,
+          "settings": {
+            "exc": "diners_club, discover, ideal, bancontact, unionpay, maestro",
+            "icon_size": 32,
+            "alignment": "space-between",
+            "min_gap": 4,
+            "padding_sides": 0,
+            "margin_top": 0,
+            "margin_bottom": 0,
+            "max-width": "44rem"
           }
         },
         "custom_liquid_DTNb9G": {
@@ -104,6 +144,7 @@
         },
         "custom_liquid_3FHwzX": {
           "type": "custom_liquid",
+          "disabled": true,
           "settings": {
             "custom_liquid": "<div class = \"fast-delivery-offer\">\n    <svg\n      xmlns:dc=\"http://purl.org/dc/elements/1.1/\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      xmlns:xlink=\"http://www.w3.org/1999/xlink\"\n      width=\"15\"\n      fill=\"#007800\"\n      version=\"1.1\"\n      id=\"Layer_1\"\n      x=\"0px\"\n      y=\"0px\"\n      viewBox=\"0 0 24 24\"\n      style=\"enable-background:new 0 0 24 24;\"\n      xml:space=\"preserve\"\n    >\n      <metadata>\n        <dc:creator>Davooda</dc:creator>\n        <dc:relation>https://davooda.com</dc:relation>\n      </metadata>\n\n      <style type=\"text/css\">\n        .st0{fill:none;stroke:#039903;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}\n        .st1{fill:none;stroke:#039903;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}\n        .st2{fill:none;stroke:#039903;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}\n        .st3{fill:#039903;}\n        .st4{fill:#FFFFFF;stroke:#039903;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}\n        .st5{fill:none;stroke:#039903;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}\n        .st6{fill:none;stroke:#039903;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}\n        .st7{fill:#010101;}\n        .st8{fill:none;stroke:#039903;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}\n      </style>\n      <g>\n        <path\n          class=\"st0\"\n          d=\"M6,5h9v2l3.7,0.8c0.9,0.2,1.7,0.8,2.1,1.7l1.8,4c0.2,0.4,0.3,0.8,0.3,1.3v1.7V18h-3\"\n        />\n        <line class=\"st0\" x1=\"5\" y1=\"13\" x2=\"2\" y2=\"13\" />\n      </g>\n      <line class=\"st0\" x1=\"15\" y1=\"18\" x2=\"9\" y2=\"18\" />\n      <circle class=\"st0\" cx=\"6.5\" cy=\"18.5\" r=\"2.5\" />\n      <circle class=\"st0\" cx=\"17.5\" cy=\"18.5\" r=\"2.5\" />\n      <polyline class=\"st0\" points=\"15,7 15,12 15,14 \" />\n      <line class=\"st0\" x1=\"1\" y1=\"9\" x2=\"7\" y2=\"9\" />\n      <line class=\"st0\" x1=\"4\" y1=\"19\" x2=\"3\" y2=\"19\" />\n    </svg>\nFast Delivery within 2-3 Days\n</div>\n\n<style>\n.fast-delivery-offer {\n    display: flex;\n    justify-content: center;\n    gap: 10px;\n    font-size: 16px;\n    background: #e9fbea;\n    border-radius: 8px;\n    width: max-content;\n    margin-left: auto;\n    margin-right: auto;\n    padding: 0px 20px;\n    font-weight: 600;\n    color: #039903;\nalign-items: center;\n}\n</style>"
           }
@@ -129,21 +170,6 @@
           "disabled": true,
           "settings": {}
         },
-        "upsellplus_upsell_pdp_block_TkbKLc": {
-          "type": "shopify://apps/upsellplus/blocks/upsell-pdp-block/553fb951-397c-4171-8b32-7056a23ffd82",
-          "settings": {}
-        },
-        "klarna_on_site_messaging_app_block_fBH8Dz": {
-          "type": "shopify://apps/klarna-on-site-messaging/blocks/app-block/b95936a9-74b6-4a95-8103-6a1b6459c25e",
-          "disabled": true,
-          "settings": {
-            "data_key": "credit-promotion-badge",
-            "theme": "dark",
-            "topPadding": "0",
-            "bottomPadding": "0",
-            "messagePrefix": ""
-          }
-        },
         "klarna_on_site_messaging_app_block_MzcLFj": {
           "type": "shopify://apps/klarna-on-site-messaging/blocks/app-block/b95936a9-74b6-4a95-8103-6a1b6459c25e",
           "settings": {
@@ -156,6 +182,7 @@
         },
         "selleasy_lb_upsell_widget_pal_wJKy46": {
           "type": "shopify://apps/selleasy/blocks/lb-upsell-widget-pal/790c1a03-a71f-4bc1-9869-00dad526d3c2",
+          "disabled": true,
           "settings": {}
         },
         "klarna_on_site_messaging_app_block_NUBM68": {
@@ -233,17 +260,18 @@
         "custom_liquid_PdUgBU",
         "loox_reviews_loox_trust_badge_zbA3Pd",
         "price",
+        "text_nnQEC9",
         "variant_picker",
         "fly_bundles_quantity_breaks_app_block_volume_QMNmFR",
         "buy_buttons",
+        "buy_box_selling_points_YGMknG",
+        "buy_box_payment_icons_axiNKj",
         "custom_liquid_DTNb9G",
         "trustview_app_embed_block_wCMHUJ",
         "custom_liquid_4NPr8P",
         "custom_liquid_3FHwzX",
         "loox_reviews_loox_rating_UEKAV4",
         "quantity_selector",
-        "upsellplus_upsell_pdp_block_TkbKLc",
-        "klarna_on_site_messaging_app_block_fBH8Dz",
         "klarna_on_site_messaging_app_block_MzcLFj",
         "selleasy_lb_upsell_widget_pal_wJKy46",
         "klarna_on_site_messaging_app_block_NUBM68",
@@ -259,12 +287,12 @@
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
         "media_size": "medium",
-        "constrain_to_viewport": true,
-        "media_fit": "cover",
-        "gallery_layout": "thumbnail_slider",
+        "constrain_to_viewport": false,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail",
         "mobile_thumbnails": "hide",
         "media_position": "left",
-        "image_zoom": "lightbox",
+        "image_zoom": "none",
         "hide_variants": false,
         "enable_video_looping": false,
         "padding_top": 8,
