@@ -77,7 +77,7 @@
         {%- elsif picker_type == 'swatch' -%}
           <fieldset class="js product-form__input product-form__input--swatch">
             <legend class="variant-picker-step__header form__label">
-              <span class="variant-picker-step__number" aria-hidden="true">{{ display_step }}</span>
+              {% comment %} <span class="variant-picker-step__number" aria-hidden="true">{{ display_step }}</span> {% endcomment %}
               <span class="variant-picker-step__title">{{ step_title }}: <span data-selected-value>{{- option.selected_value -}}</span></span>
             </legend>
             {% render 'product-variant-options',
@@ -90,7 +90,7 @@
         {%- elsif picker_type == 'button' -%}
           <fieldset class="js product-form__input product-form__input--pill">
             <legend class="variant-picker-step__header form__label">
-              <span class="variant-picker-step__number" aria-hidden="true">{{ display_step }}</span>
+              {% comment %} <span class="variant-picker-step__number" aria-hidden="true">{{ display_step }}</span> {% endcomment %}
               <span class="variant-picker-step__title">{{ step_title }}</span>
             </legend>
             <div class="variant-picker-step__options">
@@ -109,7 +109,7 @@
         {%- else -%}
           <div class="product-form__input product-form__input--dropdown">
             <div class="variant-picker-step__header form__label">
-              <span class="variant-picker-step__number" aria-hidden="true">{{ display_step }}</span>
+              {% comment %} <span class="variant-picker-step__number" aria-hidden="true">{{ display_step }}</span> {% endcomment %}
               <span class="variant-picker-step__title">{{ option.name }}</span>
             </div>
             <div class="select">
@@ -147,7 +147,7 @@
         <div class="variant-picker-step variant-picker-step--{{ display_step }}">
           <fieldset class="product-form__input product-form__input--pill product-form__logo-option">
             <legend class="variant-picker-step__header form__label">
-              <span class="variant-picker-step__number" aria-hidden="true">{{ display_step }}</span>
+              {% comment %} <span class="variant-picker-step__number" aria-hidden="true">{{ display_step }}</span> {% endcomment %}
               <span class="variant-picker-step__title">Choose Blank or With Logo</span>
             </legend>
             <div class="logo-option-radios">

@@ -130,7 +130,7 @@
 
   {%- comment -%} Visible: Choose Blank or With Logo (div not fieldset so these are not included in selectedOptionValues) {% endcomment -%}
   <div class="variant-picker-step__header form__label">
-    <span class="variant-picker-step__number" aria-hidden="true">{{ step_number }}</span>
+    {% comment %} <span class="variant-picker-step__number" aria-hidden="true">{{ step_number }}</span> {% endcomment %}
     <span class="variant-picker-step__title">Choose Blank or With Logo</span>
   </div>
   <div class="js product-form__input product-form__input--pill product-form__logo-option" role="group" aria-label="Blank or With Logo">

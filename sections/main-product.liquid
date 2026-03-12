@@ -114,7 +114,7 @@
           {%- for block in section.blocks -%}
             {%- case block.type -%}
               {%- when '@app' -%}
-                {%- if block.id contains 'fly_bundles_quantity_breaks' -%}
+                {% comment %} {%- if block.id contains 'fly_bundles_quantity_breaks' -%}
                   <div class="variant-picker-step variant-picker-step--bundle bundle-app-wrapper">
                     <div class="variant-picker-step__header form__label bundle-app-wrapper__header">
                       <span class="variant-picker-step__number" aria-hidden="true">{{ product.metafields.custom.app_step_number.value | default: 3 }}</span>
@@ -125,9 +125,9 @@
                       {% render block %}
                     </div>
                   </div>
-                {%- else -%}
+                {%- else -%} {% endcomment %}
                   {% render block %}
-                {%- endif -%}
+                {% comment %} {%- endif -%} {% endcomment %}
               {%- when 'text' -%}
                 <p
                   class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
