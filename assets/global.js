@@ -1147,6 +1147,137 @@ class VariantSelects extends HTMLElement {
 
 customElements.define('variant-selects', VariantSelects);
 
+// Premium celebration: many party poppers + confetti (burst outward then fall with gravity/drift). No heavy libs, CSS-driven for 60fps.
+function runPremiumCelebration() {
+  const overlay = document.querySelector('[data-premium-congratulations-overlay]');
+  const poppersEl = overlay?.querySelector('[data-premium-poppers-container]');
+  const confettiEl = overlay?.querySelector('[data-premium-confetti-container]');
+  if (!overlay || !poppersEl || !confettiEl) return;
+
+  poppersEl.innerHTML = '';
+  confettiEl.innerHTML = '';
+
+  const CONFETTI_COLORS = ['#ff6b6b', '#4ecdc4', '#ffe66d', '#77dd77', '#dda0dd', '#87ceeb', '#ffb347', '#ff6961', '#aec6cf', '#f5c832'];
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 750;
+  const POPPER_COUNT = isMobile ? Math.round(55 * 0.4) : 55;
+  const CONFETTI_PER_POPPER = 9;
+  const popperIconUrl = overlay.dataset.partyPopperIcon || '';
+
+  function random(min, max) {
+    return min + Math.random() * (max - min);
+  }
+  function pick(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
+
+  // Create party poppers at random positions; bottom-left at (left%, top%) so scale origin stays fixed. Animate like confetti (burst then fall) with delay; shorter duration so they disappear before confetti.
+  for (let i = 0; i < POPPER_COUNT; i++) {
+    const left = random(2, 96);
+    const top = random(4, 88);
+    const bottom = 100 - top; // spawn point = popper bottom-left
+    const rotation = random(-28, 28);
+    const scale = random(0.82, 1.28);
+    const delay = random(0, 0.32);
+    const driftX = random(-10, 10);
+    const fallY = random(50, 120);
+    const popperDuration = random(1.0, 1.25);
+    const popper = document.createElement('div');
+    popper.className = 'premium-celebration-popper';
+    popper.setAttribute('aria-hidden', 'true');
+    popper.style.cssText = `left:${left}%;bottom:${bottom}%;--popper-rotation:${rotation}deg;--popper-scale:${scale};--popper-delay:${delay}s;--popper-duration:${popperDuration}s;--popper-drift-x:${driftX}px;--popper-fall-y:${fallY}px`;
+    if (popperIconUrl) {
+      const img = document.createElement('img');
+      img.src = popperIconUrl;
+      img.alt = '';
+      img.className = 'premium-celebration-popper__icon';
+      img.setAttribute('aria-hidden', 'true');
+      popper.appendChild(img);
+    } else {
+      popper.innerHTML = '<span class="premium-celebration-popper__icon" aria-hidden="true">🎉</span>';
+    }
+    poppersEl.appendChild(popper);
+
+    // Confetti origin: top-right of popper (where streamers shoot out); burst when popper peaks (~65% of 200ms)
+    const popperSizePercent = 4.5; // ~4.5vw ≈ 4.5% of viewport
+    const originLeft = Math.min(98, left + popperSizePercent);
+    const originTop = Math.max(1, top - popperSizePercent);
+    const confettiBurstDelay = delay + 0.13;
+    for (let j = 0; j < CONFETTI_PER_POPPER; j++) {
+      const angleDeg = random(0, 360);
+      const angleRad = (angleDeg * Math.PI) / 180;
+      const burstDist = random(24, 52);
+      const burstX = Math.cos(angleRad) * burstDist;
+      const burstY = -Math.sin(angleRad) * burstDist;
+      const fallY = random(90, 200);
+      const driftX = random(-24, 24);
+      const size = random(4, 11);
+      const rotStart = random(0, 360);
+      const rotEnd = rotStart + random(180, 540);
+      const durationConf = random(1.5, 2.0);
+      const round = Math.random() > 0.6 ? '50%' : '2px';
+      const piece = document.createElement('span');
+      piece.className = 'premium-celebration-confetti';
+      piece.setAttribute('aria-hidden', 'true');
+      piece.style.cssText = `left:${originLeft}%;top:${originTop}%;--burst-x:${burstX}px;--burst-y:${burstY}px;--drift-x:${driftX}px;--fall-y:${fallY}px;--rot-start:${rotStart}deg;--rot-end:${rotEnd}deg;--size:${size}px;--color:${pick(CONFETTI_COLORS)};--delay:${confettiBurstDelay}s;--duration:${durationConf}s;border-radius:${round}`;
+      confettiEl.appendChild(piece);
+    }
+  }
+
+  // Add extra floating confetti from random screen positions (no popper)
+  for (let k = 0; k < 45; k++) {
+    const left = random(2, 96);
+    const top = random(0, 50);
+    const angleDeg = random(200, 340);
+    const angleRad = (angleDeg * Math.PI) / 180;
+    const burstDist = random(20, 50);
+    const burstX = Math.cos(angleRad) * burstDist;
+    const burstY = -Math.sin(angleRad) * burstDist;
+    const fallY = random(120, 220);
+    const driftX = random(-30, 30);
+    const size = random(4, 11);
+    const rotStart = random(0, 360);
+    const rotEnd = rotStart + random(360, 720);
+    const delayConf = random(0, 0.4);
+    const durationConf = random(1.8, 2.1);
+    const round = Math.random() > 0.6 ? '50%' : '2px';
+    const piece = document.createElement('span');
+    piece.className = 'premium-celebration-confetti';
+    piece.setAttribute('aria-hidden', 'true');
+    piece.style.cssText = `left:${left}%;top:${top}%;--burst-x:${burstX}px;--burst-y:${burstY}px;--drift-x:${driftX}px;--fall-y:${fallY}px;--rot-start:${rotStart}deg;--rot-end:${rotEnd}deg;--size:${size}px;--color:${pick(CONFETTI_COLORS)};--delay:${delayConf}s;--duration:${durationConf}s;border-radius:${round}`;
+    confettiEl.appendChild(piece);
+  }
+}
+
+function showPremiumCongratulationsOverlay() {
+  const overlay = document.querySelector('[data-premium-congratulations-overlay]');
+  if (!overlay) return;
+  runPremiumCelebration();
+  overlay.classList.remove('is-leaving');
+  overlay.classList.add('is-visible');
+  window.clearTimeout(overlay._premiumCongratsTimeout);
+  overlay._premiumCongratsTimeout = window.setTimeout(() => {
+    overlay.classList.add('is-leaving');
+    overlay._premiumCongratsTimeout = window.setTimeout(() => {
+      overlay.classList.remove('is-visible', 'is-leaving');
+    }, 520);
+  }, 2600);
+}
+
+// Preload party popper SVG so it is cached before the user can trigger celebration (avoids missing icons on fast toggle).
+function preloadPartyPopperIcon() {
+  const overlay = document.querySelector('[data-premium-congratulations-overlay]');
+  const url = overlay?.dataset.partyPopperIcon;
+  if (url) {
+    const img = new Image();
+    img.src = url;
+  }
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', preloadPartyPopperIcon);
+} else {
+  preloadPartyPopperIcon();
+}
+
 // Premium upgrade toggle: one click anywhere toggles No/Yes (ignore click position).
 // Only trusted user clicks inside variant-selects, so bundle/other option updates do not trigger this.
 document.addEventListener('click', (e) => {
@@ -1160,6 +1291,7 @@ document.addEventListener('click', (e) => {
   const other = inputNo.checked ? inputYes : inputNo;
   other.checked = true;
   other.dispatchEvent(new Event('change', { bubbles: true }));
+  if (other === inputYes) showPremiumCongratulationsOverlay();
 });
 
 // Premium separate option: one click on the Premium switch toggles Standard/Premium.
@@ -1174,6 +1306,7 @@ document.addEventListener('click', (e) => {
   const other = inputOff.checked ? inputOn : inputOff;
   other.checked = true;
   other.dispatchEvent(new Event('change', { bubbles: true }));
+  if (other === inputOn) showPremiumCongratulationsOverlay();
 });
 
 // Premium badge before CTA: one click on the toggle flips Standard/Premium.
@@ -1188,6 +1321,7 @@ document.addEventListener('click', (e) => {
   const other = inputOff.checked ? inputOn : inputOff;
   other.checked = true;
   other.dispatchEvent(new Event('change', { bubbles: true }));
+  if (other === inputOn) showPremiumCongratulationsOverlay();
 });
 
 class ProductRecommendations extends HTMLElement {

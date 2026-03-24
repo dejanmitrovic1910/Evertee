@@ -44,7 +44,7 @@
       {%- form 'product',
         product,
         id: product_form_id,
-        class: 'form',
+        class: 'form premium-badget-wrapper',
         novalidate: 'novalidate',
         data-type: 'add-to-cart-form'
       -%}
@@ -175,6 +175,9 @@
                   var other = inputNo.checked ? inputYes : inputNo;
                   other.checked = true;
                   other.dispatchEvent(new Event('change', { bubbles: true }));
+                  if (other === inputYes && typeof showPremiumCongratulationsOverlay === 'function') {
+                    showPremiumCongratulationsOverlay();
+                  }
                 });
               })();
             </script>

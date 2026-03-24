@@ -1,0 +1,19 @@
+{% comment %}
+  Premium celebration: many party poppers + confetti burst then fall.
+  Content is injected by JS (random positions, physics). Purely visual, pointer-events: none.
+  Preload the popper SVG so it is cached before the user can trigger the celebration on fast click.
+{% endcomment %}
+{%- assign party_popper_icon_url = 'icon-party-popper.svg' | asset_url -%}
+<link rel="preload" href="{{ party_popper_icon_url }}" as="image">
+<div
+  class="premium-congratulations-overlay"
+  id="premium-congratulations-overlay"
+  data-premium-congratulations-overlay
+  data-party-popper-icon="{{ party_popper_icon_url }}"
+  aria-hidden="true"
+  role="presentation"
+>
+  <div class="premium-congratulations-overlay__backdrop"></div>
+  <div class="premium-congratulations-overlay__poppers" data-premium-poppers-container aria-hidden="true"></div>
+  <div class="premium-congratulations-overlay__confetti" data-premium-confetti-container aria-hidden="true"></div>
+</div>

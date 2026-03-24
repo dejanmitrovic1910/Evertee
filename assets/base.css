@@ -3598,3 +3598,12 @@ details-disclosure > details {
 .margin-small{
   margin: 1rem 0 !important;
 }
+
+.premium-badget-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.premium-badget-wrapper .gfbPageWrapper {
+  order: -1;
+}
